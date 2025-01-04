@@ -1,0 +1,64 @@
+/* Centrar el contenedor */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+  gap: 20px; /* Espaciado entre los elementos */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo de las tarjetas */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; /* Elimina subrayado de los enlaces */
+  color: #000; /* Color del texto */
+  background-color: #f8f9fa; /* Fondo claro */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30vw; /* Ancho relativo al tamaño de la ventana (30% del ancho de la ventana) */
+  max-width: 350px; /* Ancho máximo */
+  min-width: 250px; /* Ancho mínimo para evitar que se haga demasiado pequeño */
+  height: auto; /* Ajustar altura dinámicamente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Estilo de las imágenes */
+.card img {
+  width: 100px; /* Tamaño de la imagen */
+  height: 100px;
+  object-fit: cover; /* Ajustar imagen sin distorsión */
+  margin-bottom: 10px;
+  border-radius: 50%; /* Forma circular */
+}
+
+/* Hover para las tarjetas */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título centrado */
+.homeScreenTitle {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+  .card {
+    width: 45vw; /* Aumentar el ancho en pantallas medianas */
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    width: 80vw; /* Aumentar aún más el ancho en pantallas pequeñas */
+  }
+}
