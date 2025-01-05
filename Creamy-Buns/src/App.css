@@ -1,11 +1,13 @@
 /* Centrar el contenedor */
 .container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
   gap: 20px; /* Espaciado entre los elementos */
   padding: 20px; /* Espaciado interno */
+  height: 500px;
 }
 
 /* Estilo de las tarjetas */
@@ -22,7 +24,8 @@
   width: 30vw; /* Ancho relativo al tamaño de la ventana (30% del ancho de la ventana) */
   max-width: 350px; /* Ancho máximo */
   min-width: 250px; /* Ancho mínimo para evitar que se haga demasiado pequeño */
-  height: auto; /* Ajustar altura dinámicamente */
+  min-height: 250px; /* Altura mínima */
+  height: auto; /* Ajuste automático de altura según el contenido */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
