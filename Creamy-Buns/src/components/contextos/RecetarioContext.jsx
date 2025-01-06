@@ -11,10 +11,10 @@ export const RecetarioContextProvider = ({children}) => {
       //estado para buscar receta
       const [buscarReceta, setBuscarReceta] = useState("");
       //estado para eliminar receta
-      const [eliminarReceta, setEliminar] = useState("");
+      const [eliminarReceta, setEliminarReceta] = useState("");
 
     return (
-        <RecetarioContext.Provider value={{nuevaReceta,setNuevaReceta,buscarReceta,setBuscarReceta,eliminarReceta,setEliminar}}>
+        <RecetarioContext.Provider value={{nuevaReceta,setNuevaReceta,buscarReceta,setBuscarReceta,eliminarReceta,setEliminarReceta}}>
             {children}
         </RecetarioContext.Provider>
     )

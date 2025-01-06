@@ -1,5 +1,6 @@
 import FormBuscarReceta from "./FormBuscarReceta"
 import FormAgregarReceta from "./FormAgregarReceta"
+import FormEliminarReceta from "./FormEliminarReceta"
 
 const FormRecetarioOption = ({option}) => {
     
@@ -15,7 +16,7 @@ const FormRecetarioOption = ({option}) => {
         </>)
        } else if (option == 'eliminar'){
         return (<>
-            <h3>eliminar</h3>
+            <FormEliminarReceta />
         </>)
        }
     }
