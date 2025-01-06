@@ -1,13 +1,18 @@
-const Recetario = () => {
+import { useState } from "react";
+import FormRecetario from "./FormRecetario";
+import { RecetarioContextProvider } from "./contextos/RecetarioContext";
 
-    return (
-        <>
+const Recetario = () => {
+  return (
+    <>
+      <div className="">
         <h2>Recetario</h2>
-        <div>
-            <p>Recetario  </p>
-        </div>
-        </>
-    )
-}
+        <RecetarioContextProvider>
+          <FormRecetario />
+        </RecetarioContextProvider>
+      </div>
+    </>
+  );
+};
 
 export default Recetario;

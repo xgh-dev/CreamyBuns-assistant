@@ -3,7 +3,10 @@ import Pedidos from "./components/Pedidos";
 import Recetario from "./components/Recetario";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
+
+//con estas dependencias activamos las clases de bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
   return (
