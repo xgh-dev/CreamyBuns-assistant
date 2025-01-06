@@ -87,8 +87,10 @@
 .FormRecetario {
   display: flex;
   justify-content: space-evenly;
+  background-color: #f9f9f9;
 }
 
+/*formularios de recetas */
 .formularioContenedorRecetas {
   display: flex; /*damos display de flex*/
   justify-content: center;/*justificamos el contenido al centro*/
@@ -180,4 +182,32 @@ p {
     padding: 12px;
     font-size: 14px;
   }
+}
+
+/*contenedor de select y fomrmularios*/
+.contenedorDeOpcionesDeFormulario{
+  display: flex; /*damos display de flex*/
+  justify-content: center;/*justificamos el contenido al centro*/
+  align-items: center;/*alinemaos los elementos al centro esto en el eje y*/
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.contenedorDeEtiquetas{
+  display: flex;
+  flex-direction: column; /* Los divs estarán en una fila */
+  gap: 20px; /* Espacio entre los divs */
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenedorDeEtiquetas label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 }

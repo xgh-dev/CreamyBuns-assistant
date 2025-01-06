@@ -15,7 +15,8 @@ const FormRecetario = () => {
     <>
       <div className="FormRecetario">
         <div className="contenedorDeOpcionesDeFormulario">
-          <label htmlFor="">Seleccione una opción:</label>
+          <div className="contenedorDeEtiquetas">
+          <label htmlFor="">Seleccione una opción</label>
           <select
             name="opciones"
             id="opciones"
@@ -32,6 +33,7 @@ const FormRecetario = () => {
               Eliminar
             </option>
           </select>
+          </div>
         </div>
         <FormRecetarioOption option={option} />
       </div>
