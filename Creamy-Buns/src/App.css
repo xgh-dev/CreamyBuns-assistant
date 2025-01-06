@@ -83,6 +83,7 @@
   }
 }
 
+
 /*seccion para los formularios del recetario*/
 .FormRecetario {
   display: flex;
@@ -154,36 +155,6 @@ p {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .formularioRecetas {
-    padding: 15px;
-    gap: 10px;
-  }
-
-  .formularioRecetas label {
-    font-size: 14px;
-  }
-
-  .formularioRecetas input[type="text"],
-  .formularioRecetas input[type="submit"] {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .formularioRecetas {
-    max-width: 100%;
-    border: none;
-    box-shadow: none;
-  }
-
-  .formularioRecetas input[type="submit"] {
-    padding: 12px;
-    font-size: 14px;
-  }
-}
-
 /*contenedor de select y fomrmularios*/
 .contenedorDeOpcionesDeFormulario{
   display: flex; /*damos display de flex*/
@@ -211,3 +182,79 @@ p {
   font-weight: bold;
   color: #333;
 }
+
+/* Media query para pantallas de hasta 768px */
+@media (max-width: 768px) {
+  .FormRecetario,
+  .formularioContenedorRecetas,
+  .contenedorDeOpcionesDeFormulario,
+  .contenedorDeEtiquetas {
+    padding: 15px;
+    flex-direction: column; /* Coloca los elementos en columna en lugar de fila */
+    align-items: stretch; /* Asegura que los elementos se estiren para ocupar el espacio disponible */
+  }
+
+  .formularioRecetas {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .formularioRecetas label {
+    font-size: 14px;
+  }
+
+  .formularioRecetas input[type="text"],
+  .formularioRecetas input[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .contenedorDeEtiquetas {
+    gap: 15px; /* Espacio entre los divs */
+    padding: 15px;
+  }
+
+  .contenedorDeEtiquetas label {
+    font-size: 14px;
+  }
+}
+
+/* Media query para pantallas de hasta 480px */
+@media (max-width: 480px) {
+  .FormRecetario,
+  .formularioContenedorRecetas,
+  .contenedorDeOpcionesDeFormulario,
+  .contenedorDeEtiquetas {
+    padding: 10px;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: stretch;
+  }
+
+  .formularioRecetas {
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .formularioRecetas label {
+    font-size: 14px;
+  }
+
+  .formularioRecetas input[type="text"],
+  .formularioRecetas input[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .contenedorDeEtiquetas {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .contenedorDeEtiquetas label {
+    font-size: 14px;
+  }
+}
+
