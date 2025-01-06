@@ -6,7 +6,7 @@ export const RecetarioContext = createContext(null);
 export const RecetarioContextProvider = ({children}) => {
     const [nuevaReceta, setNuevaReceta] = useState({
         nombre:null,
-        receta:null
+        archivlo:null
         });
       //estado para buscar receta
       const [buscarReceta, setBuscarReceta] = useState("");
