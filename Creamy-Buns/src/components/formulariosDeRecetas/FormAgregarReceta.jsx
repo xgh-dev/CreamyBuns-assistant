@@ -28,8 +28,9 @@ const FormAgregarReceta = () => {
 
   return (
     <>
-      <div>
-        <form action="" onSubmit={handleFormAgregarReceta}>
+      <div className="formularioContenedorRecetas">
+        <form action="" onSubmit={handleFormAgregarReceta} className="formularioRecetas">
+          <div>
           <label>Nombre de la receta</label>
           <input
             type="text"
@@ -37,6 +38,8 @@ const FormAgregarReceta = () => {
             value={nuevoNombre}
             onChange={(e) => setNuevoNombre(e.target.value)}
           />
+          </div>
+          <div>
           <label>Cargar receta</label>
           <input
             type="text"
@@ -44,10 +47,11 @@ const FormAgregarReceta = () => {
             value={nuevoFile}
             onChange={(e) => setNuevoFile(e.target.value)}
           />
+          </div>
           <input type="submit" value="Agregar" />
         </form>
         {error ? <p>No pueden quedar campos vacios</p> : ""}
-      </div>
+        </div>
     </>
   );
 };

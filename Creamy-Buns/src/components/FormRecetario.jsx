@@ -5,33 +5,41 @@ import FormRecetarioOption from "./formulariosDeRecetas/FormRecetarioOption";
 const FormRecetario = () => {
   //llamar al contexto
   //const {} = useContext(RecetarioContext)
-  const [option,setOption] = useState('buscar')
+  const [option, setOption] = useState("buscar");
   const optionForm = (e) => {
-    e.preventDefault()
-    setOption(e.target.value)
-  }
+    e.preventDefault();
+    setOption(e.target.value);
+  };
 
   return (
     <>
       <div className="FormRecetario">
-        <div>
-        <label htmlFor="">Seleccione una opción:</label>
-        <select name="opciones" id="opciones" value={option} onChange={optionForm}>
-          <option value="buscar" id="buscar" >Buscar</option>
-          <option value="agregar" id="agregar">Agregar</option>
-          <option value="eliminar" id="eliminar">Eliminar</option>
-        </select>
+        <div className="contenedorDeOpcionesDeFormulario">
+          <label htmlFor="">Seleccione una opción:</label>
+          <select
+            name="opciones"
+            id="opciones"
+            value={option}
+            onChange={optionForm}
+          >
+            <option value="buscar" id="buscar">
+              Buscar
+            </option>
+            <option value="agregar" id="agregar">
+              Agregar
+            </option>
+            <option value="eliminar" id="eliminar">
+              Eliminar
+            </option>
+          </select>
         </div>
-        <div>
-          <FormRecetarioOption option={option}/>
-        </div>
+        <FormRecetarioOption option={option} />
       </div>
     </>
   );
 };
 
 export default FormRecetario;
-
 
 /*
 <div className="formRecetarioContenedor">
