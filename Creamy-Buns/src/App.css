@@ -1,4 +1,7 @@
 /* Centrar el contenedor */
+body {
+  background-color: #f9f9f9;
+}
 .homeScreenPrincipalContainer {
   display: flex;
   flex-direction: row;
@@ -183,15 +186,16 @@ p {
   color: #333;
 }
 
+
 /* Media query para pantallas de hasta 768px */
-@media (max-width: 768px) {
+@media (max-width: 550px) {/*768*/
   .FormRecetario,
   .formularioContenedorRecetas,
   .contenedorDeOpcionesDeFormulario,
   .contenedorDeEtiquetas {
     padding: 15px;
-    flex-direction: column; /* Coloca los elementos en columna en lugar de fila */
-    align-items: stretch; /* Asegura que los elementos se estiren para ocupar el espacio disponible */
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .formularioRecetas {
@@ -210,7 +214,7 @@ p {
   }
 
   .contenedorDeEtiquetas {
-    gap: 15px; /* Espacio entre los divs */
+    gap: 15px;
     padding: 15px;
   }
 
@@ -226,7 +230,7 @@ p {
   .contenedorDeOpcionesDeFormulario,
   .contenedorDeEtiquetas {
     padding: 10px;
-    flex-direction: column; /* Asegura que los elementos estén en columna */
+    flex-direction: column;
     align-items: stretch;
   }
 
@@ -257,4 +261,3 @@ p {
     font-size: 14px;
   }
 }
-
