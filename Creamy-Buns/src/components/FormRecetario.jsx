@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { RecetarioContext } from "./contextos/RecetarioContext";
 import FormRecetarioOption from "./formulariosDeRecetas/FormRecetarioOption";
 
+
 const FormRecetario = () => {
   //llamar al contexto
   //const {} = useContext(RecetarioContext)
