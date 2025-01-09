@@ -16,6 +16,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/recetario" element={<Recetario />} />
+              <Route path="/receta/:id" element = {''}/>
               <Route path="/pedidos" element={<Pedidos />} />
             </Routes>
           </BrowserRouter>

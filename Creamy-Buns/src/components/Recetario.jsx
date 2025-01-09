@@ -12,9 +12,7 @@ const Recetario = () => {
           <div className="mainFormRecetario">
           <FormRecetario />
           </div>
-          <div className="mainListaDeRecetas">
           <ListaDeRecetas />
-          </div>
         </RecetarioContextProvider>
       </div>
     </>
