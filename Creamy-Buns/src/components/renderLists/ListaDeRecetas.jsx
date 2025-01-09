@@ -66,9 +66,7 @@ const ListaDeRecetas = () => {
         <h2>Lista de recetas</h2>
         <div className="contenedorDeListaDeRecetas">
           {recetas.map((receta) => (
-            <div key={receta.id} className="recetaItem">
-              <ItemList receta={receta} />
-            </div>
+            <ItemList key={receta.id} receta={receta} />
           ))}
         </div>
       </section>

@@ -6,15 +6,21 @@ import { RecetarioContextProvider } from "./contextos/RecetarioContext";
 const Recetario = () => {
   return (
     <>
-      <div className="RecetarioMainContainer">
-        <h2>Recetario</h2>
+      <section className="RecetarioMainContainer">
+        <header>
+          <h2>Recetario</h2>
+        </header>
         <RecetarioContextProvider>
-          <div className="mainFormRecetario">
-          <FormRecetario />
-          </div>
-          <ListaDeRecetas />
+          <main className="recetarioMainContent">
+            <section className="mainFormRecetario">
+              <FormRecetario />
+            </section>
+            <section className="mainListaDeRecetas">
+              <ListaDeRecetas />
+            </section>
+          </main>
         </RecetarioContextProvider>
-      </div>
+      </section>
     </>
   );
 };

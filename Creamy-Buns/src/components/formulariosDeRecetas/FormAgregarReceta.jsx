@@ -21,37 +21,56 @@ const FormAgregarReceta = () => {
   };
 
   useEffect(() => {
-    if (nuevaReceta){
-      console.log(nuevaReceta)
+    if (nuevaReceta) {
+      console.log(nuevaReceta);
     }
-  },[nuevaReceta])
+  }, [nuevaReceta]);
 
   return (
     <>
       <div className="formularioContenedorRecetas">
-        <form action="" onSubmit={handleFormAgregarReceta} className="formularioRecetas">
+        <form
+          action=""
+          onSubmit={handleFormAgregarReceta}
+          className="formularioRecetas"
+        >
           <div>
-          <label>Nombre de la receta</label>
-          <input
-            type="text"
-            placeholder="Ingresar nuevo nombre"
-            value={nuevoNombre}
-            onChange={(e) => setNuevoNombre(e.target.value)}
-          />
+            <label>Nombre de la receta</label>
+            <input
+              type="text"
+              placeholder="Ingresar nuevo nombre"
+              value={nuevoNombre}
+              onChange={(e) => setNuevoNombre(e.target.value)}
+            />
           </div>
           <div>
-          <label>Cargar receta</label>
-          <input
-            type="text"
-            placeholder="Cargue la receta (imagen)"
-            value={nuevoFile}
-            onChange={(e) => setNuevoFile(e.target.value)}
-          />
+            <label>Ingredientes</label>
+            <textarea
+              placeholder="Ingresar ingredientes"
+              rows="5" // Controla el tamaño inicial
+            />
+          </div>
+          <div>
+            <label>Procedimiento</label>
+            <textarea placeholder="Ingresar procedimiento" rows="5" />
+          </div>
+          <div>
+            <label>Observaciones</label>
+            <textarea placeholder="Campo opcional" rows="5" />
+          </div>
+          <div>
+            <label>Cargar imagen</label>
+            <input
+              type="text"
+              placeholder="Cargue la receta (imagen)"
+              value={nuevoFile}
+              onChange={(e) => setNuevoFile(e.target.value)}
+            />
           </div>
           <input type="submit" value="Agregar" />
         </form>
         {error ? <p>No pueden quedar campos vacios</p> : ""}
-        </div>
+      </div>
     </>
   );
 };
