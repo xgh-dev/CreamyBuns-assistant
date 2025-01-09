@@ -275,3 +275,7 @@ p {
   }
 }
 
+.contenedorDeRecetas{
+  display: flex;/*indicamos el flex*/
+  justify-content: center;/*justificamos el contenido*/
+}
