@@ -304,6 +304,7 @@ p {
 /*--------------*/
 
 /* Estilos generales de la lista de recetas*/
+/*
 .contenedorDeRecetas {
   display: flex;
   flex-direction: column;
@@ -314,7 +315,8 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-}
+}*/
+
 
 .contenedorDeListaDeRecetas {
   display: flex;

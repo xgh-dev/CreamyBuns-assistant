@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormEliminarReceta = () => {
-  const { eliminarReceta, setEliminarReceta } = useContext(RecetarioContext);
+  const { listaDeRecetas,setListaDeRecetas,recetas } = useContext(RecetarioContext);
 
   const handleFormEliminarReceta = (e) => {
     if (eliminarReceta !== "") {
