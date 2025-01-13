@@ -13,7 +13,8 @@ const FormEliminarReceta = () => {
     if (eliminarReceta !== "") {
       const listaActualizada = listaDeRecetas.filter(
         (receta) =>
-          receta.nombre_del_postre.toLowerCase() !== eliminarReceta.toLowerCase()
+          receta.nombre_del_postre.toLowerCase() !==
+          eliminarReceta.toLowerCase()
       );
       setListaDeRecetas(listaActualizada);
       console.log(eliminarReceta);
@@ -23,8 +24,11 @@ const FormEliminarReceta = () => {
     }
   };
   useEffect(() => {
-    cargarRecetas();
+    if (listaDeRecetas.length == 1) {
+      cargarRecetas();
+    }
   }, []);
+
   return (
     <>
       <div className="formularioContenedorRecetas">

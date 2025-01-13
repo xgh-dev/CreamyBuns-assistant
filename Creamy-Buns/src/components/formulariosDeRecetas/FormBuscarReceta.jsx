@@ -8,8 +8,13 @@ const FormBuscarReceta = () => {
   //hook para buscar receta
   const [nombre, setNombre] = useState("");
 
+  //hook de proteccion
+  const [listaDeRecetasOriginal,setListaDeRecetasOriginal] = useState([])
+
+
   const handleFormBuscarReceta = (e) => {
     e.preventDefault();
+    setListaDeRecetasOriginal(listaDeRecetas)//creamos una copia de la lista para poder recuperarla
     if (nombre !== "") {
       setListaDeRecetas(
         listaDeRecetas.filter((receta) =>
@@ -17,17 +22,14 @@ const FormBuscarReceta = () => {
         )
       );
       setNombre("");
+      
     } else {
       //en caso de que se ejecute el else renderizamos de nuevo todo
-      cargarRecetas();
+      setListaDeRecetas(listaDeRecetasOriginal)
+      setNombre('')
       console.log("no deje campos vacios");
     }
   };
-
-  //mediante este useEffect podemos generar la busqueda en "tiempo real"
-  /*useEffect(() => {
-    setListaDeRecetas(listaDeRecetas.filter(receta => receta.nombre_postre.toLowerCase().includes(nombre.toLowerCase())))
-  },[nombre])*/
 
   return (
     <>

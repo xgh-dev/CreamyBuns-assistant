@@ -5,7 +5,6 @@ import { obtenerRecetasApi, eliminarReceta, nuevaReceta } from "../../apiAcces";
 export const RecetarioContext = createContext(null);
 
 export const RecetarioContextProvider = ({ children }) => {
-
   //hook de la lista de recetas
   const [listaDeRecetas, setListaDeRecetas] = useState([]);
 
