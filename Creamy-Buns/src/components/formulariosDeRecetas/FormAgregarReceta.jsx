@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 
 const FormAgregarReceta = () => {
   //uso de contexto
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas } =
+  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,initialSize,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
     useContext(RecetarioContext);
 
   //hook para capturar los datos
@@ -48,9 +48,10 @@ const FormAgregarReceta = () => {
   };
 
   useEffect(() => {
-    if (listaDeRecetas.length == 1){
-    cargarRecetas()}
-  },[])
+    if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
+      setListaDeRecetas(listaDeRecetasOriginal)
+    }
+  }, []);
 
   return (
     <>

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormEliminarReceta = () => {
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas } =
+  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,initialSize,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
     useContext(RecetarioContext);
 
   //crear un hook que busque la receta
@@ -24,8 +24,8 @@ const FormEliminarReceta = () => {
     }
   };
   useEffect(() => {
-    if (listaDeRecetas.length == 1) {
-      cargarRecetas();
+    if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
+      setListaDeRecetas(listaDeRecetasOriginal)
     }
   }, []);
 

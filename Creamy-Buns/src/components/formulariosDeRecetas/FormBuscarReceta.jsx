@@ -2,15 +2,11 @@ import { useContext, useState, useEffect } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormBuscarReceta = () => {
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas } =
+  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
     useContext(RecetarioContext);
 
   //hook para buscar receta
   const [nombre, setNombre] = useState("");
-
-  //hook de proteccion
-  const [listaDeRecetasOriginal,setListaDeRecetasOriginal] = useState([])
-
 
   const handleFormBuscarReceta = (e) => {
     e.preventDefault();

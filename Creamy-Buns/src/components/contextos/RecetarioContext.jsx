@@ -8,6 +8,9 @@ export const RecetarioContextProvider = ({ children }) => {
   //hook de la lista de recetas
   const [listaDeRecetas, setListaDeRecetas] = useState([]);
 
+  //hook de proteccion
+  const [listaDeRecetasOriginal, setListaDeRecetasOriginal] = useState([]);
+
   //useEffect nos permitira que al iniciar la aplicacion podamos alimentar estados con funciones asyncronas de una manera limpiar
   const cargarRecetas = async () => {
     const datos = await obtenerRecetasApi();
@@ -24,6 +27,8 @@ export const RecetarioContextProvider = ({ children }) => {
         setListaDeRecetas,
         obtenerRecetasApi,
         cargarRecetas,
+        listaDeRecetasOriginal,
+        setListaDeRecetasOriginal,
       }}
     >
       {children}
