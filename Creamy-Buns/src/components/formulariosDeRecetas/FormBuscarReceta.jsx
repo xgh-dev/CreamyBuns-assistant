@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormBuscarReceta = () => {
-  const { listaDeRecetas,setListaDeRecetas,recetas } =
+  const { listaDeRecetas,setListaDeRecetas } =
     useContext(RecetarioContext);
   //const [buscarReceta,setBuscarReceta] = useState('')
   //hook para buscar receta
@@ -15,7 +15,7 @@ const FormBuscarReceta = () => {
       setNombre('')
     } else {
       //en caso de que se ejecute el else renderizamos de nuevo todo
-      setListaDeRecetas(recetas)
+      setListaDeRecetas()
       console.log('no deje campos vacios')
     }
   };
