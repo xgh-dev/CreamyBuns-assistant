@@ -1,20 +1,30 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormEliminarReceta = () => {
-  const { listaDeRecetas,setListaDeRecetas,eliminarReceta, setEliminarReceta } = useContext(RecetarioContext);
+  const { listaDeRecetas, setListaDeRecetas, cargarRecetas } =
+    useContext(RecetarioContext);
 
+  //crear un hook que busque la receta
+  const [eliminarReceta, setEliminarReceta] = useState("");
 
   const handleFormEliminarReceta = (e) => {
+    e.preventDefault();
     if (eliminarReceta !== "") {
-      e.preventDefault();
+      const listaActualizada = listaDeRecetas.filter(
+        (receta) =>
+          receta.nombre_del_postre.toLowerCase() !== eliminarReceta.toLowerCase()
+      );
+      setListaDeRecetas(listaActualizada);
       console.log(eliminarReceta);
       setEliminarReceta("");
     } else {
       console.log("no puede dejar campos vacios");
     }
   };
-
+  useEffect(() => {
+    cargarRecetas();
+  }, []);
   return (
     <>
       <div className="formularioContenedorRecetas">

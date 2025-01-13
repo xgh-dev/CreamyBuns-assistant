@@ -7,7 +7,7 @@ const FormAgregarReceta = () => {
 
   //hook para capturar los datos
   const [nuevaReceta, setNuevaReceta] = useState({
-    id: listaDeRecetas.length + 1,
+    id: listaDeRecetas.length + 1,//le sumamos uno para que arranque con un valor mayor al ultimo de la lista
     nombre_del_postre: '',
     ingredientes: '',
     metodo_preparacion: '',
@@ -28,13 +28,13 @@ const FormAgregarReceta = () => {
       setListaDeRecetas([...listaDeRecetas,nuevaReceta])
       //console.log(nuevaReceta);
       setNuevaReceta({
-        id: listaDeRecetas.length + 1,
+        id: nuevaReceta.id + 1, //de esta forma actualizamos el id, funciona llamando al id existente e incrementando en 1, esto para que cuando vuelva a ser llamado ya exista un nuevo valor de id, esta variable no es modificada en ningun momento por el formulario
         nombre_del_postre: '',
         ingredientes: '',
         metodo_preparacion: '',
         observaciones: '',
         imagen: '',
-        precio: 0})
+        precio: ''})
     } else {
       setError(true);
     }

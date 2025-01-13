@@ -2,21 +2,25 @@ import { useContext, useState, useEffect } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormBuscarReceta = () => {
-  const { listaDeRecetas,setListaDeRecetas } =
+  const { listaDeRecetas, setListaDeRecetas, cargarRecetas } =
     useContext(RecetarioContext);
-  //const [buscarReceta,setBuscarReceta] = useState('')
+
   //hook para buscar receta
   const [nombre, setNombre] = useState("");
 
   const handleFormBuscarReceta = (e) => {
     e.preventDefault();
-    if (nombre !== ''){
-      setListaDeRecetas(listaDeRecetas.filter(receta => receta.nombre_postre.toLowerCase().includes(nombre.toLowerCase())))
-      setNombre('')
+    if (nombre !== "") {
+      setListaDeRecetas(
+        listaDeRecetas.filter((receta) =>
+          receta.nombre_del_postre.toLowerCase().includes(nombre.toLowerCase())
+        )
+      );
+      setNombre("");
     } else {
       //en caso de que se ejecute el else renderizamos de nuevo todo
-      setListaDeRecetas()
-      console.log('no deje campos vacios')
+      cargarRecetas();
+      console.log("no deje campos vacios");
     }
   };
 
@@ -24,7 +28,6 @@ const FormBuscarReceta = () => {
   /*useEffect(() => {
     setListaDeRecetas(listaDeRecetas.filter(receta => receta.nombre_postre.toLowerCase().includes(nombre.toLowerCase())))
   },[nombre])*/
-
 
   return (
     <>

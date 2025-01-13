@@ -13,7 +13,7 @@ const ItemList = ({ receta }) => {
         {/* Información del postre */}
         <div className="item-info-receta">
           <h2 className="item-name-receta">{receta.nombre_del_postre}</h2>
-          <p className="item-price-receta">Precio: ${receta.precio}</p>
+          <p className="item-price-receta">Id: {receta.id} -- Precio: ${receta.precio}</p>
         </div>
       </div>
     </Link>
