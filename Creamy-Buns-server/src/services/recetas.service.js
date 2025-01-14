@@ -23,7 +23,7 @@ export async function crearRecetaDB(datos) {
     imagen,
   } = datos;
   try {
-    const resultado = await conexion.query(
+    await conexion.query(
       "INSERT INTO recetas (nombre_del_postre,precio,ingredientes,procedimiento,observaciones,imagen) VALUES (?,?,?,?,?,?)",
       [
         nombre_del_postre,

@@ -1,6 +1,10 @@
 import { createContext } from "react";
 import { useState, useEffect } from "react";
-import { obtenerRecetasApi, eliminarReceta, nuevaReceta } from "../../apiAcces";
+import {
+  obtenerRecetasApi,
+  eliminarRecetaApi,
+  nuevaRecetaApi,
+} from "../../apiAcces";
 
 export const RecetarioContext = createContext(null);
 
@@ -26,6 +30,8 @@ export const RecetarioContextProvider = ({ children }) => {
         listaDeRecetas,
         setListaDeRecetas,
         obtenerRecetasApi,
+        eliminarRecetaApi,
+        nuevaRecetaApi,
         cargarRecetas,
         listaDeRecetasOriginal,
         setListaDeRecetasOriginal,

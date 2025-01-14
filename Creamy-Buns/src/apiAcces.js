@@ -18,13 +18,13 @@ export async function obtenerRecetasApi() {
     }
   }
 
-export async function nuevaReceta(datos) {
+export async function nuevaRecetaApi(datos) {
   //definiremos un objeto que funcione como un filtro para ordenar por cualquier cosa los datos
   const datosEnJson = {
     nombre_del_postre: datos.nombre_del_postre,
     precio: datos.precio,
     ingredientes: datos.ingredientes ,
-    procedimiento: datos.metodo_preparacion ,
+    procedimiento: datos.procedimiento ,
     observaciones: datos.observaciones ,
     imagen: datos.imagen
   }
@@ -46,7 +46,7 @@ export async function nuevaReceta(datos) {
   }  
 }
 
-export async function eliminarReceta(id) {
+export async function eliminarRecetaApi(id) {
   try {
     console.log('api de eliminar receta en proceso')
     const consulta = await fetch(`${apiUrl}/eliminarReceta/${id}`,{

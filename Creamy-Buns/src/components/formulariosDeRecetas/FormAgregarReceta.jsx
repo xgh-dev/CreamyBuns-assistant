@@ -3,8 +3,15 @@ import { useContext, useState, useEffect } from "react";
 
 const FormAgregarReceta = () => {
   //uso de contexto
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,initialSize,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
-    useContext(RecetarioContext);
+  const {
+    listaDeRecetas,
+    setListaDeRecetas,
+    cargarRecetas,
+    initialSize,
+    listaDeRecetasOriginal,
+    setListaDeRecetasOriginal,
+    nuevaRecetaApi,
+  } = useContext(RecetarioContext);
 
   //hook para capturar los datos
   const [nuevaReceta, setNuevaReceta] = useState({
@@ -31,6 +38,7 @@ const FormAgregarReceta = () => {
         nuevaReceta.procedimiento,
       ].every((value) => value !== "")
     ) {
+      nuevaRecetaApi(nuevaReceta)
       setListaDeRecetas([...listaDeRecetas, nuevaReceta]);
       //console.log(nuevaReceta);
       setNuevaReceta({
@@ -49,7 +57,7 @@ const FormAgregarReceta = () => {
 
   useEffect(() => {
     if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
-      setListaDeRecetas(listaDeRecetasOriginal)
+      setListaDeRecetas(listaDeRecetasOriginal);
     }
   }, []);
 
@@ -91,11 +99,11 @@ const FormAgregarReceta = () => {
             <textarea
               placeholder="Ingresar procedimiento"
               rows="5"
-              value={nuevaReceta.metodo_preparacion}
+              value={nuevaReceta.procedimiento}
               onChange={(e) =>
                 setNuevaReceta({
                   ...nuevaReceta,
-                  metodo_preparacion: e.target.value,
+                  procedimiento: e.target.value,
                 })
               }
             />
