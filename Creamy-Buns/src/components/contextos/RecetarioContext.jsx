@@ -8,7 +8,7 @@ export const RecetarioContextProvider = ({ children }) => {
   //hook de la lista de recetas
   const [listaDeRecetas, setListaDeRecetas] = useState([]);
 
-  //hook de proteccion
+  //hook de proteccion para restaurar la lista original
   const [listaDeRecetasOriginal, setListaDeRecetasOriginal] = useState([]);
 
   //useEffect nos permitira que al iniciar la aplicacion podamos alimentar estados con funciones asyncronas de una manera limpiar

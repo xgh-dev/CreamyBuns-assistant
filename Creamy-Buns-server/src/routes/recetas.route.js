@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { obenterRecetas } from "../controllers/recetas.controller.js";
+import { obtenerRecetasController,agregarNuevaRecetaController,eliminarRecetaController} from "../controllers/recetas.controller.js";
 
 //inicializar el metodo routes de expres
 const recetasRouter = Router();
@@ -7,13 +7,10 @@ const recetasRouter = Router();
 //definir el tipo de consultas que se escucharan
 
 //ruta get
-recetasRouter.get('/obtenerRecetas',obenterRecetas)
+recetasRouter.get('/obtenerRecetas',obtenerRecetasController)
 
 //ruta post
-recetasRouter.post('/puclicarReceta',(req,res) => {
-    //esta consulta mandara el cuerpo de esta al controlador para obtener las variables con datos
-    res.send('realizando consulta post')
-})
+recetasRouter.post('/puclicarReceta',agregarNuevaRecetaController)
 
 //ruta put
 recetasRouter.put('/actualizarReceta/:id',(req,res) => {
@@ -21,9 +18,7 @@ recetasRouter.put('/actualizarReceta/:id',(req,res) => {
 })
 
 //ruta delete
-recetasRouter.delete('/eliminarReceta/:id',(req,res)=>{
-    res.send('eliminando receta')
-})
+recetasRouter.delete('/eliminarReceta/:id',eliminarRecetaController)
 
 
 export default recetasRouter;
