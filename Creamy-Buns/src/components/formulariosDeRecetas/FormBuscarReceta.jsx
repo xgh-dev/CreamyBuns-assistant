@@ -2,15 +2,19 @@ import { useContext, useState, useEffect } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormBuscarReceta = () => {
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
-    useContext(RecetarioContext);
+  const {
+    listaDeRecetas,
+    setListaDeRecetas,
+    listaDeRecetasOriginal,
+    setListaDeRecetasOriginal,
+  } = useContext(RecetarioContext);
 
   //hook para buscar receta
   const [nombre, setNombre] = useState("");
 
   const handleFormBuscarReceta = (e) => {
     e.preventDefault();
-    setListaDeRecetasOriginal(listaDeRecetas)//creamos una copia de la lista para poder recuperarla
+    setListaDeRecetasOriginal(listaDeRecetas); //creamos una copia de la lista para poder recuperarla
     if (nombre !== "") {
       setListaDeRecetas(
         listaDeRecetas.filter((receta) =>
@@ -18,11 +22,10 @@ const FormBuscarReceta = () => {
         )
       );
       setNombre("");
-      
     } else {
       //en caso de que se ejecute el else renderizamos de nuevo todo
-      setListaDeRecetas(listaDeRecetasOriginal)
-      setNombre('')
+      setListaDeRecetas(listaDeRecetasOriginal);
+      setNombre("");
       console.log("no deje campos vacios");
     }
   };

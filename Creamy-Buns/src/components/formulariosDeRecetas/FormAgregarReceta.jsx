@@ -6,10 +6,7 @@ const FormAgregarReceta = () => {
   const {
     listaDeRecetas,
     setListaDeRecetas,
-    cargarRecetas,
-    initialSize,
     listaDeRecetasOriginal,
-    setListaDeRecetasOriginal,
     nuevaRecetaApi,
   } = useContext(RecetarioContext);
 

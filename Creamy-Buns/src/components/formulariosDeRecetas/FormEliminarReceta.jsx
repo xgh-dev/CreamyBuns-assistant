@@ -2,8 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormEliminarReceta = () => {
-  const { listaDeRecetas, setListaDeRecetas, cargarRecetas,initialSize,listaDeRecetasOriginal,setListaDeRecetasOriginal } =
-    useContext(RecetarioContext);
+  const {
+    listaDeRecetas,
+    setListaDeRecetas,
+    listaDeRecetasOriginal,
+    eliminarRecetaApi
+  } = useContext(RecetarioContext);
 
   //crear un hook que busque la receta
   const [eliminarReceta, setEliminarReceta] = useState("");
@@ -11,13 +15,28 @@ const FormEliminarReceta = () => {
   const handleFormEliminarReceta = (e) => {
     e.preventDefault();
     if (eliminarReceta !== "") {
-      const listaActualizada = listaDeRecetas.filter(
-        (receta) =>
+      //acutalizar la lista
+      /*const listaActualizada = listaDeRecetas.filter(
+        (receta) => 
           receta.nombre_del_postre.toLowerCase() !==
           eliminarReceta.toLowerCase()
-      );
-      setListaDeRecetas(listaActualizada);
-      console.log(eliminarReceta);
+      );*/
+      const nuevaLista = listaDeRecetas.filter(receta => {
+        if (receta.nombre_del_postre.toLowerCase() !==
+        eliminarReceta.toLowerCase()){
+          return receta
+        } else {
+          console.log(receta)
+          //asignar una ventana de confirmacion
+          const confirmacionParaEliminar = window.confirm(`Borrar la receta ${receta.nombre_del_postre} con id: ${receta.id}`)
+          if (confirmacionParaEliminar === true){
+            eliminarRecetaApi(receta.id)
+          } else {
+            console.log('eliminacion de la receta cancelada')
+          }
+        }
+      })
+      setListaDeRecetas(nuevaLista);
       setEliminarReceta("");
     } else {
       console.log("no puede dejar campos vacios");
@@ -25,7 +44,7 @@ const FormEliminarReceta = () => {
   };
   useEffect(() => {
     if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
-      setListaDeRecetas(listaDeRecetasOriginal)
+      setListaDeRecetas(listaDeRecetasOriginal);
     }
   }, []);
 
