@@ -11,7 +11,7 @@ const FormAgregarReceta = () => {
     id: listaDeRecetas.length + 1, //le sumamos uno para que arranque con un valor mayor al ultimo de la lista
     nombre_del_postre: "",
     ingredientes: "",
-    metodo_preparacion: "",
+    procedimiento: "",
     observaciones: "",
     imagen: "",
     precio: "",
@@ -26,7 +26,7 @@ const FormAgregarReceta = () => {
     //para validar varias variables con un every y acortar las lineas de codigo metemos las variables en una lista y esa lista la evaluamos con every
     if (
       [
-        nuevaReceta.metodo_preparacion,
+        nuevaReceta.nombre_del_postre,
         nuevaReceta.ingredientes,
         nuevaReceta.procedimiento,
       ].every((value) => value !== "")
@@ -37,7 +37,7 @@ const FormAgregarReceta = () => {
         id: nuevaReceta.id + 1, //de esta forma actualizamos el id, funciona llamando al id existente e incrementando en 1, esto para que cuando vuelva a ser llamado ya exista un nuevo valor de id, esta variable no es modificada en ningun momento por el formulario
         nombre_del_postre: "",
         ingredientes: "",
-        metodo_preparacion: "",
+        procedimiento: "",
         observaciones: "",
         imagen: "",
         precio: "",

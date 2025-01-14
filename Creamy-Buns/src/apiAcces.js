@@ -18,17 +18,42 @@ export async function obtenerRecetasApi() {
     }
   }
 
-export async function nuevaReceta() {
+export async function nuevaReceta(datos) {
+  //definiremos un objeto que funcione como un filtro para ordenar por cualquier cosa los datos
+  const datosEnJson = {
+    nombre_del_postre: datos.nombre_del_postre,
+    precio: datos.precio,
+    ingredientes: datos.ingredientes ,
+    procedimiento: datos.metodo_preparacion ,
+    observaciones: datos.observaciones ,
+    imagen: datos.imagen
+  }
   try {
-    console.log('api de nueva receta funcionando') 
+    console.log('api de nueva receta funcionando')
+    const consulta = await fetch(`${apiUrl}/puclicarReceta`,{
+      //definimos el metodo en el cuerpo del fetch
+      method:'POST',
+      //definimos los header
+      headers: {"Content-Type" : "application/json"}, // Tipo de contenido
+      //definimos el body y enviamos los datos en forma json
+      body: JSON.stringify(datosEnJson),
+    })
+    //como el fetch nos retornara datos estos los convertiremos a formato json para poder mostrarlos en consola
+    const respuesta = await consulta.json()
+    console.log("receta agregada exitosamente",respuesta)
   } catch (error) {
     console.error('error en cargar la api de nueva receta',error)
   }  
 }
 
-export async function eliminarReceta() {
+export async function eliminarReceta(id) {
   try {
-    console.log('api de eliminar receta funcionando')
+    console.log('api de eliminar receta en proceso')
+    const consulta = await fetch(`${apiUrl}/eliminarReceta/${id}`,{
+      method:'DELETE'
+    }) //no olvidar asignar el metodo, ya que si no se especifica se toma como get
+    const respuesta = await consulta.json()
+    console.log('receta eliminada',respuesta) 
   } catch (error) {
     console.error('error en cargar la api de eliminar receta',error)
   }  
