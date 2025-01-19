@@ -2,6 +2,8 @@
 # backend
 Creamy-Buns-server/node_modules
 Creamy-Buns-server/.env
+.env
+
 
 # frontend
 Creamy-Buns/node_modules
