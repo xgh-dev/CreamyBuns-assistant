@@ -1,6 +1,7 @@
 # Ignorar todos los node_modules/ en cualquier subdirectorio
 # backend
 Creamy-Buns-server/node_modules
+Creamy-Buns-server\.env
 Creamy-Buns-server/.env
 
 # frontend
