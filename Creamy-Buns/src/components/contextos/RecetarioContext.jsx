@@ -16,6 +16,7 @@ export const RecetarioContextProvider = ({ children }) => {
   const [listaDeRecetasOriginal, setListaDeRecetasOriginal] = useState([]);
 
   //useEffect nos permitira que al iniciar la aplicacion podamos alimentar estados con funciones asyncronas de una manera limpiar
+  //proteger esta funcion en caso de que no exista conexion con el servidor retorne una lista vacia
   const cargarRecetas = async () => {
     const datos = await obtenerRecetasApi();
     setListaDeRecetas(datos);

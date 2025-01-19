@@ -14,7 +14,7 @@ const corsOptions  = {
 }
 
 //a la variable que contiene express debemos setearle el puerto al que estara escuchando
-app.set('port',process.env.PORT || 8080)
+app.set('port',process.env.PORT)
 
 //a la variable app que contiene el metodo de express() debemos asignarle un metodo use para que utilice el metodo expres.json()
 app.use(express.json())
