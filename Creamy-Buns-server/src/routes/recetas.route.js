@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { obtenerRecetasController,agregarNuevaRecetaController,eliminarRecetaController} from "../controllers/recetas.controller.js";
+import { obtenerRecetasController,agregarNuevaRecetaController,eliminarRecetaController,obtenerRecetaPorIdController} from "../controllers/recetas.controller.js";
 
 //inicializar el metodo routes de expres
 const recetasRouter = Router();
@@ -20,6 +20,8 @@ recetasRouter.put('/actualizarReceta/:id',(req,res) => {
 //ruta delete
 recetasRouter.delete('/eliminarReceta/:id',eliminarRecetaController)
 
+//ruta para obtener receta por id
+recetasRouter.get('/obtenerReceta/:id',obtenerRecetaPorIdController)
 
 export default recetasRouter;
 

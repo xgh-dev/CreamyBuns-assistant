@@ -42,6 +42,8 @@ const FormEliminarReceta = () => {
       console.log("no puede dejar campos vacios");
     }
   };
+  
+  //este codigo restaura la lista en caso de que se buscara algo en el formulario de buscar y asi se quedara, al cambiar de opcion de formulario la lista se regenerara
   useEffect(() => {
     if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
       setListaDeRecetas(listaDeRecetasOriginal);

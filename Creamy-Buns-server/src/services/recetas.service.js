@@ -51,3 +51,16 @@ export async function eliminarRecetaDB(id) {
     console.error("Error en el servicio de eliminar", error);
   }
 }
+
+export async function obtenerRecetaPorIdDB(id) {
+  console.log("accediendo al servicio de obtencion de una receta por id");
+  try {
+    const respuesta = await conexion.query(
+      "SELECT * from recetas where id = ?",
+      [id]
+    );
+    return respuesta;
+  } catch (error) {
+    console.error("Error en obtener datos del servicio", error);
+  }
+}

@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
 
 const FormBuscarReceta = () => {
@@ -24,7 +24,11 @@ const FormBuscarReceta = () => {
       setNombre("");
     } else {
       //en caso de que se ejecute el else renderizamos de nuevo todo
-      setListaDeRecetas(listaDeRecetasOriginal);
+      if (listaDeRecetasOriginal.length !== listaDeRecetas.length){
+        //de esta forma si las listas miden diferente podremos restaurarlas al volver a dar click
+        setListaDeRecetas(listaDeRecetasOriginal);
+        setNombre("");
+      }
       setNombre("");
       console.log("no deje campos vacios");
     }

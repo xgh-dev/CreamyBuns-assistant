@@ -3,6 +3,7 @@ import Pedidos from "./components/Pedidos";
 import Recetario from "./components/Recetario";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
+import InfoDeReceta from "./components/infoRecetas/InfoDeReceta";
 
 //con estas dependencias activamos las clases de bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,7 +17,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/recetario" element={<Recetario />} />
-              <Route path="/receta/:id" element = {''}/>
+              <Route path="/receta/:id" element = {<InfoDeReceta />}/>
               <Route path="/pedidos" element={<Pedidos />} />
             </Routes>
           </BrowserRouter>
