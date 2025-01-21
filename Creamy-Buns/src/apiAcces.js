@@ -73,7 +73,7 @@ export function useObtenerRecetaPorID(id) {
       const respuesta = await consulta.json();
       setIsLoading(false);
       setDatos(respuesta);
-      console.log("Receta obtenida:", respuesta);
+      console.log("Receta obtenida");
     } catch (err) {
       setIsLoading(false);
       setError(true);

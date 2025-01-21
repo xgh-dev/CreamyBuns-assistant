@@ -55,7 +55,7 @@ export async function eliminarRecetaDB(id) {
 export async function obtenerRecetaPorIdDB(id) {
   console.log("accediendo al servicio de obtencion de una receta por id");
   try {
-    const respuesta = await conexion.query(
+    const [respuesta] = await conexion.query(
       "SELECT * from recetas where id = ?",
       [id]
     );
