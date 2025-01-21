@@ -10,7 +10,7 @@ const Recetario = () => {
         backgroundImage: `url(${imagenFondoRecetario})`
       }}>
         <header>
-          <img src="" alt="" />
+          <img src="" alt="Logo" />
           <h2>Recetario</h2>
         </header>
         <RecetarioContextProvider>
