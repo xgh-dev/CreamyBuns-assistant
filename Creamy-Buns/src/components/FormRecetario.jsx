@@ -22,14 +22,15 @@ const FormRecetario = () => {
             id="opciones"
             value={option}
             onChange={optionForm}
+            className="etiquetaSelect"
           >
-            <option value="buscar" id="buscar">
+            <option value="buscar" id="buscar" className="optionSelect">
               Buscar
             </option>
-            <option value="agregar" id="agregar">
+            <option value="agregar" id="agregar" className="optionSelect">
               Agregar
             </option>
-            <option value="eliminar" id="eliminar">
+            <option value="eliminar" id="eliminar" className="optionSelect">
               Eliminar
             </option>
           </select>

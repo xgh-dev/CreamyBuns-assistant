@@ -1,4 +1,9 @@
-/*contenedores de los elementos de las etiquetas*/
+h2,input, label {
+  font-family: monospace;
+  font-size: bold;
+}
+
+
 
 /* Centrar el contenedor */
 .homeScreenPrincipalContainer {
@@ -133,11 +138,11 @@ header h2 {
   justify-content: center;/*justificamos el contenido al centro*/
   align-items: center;/*alinemaos los elementos al centro esto en el eje y*/
   padding: 20px;
-  background-color: #ffff;
+  /*background-color: #ffff;*/
   height: 100%;
   max-height: 335px;
   box-sizing: border-box;
-  overflow: hidden;
+  /*overflow: hidden;*/ /*aqui overflow:hidden no tiene una aplicacion util y por ende nos estorba*/
 }
 
 .formularioRecetas {
@@ -150,9 +155,9 @@ header h2 {
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
   max-height: 335px; /* Establece una altura máxima para activar el scrollbar */
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
 
 
@@ -213,10 +218,10 @@ p {
   max-width: 100%;
   width: 100%;
   padding: 20px;
-  
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffff;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 1);
 }
 
 .contenedorDeEtiquetas label {

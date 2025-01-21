@@ -4,7 +4,7 @@ import {
   obtenerRecetasApi,
   eliminarRecetaApi,
   nuevaRecetaApi,
-} from "../../apiAcces";
+} from "../../apiAcces.js";
 
 export const RecetarioContext = createContext(null);
 
