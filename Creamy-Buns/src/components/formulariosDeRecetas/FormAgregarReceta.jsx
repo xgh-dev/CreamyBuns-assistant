@@ -138,7 +138,7 @@ const FormAgregarReceta = () => {
             <input
               type="text"
               placeholder="Cargue la receta (imagen)"
-              value={nuevaReceta.imagen}
+              //value={nuevaReceta.imagen}
               onChange={(e) =>
                 setNuevaReceta({ ...nuevaReceta, imagen: e.target.value })
               }
