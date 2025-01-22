@@ -17,7 +17,7 @@ const FormAgregarReceta = () => {
     ingredientes: "",
     procedimiento: "",
     observaciones: "",
-    imagen: "",
+    imagen: null,
     precio: "",
   });
   //hook para proteger de errores
@@ -44,7 +44,7 @@ const FormAgregarReceta = () => {
         ingredientes: "",
         procedimiento: "",
         observaciones: "",
-        imagen: "",
+        imagen: null,
         precio: "",
       });
     } else {

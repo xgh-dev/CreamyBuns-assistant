@@ -1,5 +1,4 @@
 import express from 'express'
-
 import cors from 'cors'
 import indexRouter from './routes/index.route.js'
 
@@ -8,9 +7,12 @@ const app = express()
 
 //definir los permisos de cors
 const corsOptions  = {
-    origin: '*',
+    origin: 'http://localhost:5173',
     methods: ["POST","GET","DELETE","PUT"],
-    credentials: true
+    credentials: true,
+    allowedHeaders: ["Content-Type"], // Encabezados permitidos
+    exposedHeaders: ["Content-Type", "Authorization"], // Opcional, para exponer encabezados al cliente
+
 }
 
 //a la variable que contiene express debemos setearle el puerto al que estara escuchando
@@ -21,6 +23,10 @@ app.use(express.json())
 
 //asignar el metodo corse y sus opciones
 app.use(cors(corsOptions));
+
+//incrementamos el tamaño maximo permitido de los datos en solicitudes
+app.use(express.json({ limit: "10mb" })); // Cambia 10mb por el límite que necesites
+app.use(express.urlencoded({ extended: true, limit: "10mb" })); // Para datos codificados en URL
 
 //definir la ruta que accedera a las rutas
 app.use('/',indexRouter)
