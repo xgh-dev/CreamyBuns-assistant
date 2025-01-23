@@ -35,7 +35,9 @@ const FormAgregarReceta = () => {
         nuevaReceta.procedimiento,
       ].every((value) => value !== "")
     ) {
-      nuevaRecetaApi(nuevaReceta)
+      //api de agregar receta
+      //nuevaRecetaApi(nuevaReceta)
+      console.log(nuevaReceta)
       setListaDeRecetas([...listaDeRecetas, nuevaReceta]);
       //console.log(nuevaReceta);
       setNuevaReceta({
@@ -136,12 +138,17 @@ const FormAgregarReceta = () => {
           <div>
             <label>Cargar imagen</label>
             <input
-              type="text"
+              type="file"
               placeholder="Cargue la receta (imagen)"
+              className="inputCapturadorDeArchivos"
               //value={nuevaReceta.imagen}
-              onChange={(e) =>
-                setNuevaReceta({ ...nuevaReceta, imagen: e.target.value })
-              }
+              onChange={(e) => {
+                const file = e.target.files[0]
+                if (file){
+                  const blob = new Blob([file],{type:file.type})
+                  setNuevaReceta({ ...nuevaReceta, imagen: blob })
+                }
+              }}
             />
           </div>
           <input type="submit" value="Agregar" />
