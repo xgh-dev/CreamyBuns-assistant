@@ -12,7 +12,7 @@ const FormAgregarReceta = () => {
 
   //hook para capturar los datos
   const [nuevaReceta, setNuevaReceta] = useState({
-    id: listaDeRecetas.length + 1, //le sumamos uno para que arranque con un valor mayor al ultimo de la lista
+    id: listaDeRecetas[listaDeRecetas.length - 1].id + 1, //le sumamos uno para que arranque con un valor mayor al ultimo de la lista
     nombre_del_postre: "",
     ingredientes: "",
     procedimiento: "",
@@ -37,7 +37,7 @@ const FormAgregarReceta = () => {
     ) {
       //api de agregar receta
       //nuevaRecetaApi(nuevaReceta)
-      console.log(nuevaReceta)
+      console.log(nuevaReceta);
       setListaDeRecetas([...listaDeRecetas, nuevaReceta]);
       //console.log(nuevaReceta);
       setNuevaReceta({
@@ -143,11 +143,8 @@ const FormAgregarReceta = () => {
               className="inputCapturadorDeArchivos"
               //value={nuevaReceta.imagen}
               onChange={(e) => {
-                const file = e.target.files[0]
-                if (file){
-                  const blob = new Blob([file],{type:file.type})
-                  setNuevaReceta({ ...nuevaReceta, imagen: blob })
-                }
+                const file = e.target.files[0];
+                setNuevaReceta({ ...nuevaReceta, imagen: file });
               }}
             />
           </div>

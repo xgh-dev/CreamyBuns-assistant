@@ -20,32 +20,35 @@ export async function obtenerRecetasApi() {
 }
 
 export async function nuevaRecetaApi(datos) {
-  //definiremos un objeto que funcione como un filtro para ordenar por cualquier cosa los datos
-  const datosEnJson = {
-    nombre_del_postre: datos.nombre_del_postre,
-    precio: datos.precio,
-    ingredientes: datos.ingredientes,
-    procedimiento: datos.procedimiento,
-    observaciones: datos.observaciones,
-    imagen: datos.imagen,
-  };
+  const formData = new FormData();
+  
+  // Añadimos los datos que no son archivos
+  formData.append("nombre_del_postre", datos.nombre_del_postre);
+  formData.append("precio", datos.precio);
+  formData.append("ingredientes", datos.ingredientes);
+  formData.append("procedimiento", datos.procedimiento);
+  formData.append("observaciones", datos.observaciones);
+
+  // Convertimos la imagen a un Blob y la añadimos al FormData
+  if (datos.imagen) {
+    const blob = new Blob([datos.imagen], { type: datos.imagen.type }); // Asumiendo que imagen es un objeto de tipo File
+    formData.append("imagen", blob, "imagen.jpg"); // Puedes ajustar el nombre del archivo si es necesario
+  }
+
   try {
     console.log("api de nueva receta funcionando");
     const consulta = await fetch(`${apiUrl}/puclicarReceta`, {
-      //definimos el metodo en el cuerpo del fetch
       method: "POST",
-      //definimos los header
-      headers: { "Content-Type": "application/json" }, // Tipo de contenido
-      //definimos el body y enviamos los datos en forma json
-      body: JSON.stringify(datosEnJson),
+      body: formData, // Enviamos el FormData con los datos y la imagen
     });
-    //como el fetch nos retornara datos estos los convertiremos a formato json para poder mostrarlos en consola
+
     const respuesta = await consulta.json();
     console.log("receta agregada exitosamente", respuesta);
   } catch (error) {
     console.error("error en cargar la api de nueva receta", error);
   }
 }
+
 
 export async function eliminarRecetaApi(id) {
   try {
