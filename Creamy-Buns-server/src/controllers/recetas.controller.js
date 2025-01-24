@@ -18,18 +18,44 @@ export const obtenerRecetasController = async (req, res) => {
 
 export const agregarNuevaRecetaController = async (req, res) => {
   try {
-    await crearRecetaDB(req.body);
-    //cargaremos en el body de la req la informacion
-    console.log("mandando datos al servicio");
-    // Responder con éxito sin modificar el body
+    // Extraer los datos del formulario del cuerpo de la solicitud
+    const { nombre_del_postre, precio, ingredientes, procedimiento, observaciones } = req.body;
+
+    // Validar si el archivo existe en la solicitud
+    if (!req.files || !req.files.imagen) {
+      return res.status(400).json({ message: "El archivo de imagen es obligatorio." });
+    }
+
+    // Extraer el archivo del `FormData` como está
+    const imagenBlob = req.files.imagen.data; // Aquí obtenemos directamente el buffer del archivo
+
+    // Preparar los datos para la base de datos
+    const nuevaReceta = {
+      nombre_del_postre,
+      precio,
+      ingredientes,
+      procedimiento,
+      observaciones,
+      imagen: imagenBlob, // Enviar directamente el BLOB al servicio
+    };
+
+    // Llamar al servicio que guarda los datos en la base de datos
+    await crearRecetaDB(nuevaReceta);
+
+    console.log("Receta creada exitosamente");
     return res.status(201).json({
       message: "Receta creada exitosamente",
-      data: req.body,
+      data: nuevaReceta,
     });
   } catch (error) {
-    console.error("error en el controllador de agregar nueva receta", error);
+    console.error("Error en el controlador de agregar nueva receta", error);
+    return res.status(500).json({
+      message: "Error al agregar la receta",
+      error,
+    });
   }
 };
+
 
 export const eliminarRecetaController = async (req, res) => {
   try {

@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import indexRouter from './routes/index.route.js'
+import fileUpload from 'express-fileupload'
 
 //inicializar la variable que nos llama a express
 const app = express()
@@ -21,6 +22,9 @@ app.set('port',process.env.PORT)
 //a la variable app que contiene el metodo de express() debemos asignarle un metodo use para que utilice el metodo expres.json()
 app.use(express.json()); // Sin límite de tamaño
 app.use(express.urlencoded({ extended: true })); // Sin límite de tamaño
+
+// Habilitar el middleware para manejar archivos en el `FormData`
+app.use(fileUpload());
 
 //asignar el metodo corse y sus opciones
 app.use(cors(corsOptions));
