@@ -30,11 +30,13 @@ export async function nuevaRecetaApi(datos) {
   formData.append("observaciones", datos.observaciones);
 
   // Convertimos la imagen a un Blob y la añadimos al FormData
-  if (datos.imagen) {
-    const blob = new Blob([datos.imagen], { type: datos.imagen.type }); // Asumiendo que imagen es un objeto de tipo File
-    formData.append("imagen", blob, "imagen.jpg"); // Puedes ajustar el nombre del archivo si es necesario
+  if (datos.imagen instanceof File) {
+    const blob = new Blob([datos.imagen], { type: datos.imagen.type });
+    formData.append("imagen", blob, datos.imagen.name || "imagen.jpg");
+  } else if (datos.imagen) {
+    console.log("El campo 'imagen' no es un archivo válido.");
   }
-
+  //console.log(formData)
   try {
     console.log("api de nueva receta funcionando");
     const consulta = await fetch(`${apiUrl}/puclicarReceta`, {
@@ -47,6 +49,7 @@ export async function nuevaRecetaApi(datos) {
   } catch (error) {
     console.error("error en cargar la api de nueva receta", error);
   }
+  
 }
 
 
