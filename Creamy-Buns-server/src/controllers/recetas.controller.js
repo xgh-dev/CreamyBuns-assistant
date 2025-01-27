@@ -19,30 +19,34 @@ export const obtenerRecetasController = async (req, res) => {
 export const agregarNuevaRecetaController = async (req, res) => {
   try {
     // Extraer los datos del formulario del cuerpo de la solicitud
-    const { nombre_del_postre, precio, ingredientes, procedimiento, observaciones } = req.body;
+    const {
+      nombre_del_postre,
+      precio,
+      ingredientes,
+      procedimiento,
+      observaciones,
+    } = req.body;
 
-    // Validar si el archivo existe en la solicitud
-    if (!req.files || !req.files.imagen) {
-      return res.status(400).json({ message: "El archivo de imagen es obligatorio." });
-    }
-
-    // Extraer el archivo del `FormData` como está
-    const imagenBlob = req.files.imagen.data; // Aquí obtenemos directamente el buffer del archivo
-
-    // Preparar los datos para la base de datos
     const nuevaReceta = {
       nombre_del_postre,
       precio,
       ingredientes,
       procedimiento,
       observaciones,
-      imagen: imagenBlob, // Enviar directamente el BLOB al servicio
     };
+
+    //validamos si req.files.imagen existe
+    if (req.files) {
+      // Extraer el archivo del `FormData` como está
+      const imagenBlob = req.files.imagen.data; // Aquí obtenemos directamente el buffer del archivo
+      //agregamos al objeto
+      nuevaReceta.imagen = imagenBlob;
+    }
 
     // Llamar al servicio que guarda los datos en la base de datos
     await crearRecetaDB(nuevaReceta);
-
     console.log("Receta creada exitosamente");
+    //returnamos como respuesta un json con la informacion cargada
     return res.status(201).json({
       message: "Receta creada exitosamente",
       data: nuevaReceta,
@@ -55,7 +59,6 @@ export const agregarNuevaRecetaController = async (req, res) => {
     });
   }
 };
-
 
 export const eliminarRecetaController = async (req, res) => {
   try {
@@ -72,7 +75,9 @@ export const obtenerRecetaPorIdController = async (req, res) => {
     const [respuesta] = await obtenerRecetaPorIdDB(req.params.id);
     res.status(200).json(respuesta);
   } catch (error) {
-    console.error("error en el controlador de obtencion de recetas por id", error);
+    console.error(
+      "error en el controlador de obtencion de recetas por id",
+      error
+    );
   }
-
 };
