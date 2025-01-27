@@ -6,7 +6,7 @@ const FormEliminarReceta = () => {
     listaDeRecetas,
     setListaDeRecetas,
     listaDeRecetasOriginal,
-    eliminarRecetaApi
+    eliminarRecetaApi,
   } = useContext(RecetarioContext);
 
   //crear un hook que busque la receta
@@ -14,35 +14,38 @@ const FormEliminarReceta = () => {
 
   const handleFormEliminarReceta = (e) => {
     e.preventDefault();
-    if (eliminarReceta !== "") {
-      //acutalizar la lista
-      /*const listaActualizada = listaDeRecetas.filter(
-        (receta) => 
-          receta.nombre_del_postre.toLowerCase() !==
-          eliminarReceta.toLowerCase()
-      );*/
-      const nuevaLista = listaDeRecetas.filter(receta => {
-        if (receta.nombre_del_postre.toLowerCase() !==
-        eliminarReceta.toLowerCase()){
-          return receta
-        } else {
-          console.log(receta)
-          //asignar una ventana de confirmacion
-          const confirmacionParaEliminar = window.confirm(`Borrar la receta ${receta.nombre_del_postre} con id: ${receta.id}`)
-          if (confirmacionParaEliminar === true){
-            eliminarRecetaApi(receta.id)
-          } else {
-            console.log('eliminacion de la receta cancelada')
-          }
-        }
-      })
+
+    //buscar la receta
+    const recetaParaEliminar = listaDeRecetas.find(
+      (receta) =>
+        receta.nombre_del_postre.toLowerCase() === eliminarReceta.toLowerCase()
+    );
+
+    //evaluar si esta existe o no, mediante una negacion, en caso de que no exista se returna la ejecucion del codigo
+    if (!recetaParaEliminar) {
+      return;
+    }
+
+    //apoyarnos de un window confirm para ejecutar o cancelar la eliminacion de la receta
+    const confirmacion = window.confirm(
+      `Confirme la eliminacion de la receta ${recetaParaEliminar.nombre_del_postre}`
+    );
+
+    //evaluar la confirmacion
+    if (confirmacion) {
+      eliminarRecetaApi(recetaParaEliminar.id);
+
+      //actualizar la lista renderizada
+      const nuevaLista = listaDeRecetas.filter(
+        (receta) => receta.id !== recetaParaEliminar.id
+      );
+      //setear la lista renderizada
       setListaDeRecetas(nuevaLista);
-      setEliminarReceta("");
     } else {
-      console.log("no puede dejar campos vacios");
+      console.log("Eliminacion cancelada");
     }
   };
-  
+
   //este codigo restaura la lista en caso de que se buscara algo en el formulario de buscar y asi se quedara, al cambiar de opcion de formulario la lista se regenerara
   useEffect(() => {
     if (listaDeRecetas.length <= listaDeRecetasOriginal.length) {
