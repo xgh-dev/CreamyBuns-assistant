@@ -7,8 +7,8 @@ const ItemList = ({ receta }) => {
 
   //creamos un useEffect que funcione como filtro para transformar los datos blob en url
   useEffect(() => {
-    if (receta.imagen instanceof Blob) {
-      //transformamos el blob a url
+    if (receta.imagen instanceof File) {
+      //transformamos el file a url
       const url = URL.createObjectURL(receta.imagen);
       //seteamos la url
       setImagenURL(url);
