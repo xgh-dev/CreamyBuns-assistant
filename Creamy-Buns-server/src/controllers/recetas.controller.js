@@ -109,8 +109,6 @@ export const obtenerRecetaPorIdController = async (req, res) => {
       //estructurar la url
       const base64Url = `data:${extension};base64,${imagenBase64}`;
       respuesta.imagen = base64Url
-    } else {
-      return
     }
     res.status(200).json(respuesta);
   } catch (error) {

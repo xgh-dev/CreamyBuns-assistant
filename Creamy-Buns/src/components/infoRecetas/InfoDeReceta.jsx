@@ -7,7 +7,7 @@ const InfoDeReceta = () => {
   const { isLoading, error, datos } = useObtenerRecetaPorID(id); //mandar un condicional para no tener multiples ejecuciones
   if (isLoading == false) {
     console.log(datos);
-    console.log(datos.imagen)
+    //console.log(datos.imagen)
   }
   return (
     <>
