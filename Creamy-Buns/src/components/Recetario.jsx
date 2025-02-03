@@ -1,7 +1,6 @@
 import FormRecetario from "./FormRecetario";
 import ListaDeRecetas from "./renderLists/ListaDeRecetas";
 import { RecetarioContextProvider } from "./contextos/RecetarioContext";
-//import imagenFondoRecetario from '../assets/imagenesRecetario/imagenFondoRecetario.jpg'
 
 const Recetario = () => {
   return (
