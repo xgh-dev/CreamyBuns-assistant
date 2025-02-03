@@ -18,7 +18,7 @@ const FormBuscarReceta = () => {
     if (nombre !== "") {
       setListaDeRecetas(
         listaDeRecetas.filter((receta) =>
-          receta.nombre_del_postre.toLowerCase().includes(nombre.toLowerCase())
+          receta.returnarDatos().nombre.toLowerCase().includes(nombre.toLowerCase())
         )
       );
       setNombre("");

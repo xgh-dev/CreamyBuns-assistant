@@ -12,7 +12,7 @@ export async function obtenerRecetasApi() {
   try {
     const query = await fetch(`${apiUrl}/obtenerRecetas`);
     const recetas = await query.json();
-    console.log(recetas);
+    //console.log(recetas);
     return recetas;
   } catch (error) {
     console.error("error en el fetch", error);

@@ -5,6 +5,7 @@ import {
   eliminarRecetaApi,
   nuevaRecetaApi,
 } from "../../apiAcces.js";
+import { Receta } from "../../clases/claseCliente.js";
 
 export const RecetarioContext = createContext(null);
 
@@ -19,7 +20,21 @@ export const RecetarioContextProvider = ({ children }) => {
   //proteger esta funcion en caso de que no exista conexion con el servidor retorne una lista vacia
   const cargarRecetas = async () => {
     const datos = await obtenerRecetasApi();
-    setListaDeRecetas(datos);
+    const listaConClases = datos.map(
+      (receta) =>
+        new Receta(
+          receta.id,
+          receta.nombre_del_postre,
+          receta.precio,
+          receta.ingredientes,
+          receta.procedimiento,
+          receta.observaciones,
+          receta.imagen
+        )
+    );
+    //funciona mi clase
+    //console.log(listaClases[0].mostrarDatos());
+    setListaDeRecetas(listaConClases);
   };
   useEffect(() => {
     cargarRecetas();
@@ -36,6 +51,7 @@ export const RecetarioContextProvider = ({ children }) => {
         cargarRecetas,
         listaDeRecetasOriginal,
         setListaDeRecetasOriginal,
+        Receta
       }}
     >
       {children}

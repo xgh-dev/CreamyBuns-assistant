@@ -13,7 +13,7 @@ const ListaDeRecetas = () => {
         </header>
         <div className="contenedorDeListaDeRecetas">
           {listaDeRecetas.map((receta) => (
-            <ItemList key={receta.id} receta={receta} />
+            <ItemList key={receta.returnarDatos().id} receta={receta} />
           ))}
         </div>
       </div>

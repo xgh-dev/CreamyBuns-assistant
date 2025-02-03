@@ -8,6 +8,7 @@ const FormAgregarReceta = () => {
     setListaDeRecetas,
     listaDeRecetasOriginal,
     nuevaRecetaApi,
+    Receta,
   } = useContext(RecetarioContext);
 
   //hook para capturar los datos
@@ -36,9 +37,20 @@ const FormAgregarReceta = () => {
       ].every((value) => value !== "")
     ) {
       //api de agregar receta
-      nuevaRecetaApi(nuevaReceta)
+      nuevaRecetaApi(nuevaReceta);
       //console.log(nuevaReceta);
-      setListaDeRecetas([...listaDeRecetas, nuevaReceta]);
+      setListaDeRecetas([
+        ...listaDeRecetas,
+        new Receta(
+          nuevaReceta.id,
+          nuevaReceta.nombre_del_postre,
+          nuevaReceta.precio,
+          nuevaReceta.ingredientes,
+          nuevaReceta.procedimiento,
+          nuevaReceta.observaciones,
+          nuevaReceta.imagen
+        ),
+      ]);
       setNuevaReceta({
         id: nuevaReceta.id + 1, //de esta forma actualizamos el id, funciona llamando al id existente e incrementando en 1, esto para que cuando vuelva a ser llamado ya exista un nuevo valor de id, esta variable no es modificada en ningun momento por el formulario
         nombre_del_postre: "",
