@@ -1,7 +1,6 @@
 import { useState } from "react";
 import FormRecetarioOption from "./formulariosDeRecetas/FormRecetarioOption";
 
-
 const FormRecetario = () => {
   //llamar al contexto
   //const {} = useContext(RecetarioContext)
@@ -16,24 +15,24 @@ const FormRecetario = () => {
       <div className="FormRecetario">
         <div className="contenedorDeOpcionesDeFormulario">
           <div className="contenedorDeEtiquetas">
-          <label htmlFor="">Seleccione una opción</label>
-          <select
-            name="opciones"
-            id="opciones"
-            value={option}
-            onChange={optionForm}
-            className="etiquetaSelect"
-          >
-            <option value="buscar" id="buscar" className="optionSelect">
-              Buscar
-            </option>
-            <option value="agregar" id="agregar" className="optionSelect">
-              Agregar
-            </option>
-            <option value="eliminar" id="eliminar" className="optionSelect">
-              Eliminar
-            </option>
-          </select>
+            <label htmlFor="">Seleccione una opción</label>
+            <select
+              name="opciones"
+              id="opciones"
+              value={option}
+              onChange={optionForm}
+              className="etiquetaSelect"
+            >
+              <option value="buscar" id="buscar" className="optionSelect">
+                Buscar
+              </option>
+              <option value="agregar" id="agregar" className="optionSelect">
+                Agregar
+              </option>
+              <option value="eliminar" id="eliminar" className="optionSelect">
+                Eliminar
+              </option>
+            </select>
           </div>
         </div>
         <FormRecetarioOption option={option} />

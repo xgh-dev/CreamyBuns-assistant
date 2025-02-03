@@ -1,14 +1,12 @@
 import FormRecetario from "./FormRecetario";
 import ListaDeRecetas from "./renderLists/ListaDeRecetas";
 import { RecetarioContextProvider } from "./contextos/RecetarioContext";
-import imagenFondoRecetario from '../assets/imagenesRecetario/imagenFondoRecetario.jpg'
+//import imagenFondoRecetario from '../assets/imagenesRecetario/imagenFondoRecetario.jpg'
 
 const Recetario = () => {
   return (
     <>
-      <section className="RecetarioMainContainer" style={{
-        backgroundImage: `url(${imagenFondoRecetario})`
-      }}>
+      <section className="RecetarioMainContainer">
         <header>
           <img src="" alt="Logo" />
           <h2>Recetario</h2>
@@ -29,3 +27,10 @@ const Recetario = () => {
 };
 
 export default Recetario;
+
+/*
+ style={{
+        backgroundImage: `url(${imagenFondoRecetario})`
+      }}
+
+*/
