@@ -2,6 +2,8 @@ h2,input, label {
   font-family: monospace;
   font-size: bold;
 }
+.homeScreenBody { background-color: #f4f4f4;}
+
 
 /*--------Seccion del inicio--------*/
 /* Estilos generales para el título */
@@ -67,6 +69,7 @@ h2,input, label {
   .homeScreenPrincipalContainer {
     flex-direction: column;
     height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+    gap: 0;
   }
 
   .cardHomeScreen {
