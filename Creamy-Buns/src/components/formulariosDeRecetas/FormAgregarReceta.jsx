@@ -14,7 +14,7 @@ const FormAgregarReceta = () => {
   //hook para capturar los datos
   const [nuevaReceta, setNuevaReceta] = useState({
     id:
-    listaDeRecetas > 0 ? listaDeRecetas[listaDeRecetas.length - 1].id + 1 : 0, //le sumamos uno para que arranque con un valor mayor al ultimo de la lista
+    listaDeRecetas > 0 ? listaDeRecetas[listaDeRecetas.length - 1].id + 1 : 1, //le sumamos uno para que arranque con un valor mayor al ultimo de la lista
       //agregamos un condicional para proteger el renderizado del componente, deberemos ajustar el condicional para que evalue si hay un error, envez de que evalue con 0
     nombre_del_postre: "",
     ingredientes: "",
