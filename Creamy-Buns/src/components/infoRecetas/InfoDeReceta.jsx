@@ -4,15 +4,30 @@ import { useObtenerRecetaPorID } from "../../apiAcces";
 const InfoDeReceta = () => {
   const { id } = useParams();
   //desestruturaremos los hooks de la consulta para poder apoyarnos de estos
-  const { isLoading, error, datos } = useObtenerRecetaPorID(id); //mandar un condicional 
+  const { isLoading, error, datos } = useObtenerRecetaPorID(id); //mandar un condicional
   // para no tener multiples ejecuciones
+  let ingredientes = [] //lista que mandaremos al html
   if (isLoading == false) {
-    console.log(datos);
-    //console.log(datos.imagen)
+    let ingrediente = '' //esta variable crea el string de un ingrediente y la manda a la variable de la lista
+    let llave = 0 //para poder incrementar este contador lo declaramos afuera del for y dentro del for lo incrementamos, para que con cada iteracion este se incremente 
+    for (let index = 0; index < datos.ingredientes.length; index++) {
+      if (datos.ingredientes[index] !== '\r'){
+        //console.log(datos.ingredientes[index])//hasta aqui nos imprime cada elemento del string
+        ingrediente = ingrediente + datos.ingredientes[index]
+      } else {
+        //console.log('ejecutando else')
+        llave = llave + 1
+        ingredientes.push(<li key={llave} className="ingrediente-item">{ingrediente}</li>)
+        ingrediente = ''
+      }
+    }
   }
+  //console.log(ingredientes)
+
+
   return (
     <>
-      {error ? <p>Hay un error en la conexion</p>:''}
+      {error ? <p>Hay un error en la conexion</p> : ""}
       {isLoading ? (
         <h1>Cargando datos</h1>
       ) : (
@@ -35,11 +50,7 @@ const InfoDeReceta = () => {
                 <article className="ingredientes-article">
                   <h4 className="sub-title">Base</h4>
                   <ul className="ingredientes-list">
-                    <li className="ingrediente-item">ingrediente 1</li>
-                    <li className="ingrediente-item">ingrediente 2</li>
-                    <li className="ingrediente-item">ingrediente 3</li>
-                    <li className="ingrediente-item">ingrediente 4</li>
-                    <li className="ingrediente-item">ingrediente 5</li>
+                    {ingredientes}
                   </ul>
                 </article>
               </section>
