@@ -4,7 +4,6 @@ h2,input, label {
 }
 .homeScreenBody { background-color: #f4f4f4;}
 
-
 /*--------Seccion del inicio--------*/
 /* Estilos generales para el título */
 .homeScreenTitle {
@@ -107,7 +106,6 @@ h2,input, label {
   }
 }
 
-
 /*--------------------------------*/
 /*css principal de elemento recetario*/
 /* Diseño global */
@@ -118,20 +116,20 @@ h2,input, label {
   min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la pantalla */
 }
 
-header {
+.headerRecetario {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  
 }
 
-header img {
+.headerRecetario img {
   width: 80px;
   height: auto;
   margin-bottom: 10px;
 }
 
-header h2 {
+.headerRecetario h2 {
   font-size: 1.5rem;
   color: #333;
   text-align: center;

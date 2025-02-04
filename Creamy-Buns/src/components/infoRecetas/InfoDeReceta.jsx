@@ -4,13 +4,15 @@ import { useObtenerRecetaPorID } from "../../apiAcces";
 const InfoDeReceta = () => {
   const { id } = useParams();
   //desestruturaremos los hooks de la consulta para poder apoyarnos de estos
-  const { isLoading, error, datos } = useObtenerRecetaPorID(id); //mandar un condicional para no tener multiples ejecuciones
+  const { isLoading, error, datos } = useObtenerRecetaPorID(id); //mandar un condicional 
+  // para no tener multiples ejecuciones
   if (isLoading == false) {
     console.log(datos);
     //console.log(datos.imagen)
   }
   return (
     <>
+      {error ? <p>Hay un error en la conexion</p>:''}
       {isLoading ? (
         <h1>Cargando datos</h1>
       ) : (

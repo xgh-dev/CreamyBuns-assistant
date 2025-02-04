@@ -6,7 +6,7 @@ const Recetario = () => {
   return (
     <>
       <section className="RecetarioMainContainer">
-        <header>
+        <header className="headerRecetario">
           <img src="" alt="Logo" />
           <h2>Recetario</h2>
         </header>
