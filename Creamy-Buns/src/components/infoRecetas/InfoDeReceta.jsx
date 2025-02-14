@@ -23,7 +23,6 @@ const InfoDeReceta = () => {
       datos.observaciones = datos.observaciones.concat('\r');
     }
 
-    console.log(datos);
     let ingrediente = ""; //esta variable crea el string de un ingrediente y la manda a la variable de la lista
     let llave = 0; //para poder incrementar este contador lo declaramos afuera del for y dentro del for lo incrementamos, para que con cada iteracion este se incremente
     for (let index = 0; index < datos.ingredientes.length; index++) {

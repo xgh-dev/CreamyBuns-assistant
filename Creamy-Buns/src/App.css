@@ -68,12 +68,12 @@ h2,input, label {
   .homeScreenPrincipalContainer {
     flex-direction: column;
     height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-    gap: 0;
+    gap: 20px;
   }
 
   .cardHomeScreen {
     width: 100%;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
   }
 
   .recetarioContenedor, .pedidosContenedor {

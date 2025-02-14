@@ -4,6 +4,7 @@ import Recetario from "./components/Recetario";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
 import InfoDeReceta from "./components/infoRecetas/InfoDeReceta";
+import FooterDeNavegacion from "./components/footer/FoorterDeNavegacion";
 
 //con estas dependencias activamos las clases de bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,7 +21,8 @@ function App() {
               <Route path="/receta/:id" element = {<InfoDeReceta />}/>
               <Route path="/pedidos" element={<Pedidos />} />
             </Routes>
-          </BrowserRouter>
+            <FooterDeNavegacion />
+            </BrowserRouter>
         </div>
     </>
   );
