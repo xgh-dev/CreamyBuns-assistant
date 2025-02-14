@@ -7,8 +7,8 @@ import InfoDeReceta from "./components/infoRecetas/InfoDeReceta";
 import FooterDeNavegacion from "./components/footer/FoorterDeNavegacion";
 
 //con estas dependencias activamos las clases de bootstrap
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
   return (
