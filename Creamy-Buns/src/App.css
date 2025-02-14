@@ -1,3 +1,10 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
 h2,input, label {
   font-family: monospace;
   font-size: bold;
