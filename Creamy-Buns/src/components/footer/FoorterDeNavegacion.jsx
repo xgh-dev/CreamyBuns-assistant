@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const FooterDeNavegacion = () => {
   return (
@@ -12,9 +13,15 @@ const FooterDeNavegacion = () => {
             margin: 0,
           }}
         >
-          <li><a href="/">HomeScreen</a></li>
-          <li><a href="/recetario">Recetario</a></li>
-          <li><a href="/pedidos">Pedidos</a></li>
+          <li>
+            <Link to="/">HomeScreen</Link>
+          </li>
+          <li>
+            <Link to="/recetario">Recetario</Link>
+          </li>
+          <li>
+            <Link to="/pedidos">Pedidos</Link>
+          </li>
           <li>Clientes</li>
         </ul>
       </footer>
@@ -23,5 +30,3 @@ const FooterDeNavegacion = () => {
 };
 
 export default FooterDeNavegacion;
-
-
