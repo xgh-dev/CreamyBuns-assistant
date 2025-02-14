@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaHome, FaBook, FaUsers } from "react-icons/fa";
+import { HiAnnotation } from "react-icons/hi";
 
 const FooterDeNavegacion = () => {
   return (
@@ -14,15 +16,23 @@ const FooterDeNavegacion = () => {
           }}
         >
           <li>
-            <Link to="/">HomeScreen</Link>
+            <Link to="/">
+              <FaHome />
+            </Link>
           </li>
           <li>
-            <Link to="/recetario">Recetario</Link>
+            <Link to="/recetario">
+              <FaBook />
+            </Link>
           </li>
           <li>
-            <Link to="/pedidos">Pedidos</Link>
+            <Link to="/pedidos">
+              <HiAnnotation />
+            </Link>
           </li>
-          <li>Clientes</li>
+          <li>
+            <FaUsers />
+          </li>
         </ul>
       </footer>
     </>
