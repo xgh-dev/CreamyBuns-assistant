@@ -1,3 +1,11 @@
+/* En App.css, asegura que html y body ocupen todo el alto de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0; /* Elimina márgenes predeterminados que puedan interferir */
+}
+
+
+
 a {
   text-decoration: none;
   color: inherit;
@@ -11,107 +19,11 @@ h2,input, label {
 }
 .homeScreenBody { background-color: #f4f4f4;}
 
+
 /*--------Seccion del inicio--------*/
 /* Estilos generales para el título */
-.homeScreenTitle {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin: 0;
-}
 
-.homeScreeTitleContainer{
-  margin-bottom: 0;
-}
 
-/* Estilos para el contenedor principal */
-.homeScreenPrincipalContainer {
-  display: flex;
-  flex-direction: column; /* En móviles, los contenedores estarán en columna */
-  justify-content: center; /* Alineación vertical */
-  align-items: center; /* Alineación horizontal */
-  gap: 20px; /* Espacio entre los elementos */
-  padding: 20px;
-  height: 80vh; /* El contenedor ocupa el 80% de la altura de la pantalla */
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* Estilos para los enlaces que contienen los contenedores */
-.cardHomeScreen {
-  width: 100%;
-  max-width: 500px; /* Tamaño máximo para los divs */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de hover */
-}
-
-/* Efecto hover para los contenedores */
-.cardHomeScreen:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo del contenedor de cada imagen con el fondo */
-.recetarioContenedor, .pedidosContenedor {
-  width: 100%;
-  height: 50vh; /* Ocupa la mitad de la pantalla */
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-/* En dispositivos móviles */
-@media screen and (max-width: 767px) {
-
-  .homeScreenPrincipalContainer {
-    flex-direction: column;
-    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-    gap: 20px;
-  }
-
-  .cardHomeScreen {
-    width: 100%;
-    /*margin-bottom: 20px;*/
-  }
-
-  .recetarioContenedor, .pedidosContenedor {
-    height: 50vh; /* En móviles, las imágenes ocuparán la mitad de la altura de la pantalla */
-  }
-}
-
-/* En pantallas más grandes */
-@media screen and (min-width: 768px) {
-  .homeScreeTitleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    width: 100%;
-  }
-
-  .homeScreenPrincipalContainer {
-    flex-direction: row; /* En pantallas más grandes, los contenedores se disponen en fila */
-    justify-content: space-around; /* Espacio alrededor de los contenedores */
-    align-items: center; /* Centrado vertical del contenedor principal */
-  }
-
-  .cardHomeScreen {
-    width: 48%; /* Ajustamos el tamaño de los contenedores para que haya dos en una fila */
-  }
-
-  .recetarioContenedor, .pedidosContenedor {
-    height: 60vh; /* En pantallas grandes, las imágenes ocuparán más espacio */
-  }
-}
 
 /*--------------------------------*/
 /*css principal de elemento recetario*/

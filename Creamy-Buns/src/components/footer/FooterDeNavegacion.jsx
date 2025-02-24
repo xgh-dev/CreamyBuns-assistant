@@ -1,39 +1,30 @@
 import { Link } from "react-router-dom";
-import { FaHome, FaBook, FaUsers } from "react-icons/fa";
-import { HiAnnotation } from "react-icons/hi";
+import { FooterList,IconStyledFaHome,IconStyledFaBook,IconStyledHiAnnotation,IconStyledFaUsers } from "./FooterStyle.js";
 
 const FooterDeNavegacion = () => {
   return (
     <>
       <footer>
-        <ul
-          style={{
-            listStyle: "none",
-            display: "flex",
-            justifyContent: "space-evenly",
-            padding: 0,
-            margin: 0,
-          }}
-        >
+        <FooterList>
           <li>
             <Link to="/">
-              <FaHome />
+              <IconStyledFaHome/>
             </Link>
           </li>
           <li>
             <Link to="/recetario">
-              <FaBook />
+              <IconStyledFaBook/>
             </Link>
           </li>
           <li>
             <Link to="/pedidos">
-              <HiAnnotation />
+              <IconStyledHiAnnotation/>
             </Link>
           </li>
           <li>
-            <FaUsers />
+            <IconStyledFaUsers/>
           </li>
-        </ul>
+        </FooterList>
       </footer>
     </>
   );
