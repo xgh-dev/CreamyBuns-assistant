@@ -28,7 +28,7 @@ export const BodyCards = styled.div`
   justify-content: space-around;
   box-sizing: border-box;
   overflow-y: auto; /* Barra de desplazamiento vertical */
-  height: 80vh; /* Limita la altura al 80% del viewport */
+  height: 100%; /* Limita la altura al 80% del viewport */
   max-height: 80vh; /* Limita la altura máxima al 80% del viewport */
   padding: 10px;
   flex: 1;
@@ -44,7 +44,7 @@ export const Titulo = styled.h1`
   text-align: center; /* Centrado */
   text-transform: uppercase; /* Convertir texto a mayúsculas */
   letter-spacing: 2px; /* Espaciado entre letras */
-  margin: 20px 0; /* Espaciado superior e inferior */
+  margin: 0; /* Espaciado superior e inferior */
   padding: 10px; /* Espaciado interno */
 
 `
