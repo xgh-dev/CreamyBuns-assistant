@@ -28,9 +28,10 @@ export const BodyCards = styled.div`
   justify-content: space-around;
   box-sizing: border-box;
   overflow-y: auto; /* Barra de desplazamiento vertical */
-  height: 100%;
-  //background-color: #f4f4f4;
-  flex:1;
+  height: 80vh; /* Limita la altura al 80% del viewport */
+  max-height: 80vh; /* Limita la altura máxima al 80% del viewport */
+  padding: 10px;
+  flex: 1;
 `;
 
 export const Header = styled.header`
