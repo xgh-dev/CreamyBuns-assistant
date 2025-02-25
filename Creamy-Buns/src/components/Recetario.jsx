@@ -6,7 +6,8 @@ import {
   Header,
   Titulo,
   ContentContainer,
-  ContentSection,
+  ContentSectionForm,
+  ContentSectionList 
 } from "./Recetario.styled.js";
 
 const Recetario = () => {
@@ -18,12 +19,12 @@ const Recetario = () => {
         </Header>
         <RecetarioContextProvider>
           <ContentContainer>
-            <ContentSection>
+            <ContentSectionForm>
               <FormRecetario />
-            </ContentSection>
-            <ContentSection>
+            </ContentSectionForm>
+            <ContentSectionList>
               <ListaDeRecetas />
-            </ContentSection>
+            </ContentSectionList>
           </ContentContainer>
         </RecetarioContextProvider>
       </EstructuraDeRecetario>

@@ -11,13 +11,18 @@ export const EstructuraDeRecetario = styled.div`
 export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
     flex: 1;
     //background-color: #f4f4f4;
 `
 
-export const ContentSection = styled.section`
+export const ContentSectionForm = styled.section`
     background-color: #f4f4f4;
+    
+`
+export const ContentSectionList = styled.section`
+    background-color: #f4f4f4;
+    flex: 1;
 `
 
 export const Header = styled.header`

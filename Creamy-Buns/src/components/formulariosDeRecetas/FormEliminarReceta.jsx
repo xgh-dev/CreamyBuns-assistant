@@ -6,7 +6,6 @@ const FormEliminarReceta = () => {
     listaDeRecetas,
     setListaDeRecetas,
     listaDeRecetasOriginal,
-    eliminarRecetaApi,
   } = useContext(RecetarioContext);
 
   //crear un hook que busque la receta
@@ -28,7 +27,7 @@ const FormEliminarReceta = () => {
 
     //apoyarnos de un window confirm para ejecutar o cancelar la eliminacion de la receta
     const confirmacion = window.confirm(
-      `Confirme la eliminacion de la receta ${recetaParaEliminar.nombre_del_postre}`
+      `Confirme la eliminacion de la receta ${recetaParaEliminar.nombre}`
     );
     if (confirmacion === true){
       recetaParaEliminar.eliminarReceta()
