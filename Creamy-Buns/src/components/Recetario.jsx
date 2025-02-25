@@ -1,26 +1,26 @@
 import FormRecetario from "./formulariosDeRecetas/FormRecetario";
 import ListaDeRecetas from "./renderLists/ListaDeRecetas";
 import { RecetarioContextProvider } from "./contextos/RecetarioContext";
+import { EstructuraDeRecetario,Header,Titulo,ContentContainer } from "./Recetario.styled.js";
 
 const Recetario = () => {
   return (
     <>
-      <section className="RecetarioMainContainer">
-        <header className="headerRecetario">
-          <img src="" alt="Logo" />
-          <h2>Recetario</h2>
-        </header>
+      <EstructuraDeRecetario>
+        <Header >
+          <Titulo>Recetario</Titulo>
+        </Header>
         <RecetarioContextProvider>
-          <main className="recetarioMainContent">
+          <ContentContainer>
             <section className="mainFormRecetario">
               <FormRecetario />
             </section>
             <section className="mainListaDeRecetas">
               <ListaDeRecetas />
             </section>
-          </main>
+          </ContentContainer>
         </RecetarioContextProvider>
-      </section>
+      </EstructuraDeRecetario>
     </>
   );
 };

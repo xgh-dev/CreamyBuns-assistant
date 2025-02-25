@@ -4,8 +4,6 @@ html, body {
   margin: 0; /* Elimina márgenes predeterminados que puedan interferir */
 }
 
-
-
 a {
   text-decoration: none;
   color: inherit;
@@ -28,92 +26,6 @@ h2,input, label {
 /*--------------------------------*/
 /*css principal de elemento recetario*/
 /* Diseño global */
-.RecetarioMainContainer {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f4f4f4;
-  min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la pantalla */
-}
-
-.headerRecetario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-.headerRecetario img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.headerRecetario h2 {
-  font-size: 1.5rem;
-  color: #333;
-  text-align: center;
-}
-
-/* Sección principal */
-.recetarioMainContent {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px; /* Limita el ancho máximo a 1200px en pantallas grandes */
-  margin: 0 auto; /* Centra el contenido en pantallas grandes */
-}
-
-/* Mobile-first: ajustes para pantallas móviles */
-@media (max-width: 600px) {
-  .recetarioMainContent {
-    flex-direction: column;
-  }
-
-  .mainFormRecetario,
-  .mainListaDeRecetas {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .mainFormRecetario {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .mainListaDeRecetas {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* Pantallas más grandes: distribución horizontal */
-@media (min-width: 601px) {
-  .recetarioMainContent {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-  }
-
-  .mainFormRecetario,
-  .mainListaDeRecetas {
-    width: 48%; /* Mantiene los elementos con un ancho proporcional */
-  }
-
-  .mainFormRecetario {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .mainListaDeRecetas {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-}
 
 
 
