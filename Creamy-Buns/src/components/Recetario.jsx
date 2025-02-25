@@ -1,4 +1,4 @@
-import FormRecetario from "./FormRecetario";
+import FormRecetario from "./formulariosDeRecetas/FormRecetario";
 import ListaDeRecetas from "./renderLists/ListaDeRecetas";
 import { RecetarioContextProvider } from "./contextos/RecetarioContext";
 

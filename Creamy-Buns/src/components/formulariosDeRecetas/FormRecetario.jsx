@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormRecetarioOption from "./formulariosDeRecetas/FormRecetarioOption";
+import FormRecetarioOption from "./FormRecetarioOption";
 
 const FormRecetario = () => {
   //llamar al contexto
