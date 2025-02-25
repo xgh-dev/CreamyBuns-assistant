@@ -27,7 +27,7 @@ export class Receta {
     eliminarRecetaApi(this.id)
     console.log('receta eliminada: ', this.nombre)
   }
-  returnarDatos(){
+  retornarDatos(){
     return {
       id: this.id,
       nombre: this.nombre,

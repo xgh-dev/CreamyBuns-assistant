@@ -6,7 +6,7 @@ const ItemList = ({ receta }) => {
   const [imagenURL, setImagenURL] = useState("");
 
   // Guardamos los datos de la receta en una variable para evitar múltiples llamadas a returnarDatos()
-  const datosReceta = receta.returnarDatos();
+  const datosReceta = receta.retornarDatos();
   //creamos un useEffect que funcione como filtro para transformar los datos blob en url
   useEffect(() => {
     if (datosReceta.imagen instanceof File) {
