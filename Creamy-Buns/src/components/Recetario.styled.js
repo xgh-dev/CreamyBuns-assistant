@@ -6,15 +6,19 @@ export const EstructuraDeRecetario = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     flex:1;
+    //background-color: #f4f4f4;
 `
 export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     flex: 1;
-    
+    //background-color: #f4f4f4;
 `
 
+export const ContentSection = styled.section`
+    background-color: #f4f4f4;
+`
 
 export const Header = styled.header`
   text-align: center;
