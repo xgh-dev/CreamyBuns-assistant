@@ -15,13 +15,13 @@ export const ContentContainer = styled.div`
     flex: 1;
     //background-color: #f4f4f4;
 `
-
+//padre
 export const ContentSectionForm = styled.section`
     background-color: #f4f4f4;
     
 `
-export const ContentSectionList = styled.section`
-    background-color: #f4f4f4;
+//hijo
+export const ContentSectionList = styled(ContentSectionForm)`
     flex: 1;
 `
 
