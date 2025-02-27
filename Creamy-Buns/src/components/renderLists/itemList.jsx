@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ItemContainerReceta,ImagenReceta,InfoReceta,NombreReceta,PrecioReceta } from "./itemList.styled.js";
 
 const ItemList = ({ receta }) => {
   //hacemos un hook que trabaje con el url que este en el atributo imagen
@@ -26,21 +27,22 @@ const ItemList = ({ receta }) => {
       to={`/receta/${datosReceta.id}`}
       style={{ color: "inherit", textDecoration: "inherit" }}
     >
-      <div className="item-container-receta">
+      <ItemContainerReceta >
         {/* Fotografía */}
-        <img
+        <ImagenReceta
           src={imagenURL}
           alt={datosReceta.nombre}
-          className="item-image-receta"
         />
         {/* Información del postre */}
-        <div className="item-info-receta">
-          <h2 className="item-name-receta">{datosReceta.nombre}</h2>
-          <p className="item-price-receta">Precio: ${datosReceta.precio}</p>
-        </div>
-      </div>
+        <InfoReceta >
+          <NombreReceta >{datosReceta.nombre}</NombreReceta>
+          <PrecioReceta >Precio: ${datosReceta.precio}</PrecioReceta>
+        </InfoReceta>
+      </ItemContainerReceta>
     </Link>
   );
 };
 
 export default ItemList;
+
+//className="item-container-receta"

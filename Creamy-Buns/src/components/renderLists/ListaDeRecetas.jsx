@@ -1,22 +1,23 @@
 import { useContext } from "react";
 import ItemList from "./itemList";
 import { RecetarioContext } from "../contextos/RecetarioContext";
+import { EstructuraDeListaDeRecetas,Header,TituloH2,ContenedorDeListaDeRecetas } from "./ListaDeRecetas.styled.js";
 
 const ListaDeRecetas = () => {
   const { listaDeRecetas } = useContext(RecetarioContext);
 
   return (
     <>
-      <div className="contenedorDeRecetas">
-        <header className="headerTituloListaDeRecetas">
-          <h2>Lista de recetas</h2>
-        </header>
-        <div className="contenedorDeListaDeRecetas">
+      <EstructuraDeListaDeRecetas >
+        <Header >
+          <TituloH2>Lista de recetas</TituloH2>
+        </Header>
+        <ContenedorDeListaDeRecetas >
           {listaDeRecetas.map((receta) => (
             <ItemList key={receta.retornarDatos().id} receta={receta} />
           ))}
-        </div>
-      </div>
+        </ContenedorDeListaDeRecetas>
+      </EstructuraDeListaDeRecetas>
     </>
   );
 };

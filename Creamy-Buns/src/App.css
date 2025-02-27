@@ -16,19 +16,6 @@ h2,input, label {
   font-size: bold;
 }
 .homeScreenBody { background-color: #f4f4f4;}
-
-
-/*--------Seccion del inicio--------*/
-/* Estilos generales para el título */
-
-
-
-/*--------------------------------*/
-/*css principal de elemento recetario*/
-/* Diseño global */
-
-
-
 /*---------------------------*/
 /*Css del componente FormRecetario*/
 .FormRecetario {
@@ -134,7 +121,7 @@ select:focus {
   align-items: center;
   padding: 15px;
   height: 100%;
-  max-height: 400px;
+  max-height: 200px;/*con esto implementamos el limite para que se active el scrollbar*/
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -252,168 +239,6 @@ form textarea::placeholder {
     padding: 8px;
   }
 }
-/*--------------*/
-/*------seccion de la lista de recetas------*/
-.contenedorDeRecetas {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 100%;
-  padding: 20px;
-  /*background-color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-  box-sizing: border-box;
-}
-
-.headerTituloListaDeRecetas {
-  text-align: center;
-  margin-bottom: 0;  /* Elimina el espacio entre el header y la lista */
-}
-
-.headerTituloListaDeRecetas h2 {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.contenedorDeListaDeRecetas {
-  display: flex;
-  flex-direction: column; /* Asegura que los elementos estén en columna */
-  gap: 10px;
-  padding: 10px;
-  max-height: 400px; /* Definimos un alto máximo para habilitar el scroll */
-  overflow-y: auto;  /* Permite el desplazamiento vertical si el contenido excede el contenedor */
-}
-
-@media (max-width: 768px) {
-  .contenedorDeListaDeRecetas {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .contenedorDeListaDeRecetas {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contenedorDeRecetas .itemReceta {
-  background-color: #fff;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contenedorDeRecetas .itemReceta:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contenedorDeRecetas .itemReceta h3 {
-  font-size: 1rem;  /* Igual que el tamaño del select */
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.contenedorDeRecetas .itemReceta p {
-  font-size: 1rem; /* Igual que el tamaño del texto del select */
-  color: #555;
-  margin-bottom: 10px;
-  line-height: 1.5;  /* Mejora la legibilidad del texto */
-}
-
-.contenedorDeRecetas .itemReceta .buttonReceta {
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #bd8750;
-  border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.contenedorDeRecetas .itemReceta .buttonReceta:hover {
-  background-color: #0056b3;
-}
-
-/*--------------*/
-/*items propios de la lista*/
-/* Estilo para el título */
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Contenedor principal del recuadro */
-.item-container-receta {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 300px; /* Tamaño uniforme */
-  height: 120px; /* Tamaño uniforme */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  margin: 10px auto; /* Centrar horizontalmente */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.item-container-receta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Estilo de la imagen */
-.item-image-receta {
-  width: 80px; /* Ajustar tamaño de la imagen */
-  height: 80px; /* Ajustar tamaño de la imagen */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 10px;
-}
-
-/* Contenedor de la información */
-.item-info-receta {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Asegurar que el contenido se ajuste */
-  overflow: hidden; /* Evitar que el texto se desborde */
-}
-
-/* Estilo del nombre del postre */
-.item-name-receta {
-  margin: 0 0 5px 0;
-  font-size: 1em;
-  font-weight: bold;
-  color: #333;
-  white-space: nowrap; /* Evitar salto de línea */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Agregar "..." si el texto es muy largo */
-}
-
-/* Estilo del precio */
-.item-price-receta {
-  margin: 0;
-  font-weight: bold;
-  color: #555;
-  font-size: 0.9em;
-}
-
-
 
 /*--------Seccion de informacion de cada receta---------*/
 /* Estilo general */
