@@ -1,5 +1,13 @@
 import { useState } from "react";
 import FormRecetarioOption from "./FormRecetarioOption";
+import {
+  EstructuraFormRecetario,
+  ContenedorDeTipoDeFormulario,
+  ContenedorDeEtiquetasDeTipoDeFormulario,
+  Label,
+  Option,
+  Select,
+} from "./FormRecetario.styled.js";
 
 const FormRecetario = () => {
   //llamar al contexto
@@ -12,104 +20,30 @@ const FormRecetario = () => {
 
   return (
     <>
-      <div className="FormRecetario">
-        <div className="contenedorDeOpcionesDeFormulario">
-          <div className="contenedorDeEtiquetas">
-            <label htmlFor="">Seleccione una opción</label>
-            <select
-              name="opciones"
-              id="opciones"
-              value={option}
-              onChange={optionForm}
-              className="etiquetaSelect"
-            >
-              <option value="buscar" id="buscar" className="optionSelect">
-                Buscar
-              </option>
-              <option value="agregar" id="agregar" className="optionSelect">
-                Agregar
-              </option>
-              <option value="eliminar" id="eliminar" className="optionSelect">
-                Eliminar
-              </option>
-            </select>
-          </div>
-        </div>
+      <EstructuraFormRecetario>
+        <ContenedorDeTipoDeFormulario>
+          <Label htmlFor="">Seleccione una opción</Label>
+          <Select
+            name="opciones"
+            id="opciones"
+            value={option}
+            onChange={optionForm}
+          >
+            <Option value="buscar" id="buscar">
+              Buscar
+            </Option>
+            <Option value="agregar" id="agregar" >
+              Agregar
+            </Option>
+            <Option value="eliminar" id="eliminar">
+              Eliminar
+            </Option>
+          </Select>
+        </ContenedorDeTipoDeFormulario>
         <FormRecetarioOption option={option} />
-      </div>
+      </EstructuraFormRecetario>
     </>
   );
 };
 
 export default FormRecetario;
-
-/*
-<div className="formRecetarioContenedor">
-        <div className="dropdown dropdownContainerAgregar">
-          <button
-            type="button"
-            className="btn btn-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            data-bs-auto-close="outside"
-          >
-            Agregar receta
-          </button>
-          <form action="" className="dropdown-menu p-4">
-            <div className="mb-3">
-              <label>Nombre de la receta</label>
-              <input type="text" placeholder="Agregar nombre de la receta" />
-            </div>
-            <div className="mb-3">
-              <label>Ingredientes</label>
-              <input type="text" placeholder="Agregar Ingredientes" />
-            </div>
-            <div className="mb-3">
-              <label>Preparación</label>
-              <input type="text" placeholder="agregar metodo de preparación" />
-            </div>
-            <div className="mb-3">
-              <label>Observaciones</label>
-              <input type="text" placeholder="Agregar observaciones" />
-            </div>
-            <input type="submit" />
-          </form>
-        </div>
-        <div className="dropdown dropdownContainerBuscarReceta">
-          <button
-            type="button"
-            className="btn btn-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            data-bs-auto-close="outside"
-          >
-            Buscar receta
-          </button>
-          <form className="dropdown-menu p-4">
-            <div className="mb-3">
-              <label>Buscar receta</label>
-              <input type="text" placeholder="Ingrese en nombre de la receta" />
-            </div>
-            <input type="submit"/>
-          </form>
-        </div>
-        <div className="dropdown dropdownContainerEliminarReceta">
-          <button
-            type="button"
-            className="btn btn-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            data-bs-auto-close="outside"
-          >
-            Eliminar receta
-          </button>
-          <form className="dropdown-menu p-4">
-            <div className="mb-3">
-              <label >Eliminar receta</label>
-              <input type="text" placeholder="Ingrese nombre de la receta"/>
-            </div>
-            <input type="submit" />
-          </form>
-        </div>
-      </div>
-*/

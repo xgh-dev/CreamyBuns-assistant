@@ -1,34 +1,33 @@
 import styled from "styled-components";
 
-
 export const EstructuraDeRecetario = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex:1;
-    //background-color: #f4f4f4;
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  //background-color: #f4f4f4;
+`;
 export const ContentContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    //justify-content: space-evenly;
-    flex: 1;
-    //background-color: #f4f4f4;
-`
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-evenly;
+  flex: 1;
+  //background-color: #f4f4f4;
+`;
 //padre
 export const ContentSectionForm = styled.section`
-    background-color: #f4f4f4;
-    
-`
+  background-color: #f4f4f4;
+`;
 //hijo
-export const ContentSectionList = styled(ContentSectionForm)`
-    flex: 1;
-`
+export const ContentSectionList = styled.section`
+  background-color: #f4f4f4;
+  flex: 1;
+`;
 
 export const Header = styled.header`
   text-align: center;
   margin: 10px;
-`
+`;
 
 export const Titulo = styled.h1`
   font-size: 2.5rem; /* Tamaño grande para destacar */
@@ -39,5 +38,4 @@ export const Titulo = styled.h1`
   letter-spacing: 2px; /* Espaciado entre letras */
   margin: 0; /* Espaciado superior e inferior */
   padding: 10px; /* Espaciado interno */
-
-`
+`;

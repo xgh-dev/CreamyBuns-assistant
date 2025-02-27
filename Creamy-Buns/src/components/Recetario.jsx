@@ -34,9 +34,3 @@ const Recetario = () => {
 
 export default Recetario;
 
-/*
- style={{
-        backgroundImage: `url(${imagenFondoRecetario})`
-      }}
-
-*/
