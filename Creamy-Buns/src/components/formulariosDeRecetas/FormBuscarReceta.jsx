@@ -1,5 +1,13 @@
 import { useContext, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
+import {
+  ContenedorDeFormulario,
+  ContenedorDeEtiquetasForm,
+  Formulario,
+  Input,
+  InputSubmit,
+  Label,
+} from "./FormsRecetario.styled.js";
 
 const FormBuscarReceta = () => {
   const {
@@ -36,20 +44,20 @@ const FormBuscarReceta = () => {
 
   return (
     <>
-      <div className="formularioContenedorRecetas">
-        <form onSubmit={handleFormBuscarReceta} className="formularioRecetas">
-          <div>
-            <label>Ingrese el nombre de la receta</label>
-            <input
+      <ContenedorDeFormulario>
+        <Formulario onSubmit={handleFormBuscarReceta} className="">
+          <ContenedorDeEtiquetasForm>
+            <Label>Ingrese el nombre de la receta</Label>
+            <Input
               type="text"
               placeholder="Nombre de la receta"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
             />
-          </div>
-          <input type="submit" />
-        </form>
-      </div>
+          </ContenedorDeEtiquetasForm>
+          <InputSubmit type="submit" />
+        </Formulario>
+      </ContenedorDeFormulario>
     </>
   );
 };
