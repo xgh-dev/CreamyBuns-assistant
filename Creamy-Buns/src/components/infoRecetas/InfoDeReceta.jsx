@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useObtenerRecetaPorID } from "../../apiAcces";
+import { ContenedorDeInfoDeReceta,ContenedorDeImagen,Header,ImagenPosicion,Main,Section,SectionSubTitulo, SectionTitulo,Tituloh1,Tituloh2,Ul,Ol } from "./InfoDeReceta.styled.js";
 
 const InfoDeReceta = () => {
   const { id } = useParams();
@@ -75,36 +76,36 @@ const InfoDeReceta = () => {
         <h1>Cargando datos</h1>
       ) : (
         <>
-          <div className="bodyInfoDeReceta">
-            <header className="headerInfoDeReceta">
-              <h1 className="tituloInfoDeReceta">{datos.nombre_del_postre}</h1>
-              <h2 className="autorInfoDeReceta">by Beli</h2>
-            </header>
-            <main className="mainContentInfoDeReceta">
-              <div className="imagen-contenedor">
-                <img
+          <ContenedorDeInfoDeReceta >
+            <Header className="headerInfoDeReceta">
+              <Tituloh1 className="tituloInfoDeReceta">{datos.nombre_del_postre}</Tituloh1>
+              <Tituloh2 className="autorInfoDeReceta">by Beli</Tituloh2>
+            </Header>
+            <Main className="mainContentInfoDeReceta">
+              <ContenedorDeImagen className="imagen-contenedor">
+                <ImagenPosicion
                   className="imagen-superior"
                   src={datos.imagen}
                   alt="Descripción de la imagen"
                 />
-              </div>
-              <section className="ingredientes-section">
-                <h3 className="section-title">Ingredientes</h3>
+              </ContenedorDeImagen>
+              <Section className="ingredientes-section">
+                <SectionTitulo className="section-title">Ingredientes</SectionTitulo>
                 <article className="ingredientes-article">
-                  <h4 className="sub-title">Base</h4>
-                  <ul className="ingredientes-list">{ingredientes}</ul>
+                  <SectionSubTitulo className="sub-title">Base</SectionSubTitulo>
+                  <Ul className="ingredientes-list">{ingredientes}</Ul>
                 </article>
-              </section>
-              <section className="procedimiento-section">
-                <h3 className="section-title">Procedimiento</h3>
-                <ol className="procedimiento-list">{procedimiento}</ol>
-              </section>
-              <section className="observaciones-section">
-                <h3 className="section-title">Observaciones</h3>
-                <ul className="observaciones-text">{observaciones}</ul>
-              </section>
-            </main>
-          </div>
+              </Section>
+              <Section className="procedimiento-section">
+                <SectionTitulo className="section-title">Procedimiento</SectionTitulo>
+                <Ol className="procedimiento-list">{procedimiento}</Ol>
+              </Section>
+              <Section className="observaciones-section">
+                <SectionTitulo className="section-title">Observaciones</SectionTitulo>
+                <Ul className="observaciones-text">{observaciones}</Ul>
+              </Section>
+            </Main>
+          </ContenedorDeInfoDeReceta>
         </>
       )}
     </>

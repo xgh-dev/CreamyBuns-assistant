@@ -72,19 +72,3 @@ export const InputSubmit = styled.input`
   }
 `;
 
-/*
-<div className="formularioContenedorRecetas">
-        <form onSubmit={handleFormBuscarReceta} className="formularioRecetas">
-          <div>
-            <label>Ingrese el nombre de la receta</label>
-            <input
-              type="text"
-              placeholder="Nombre de la receta"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-            />
-          </div>
-          <input type="submit" />
-        </form>
-      </div>
-*/
