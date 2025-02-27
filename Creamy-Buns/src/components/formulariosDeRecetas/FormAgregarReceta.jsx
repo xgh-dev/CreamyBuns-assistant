@@ -1,5 +1,6 @@
 import { RecetarioContext } from "../contextos/RecetarioContext";
 import { useContext, useState, useEffect } from "react";
+import { ContenedorDeFormulario,ContenedorDeEtiquetasForm,Formulario,Input,InputSubmit,Label,InputFile } from "./FormsRecetario.styled.js";
 
 const FormAgregarReceta = () => {
   //uso de contexto
@@ -75,15 +76,15 @@ const FormAgregarReceta = () => {
 
   return (
     <>
-      <div className="formularioContenedorRecetas">
-        <form
+      <ContenedorDeFormulario>
+        <Formulario
           action=""
           onSubmit={handleFormAgregarReceta}
-          className="formularioRecetas"
+         
         >
-          <div>
-            <label>Nombre de la receta</label>
-            <input
+          <ContenedorDeEtiquetasForm>
+            <Label>Nombre de la receta</Label>
+            <Input
               type="text"
               placeholder="Ingresar nuevo nombre"
               value={nuevaReceta.nombre_del_postre}
@@ -94,9 +95,9 @@ const FormAgregarReceta = () => {
                 })
               }
             />
-          </div>
-          <div>
-            <label>Ingredientes</label>
+          </ContenedorDeEtiquetasForm>
+          <ContenedorDeEtiquetasForm>
+            <Label>Ingredientes</Label>
             <textarea
               placeholder="Ingresar ingredientes"
               rows="5" // Controla el tamaño inicial
@@ -105,9 +106,9 @@ const FormAgregarReceta = () => {
                 setNuevaReceta({ ...nuevaReceta, ingredientes: e.target.value })
               }
             />
-          </div>
-          <div>
-            <label>Procedimiento</label>
+          </ContenedorDeEtiquetasForm>
+          <ContenedorDeEtiquetasForm>
+            <Label>Procedimiento</Label>
             <textarea
               placeholder="Ingresar procedimiento"
               rows="5"
@@ -119,9 +120,9 @@ const FormAgregarReceta = () => {
                 })
               }
             />
-          </div>
-          <div>
-            <label>Observaciones</label>
+          </ContenedorDeEtiquetasForm>
+          <ContenedorDeEtiquetasForm>
+            <Label>Observaciones</Label>
             <textarea
               placeholder="Campo opcional"
               rows="5"
@@ -133,10 +134,10 @@ const FormAgregarReceta = () => {
                 })
               }
             />
-          </div>
-          <div>
-            <label>Precio</label>
-            <input
+          </ContenedorDeEtiquetasForm>
+          <ContenedorDeEtiquetasForm>
+            <Label>Precio</Label>
+            <Input
               type="number"
               placeholder="Ingrese el precio"
               value={nuevaReceta.precio}
@@ -147,10 +148,10 @@ const FormAgregarReceta = () => {
                 })
               }
             />
-          </div>
-          <div>
-            <label>Cargar imagen</label>
-            <input
+          </ContenedorDeEtiquetasForm>
+          <ContenedorDeEtiquetasForm>
+            <Label>Cargar imagen</Label>
+            <InputFile
               type="file"
               placeholder="Cargue la receta (imagen)"
               className="inputCapturadorDeArchivos"
@@ -160,11 +161,11 @@ const FormAgregarReceta = () => {
                 setNuevaReceta({ ...nuevaReceta, imagen: file });
               }}
             />
-          </div>
-          <input type="submit" value="Agregar" />
-        </form>
+          </ContenedorDeEtiquetasForm>
+          <InputSubmit type="submit" value="Agregar" />
+        </Formulario>
         {error ? <p>No pueden quedar campos vacios</p> : ""}
-      </div>
+      </ContenedorDeFormulario>
     </>
   );
 };

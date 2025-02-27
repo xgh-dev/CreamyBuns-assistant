@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
+import { ContenedorDeFormulario,ContenedorDeEtiquetasForm,Formulario,Input,InputSubmit,Label } from "./FormsRecetario.styled.js";
 
 const FormEliminarReceta = () => {
   const {
@@ -51,24 +52,23 @@ const FormEliminarReceta = () => {
 
   return (
     <>
-      <div className="formularioContenedorRecetas">
-        <form
+      <ContenedorDeFormulario >
+        <Formulario
           action=""
           onSubmit={handleFormEliminarReceta}
-          className="formularioRecetas"
         >
-          <div>
-            <label>Ingrese el nombre de la receta</label>
-            <input
+          <ContenedorDeEtiquetasForm>
+            <Label>Ingrese el nombre de la receta</Label>
+            <Input
               type="text"
               placeholder="Nombre de la receta"
               value={eliminarReceta}
               onChange={(e) => setEliminarReceta(e.target.value)}
             />
-          </div>
-          <input type="submit" value="Eliminar" />
-        </form>
-      </div>
+          </ContenedorDeEtiquetasForm>
+          <InputSubmit type="submit" value="Eliminar" />
+        </Formulario>
+      </ContenedorDeFormulario>
     </>
   );
 };

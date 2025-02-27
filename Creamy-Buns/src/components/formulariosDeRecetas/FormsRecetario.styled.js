@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const ContenedorDeFormulario = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding: 15px;
   height: 100%;
   max-height: 200px; /*con esto implementamos el limite para que se active el scrollbar*/
@@ -49,6 +49,11 @@ export const Input = styled.input`
     font-size: 14px; /* Ajuste de tamaño de fuente similar al de las etiquetas */
     font-weight: normal; /* No negrita, para diferenciar el placeholder del texto */
   }
+`;
+
+export const InputFile = styled.input`
+  font-size: 14px;
+  color: #333;
 `;
 
 export const InputSubmit = styled.input`
