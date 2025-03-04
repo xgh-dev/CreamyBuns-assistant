@@ -6,6 +6,7 @@ import HomeScreen from "./components/homescreen/HomeScreen";
 import InfoDeReceta from "./components/infoRecetas/InfoDeReceta";
 import FooterDeNavegacion from "./components/footer/FooterDeNavegacion";
 import { EstructuraPrincipal,EstructuraDeVistas } from "./App.styled";
+import Clientes from "./components/Clientes";
 
 //con estas dependencias activamos las clases de bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,6 +23,7 @@ function App() {
             <Route path="/recetario" element={<Recetario />} />
             <Route path="/receta/:id" element={<InfoDeReceta />} />
             <Route path="/pedidos" element={<Pedidos />} />
+            <Route path="/clientes" element={<Clientes/>}/>
           </Routes>
           </EstructuraDeVistas>
           <FooterDeNavegacion />

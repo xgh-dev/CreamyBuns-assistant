@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { FooterList,IconStyledFaHome,IconStyledFaBook,IconStyledHiAnnotation,IconStyledFaUsers } from "./FooterStyle.js";
+import {
+  FooterList,
+  IconStyledFaHome,
+  IconStyledFaBook,
+  IconStyledHiAnnotation,
+  IconStyledFaUsers,
+} from "./FooterStyle.js";
 
 const FooterDeNavegacion = () => {
   return (
@@ -8,21 +14,23 @@ const FooterDeNavegacion = () => {
         <FooterList>
           <li>
             <Link to="/">
-              <IconStyledFaHome/>
+              <IconStyledFaHome />
             </Link>
           </li>
           <li>
             <Link to="/recetario">
-              <IconStyledFaBook/>
+              <IconStyledFaBook />
             </Link>
           </li>
           <li>
             <Link to="/pedidos">
-              <IconStyledHiAnnotation/>
+              <IconStyledHiAnnotation />
             </Link>
           </li>
           <li>
-            <IconStyledFaUsers/>
+            <Link to="/clientes">
+              <IconStyledFaUsers />
+            </Link>
           </li>
         </FooterList>
       </footer>

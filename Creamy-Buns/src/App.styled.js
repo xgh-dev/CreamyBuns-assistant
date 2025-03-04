@@ -13,5 +13,5 @@ export const EstructuraDeVistas = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
+    background-color: #f4f4f4;
 `

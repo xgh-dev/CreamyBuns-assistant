@@ -18,16 +18,16 @@ export class Receta {
     this.observaciones = observaciones;
     this.imagen = imagen;
   }
-  mostrarDatos(){
-    console.log('método mostrar datos', this.nombre);
+  mostrarDatos() {
+    console.log("método mostrar datos", this.nombre);
     return this.nombre; // <-- Ahora devuelve el nombre
-}
+  }
 
   eliminarReceta() {
-    eliminarRecetaApi(this.id)
-    console.log('receta eliminada: ', this.nombre)
+    eliminarRecetaApi(this.id);
+    console.log("receta eliminada: ", this.nombre);
   }
-  retornarDatos(){
+  retornarDatos() {
     return {
       id: this.id,
       nombre: this.nombre,
@@ -35,7 +35,7 @@ export class Receta {
       ingredientes: this.ingredientes,
       procedimiento: this.procedimiento,
       observaciones: this.observaciones,
-      imagen: this.imagen
-  };
+      imagen: this.imagen,
+    };
   }
 }
