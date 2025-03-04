@@ -1,7 +1,8 @@
 import { TableHeader } from '../tablasClientes/TablaClientes.styled.js';
 
-const TablaDeClientes = () => {
-
+const TablaDeClientes = ({listaDeClientes,setListaDeClientes}) => {
+  //prueba de la lista  
+  /*
     const ListaDeCliente = [
         {
           id: 1,
@@ -88,7 +89,7 @@ const TablaDeClientes = () => {
           direccion: "Sector 258, Ciudad",
         },
       ];
-    
+    */
   return (
     <>
       <table className="table table-striped table-hover">
@@ -100,7 +101,7 @@ const TablaDeClientes = () => {
           </tr>
         </TableHeader>
         <tbody>
-          {ListaDeCliente.map((cliente) => (
+          {listaDeClientes.map((cliente) => (
             <tr key={cliente.id}>
               <td>{cliente.nombre}</td>
               <td>{cliente.apellido}</td>

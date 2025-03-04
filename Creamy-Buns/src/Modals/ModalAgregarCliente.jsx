@@ -7,7 +7,7 @@ import {
   SaveCloseButton,
 } from "./ModalAgregarClientes.styled.js";
 
-const ModalAgregarCliente = () => {
+const ModalAgregarCliente = ({listaDeClientes,setListaDeClientes}) => {
   //estado para manipular la apertura y cierre del modal
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,6 +38,8 @@ const ModalAgregarCliente = () => {
     setIsOpen(false);
     console.log("modal cerrado y datos guardados");
     console.log(agregarCliente);
+    setListaDeClientes([...listaDeClientes,agregarCliente])
+    console.log(listaDeClientes)
   };
 
   return (
