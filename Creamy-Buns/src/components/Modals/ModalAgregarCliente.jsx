@@ -6,8 +6,10 @@ import {
   OpenButton,
   SaveCloseButton,
 } from "./ModalAgregarClientes.styled.js";
+import { ClientesContext } from "../contextos/ClientesContext.jsx";
+import { useContext } from "react";
 
-const ModalAgregarCliente = ({listaDeClientes,setListaDeClientes}) => {
+const ModalAgregarCliente = () => {
   //estado para manipular la apertura y cierre del modal
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,6 +21,10 @@ const ModalAgregarCliente = ({listaDeClientes,setListaDeClientes}) => {
     correo: "",
     direccion: "",
   });
+
+  //llamar al contexto
+  const { listaDeClientes, setListaDeClientes } =
+    useContext(ClientesContext);
 
   //funcion para abrir el modal
   const openModal = () => {
@@ -38,8 +44,8 @@ const ModalAgregarCliente = ({listaDeClientes,setListaDeClientes}) => {
     setIsOpen(false);
     console.log("modal cerrado y datos guardados");
     console.log(agregarCliente);
-    setListaDeClientes([...listaDeClientes,agregarCliente])
-    console.log(listaDeClientes)
+    setListaDeClientes([...listaDeClientes, agregarCliente]);
+    console.log(listaDeClientes);
   };
 
   return (

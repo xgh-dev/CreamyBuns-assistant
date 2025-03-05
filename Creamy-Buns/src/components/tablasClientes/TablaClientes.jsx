@@ -1,7 +1,11 @@
-import { TableHeader } from '../tablasClientes/TablaClientes.styled.js';
+import { TableHeader } from "../tablasClientes/TablaClientes.styled.js";
+import { ClientesContext } from "../contextos/ClientesContext.jsx";
+import { useContext } from "react";
 
-const TablaDeClientes = ({listaDeClientes,setListaDeClientes}) => {
-  //prueba de la lista  
+const TablaDeClientes = () => {
+  //llamar al contexto
+  const { listaDeClientes } = useContext(ClientesContext);
+  //prueba de la lista
   /*
     const ListaDeCliente = [
         {

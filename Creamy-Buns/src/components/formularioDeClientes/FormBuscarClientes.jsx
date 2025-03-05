@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   ContenedorDeFormulario,
   ContenedorDeEtiquetasForm,
@@ -7,8 +7,12 @@ import {
   InputSubmit,
   Label,
 } from "./FormBuscarClientes.styled.js";
+import { ClientesContext } from "../contextos/ClientesContext.jsx";
 
-const FormBuscarClientes = ({ listaDeClientes, setListaDeClientes,ListaDeClientesOriginal }) => {
+const FormBuscarClientes = () => {
+  //llamar al contexto
+  const { listaDeClientes, setListaDeClientes, listaDeClientesCopia } =
+    useContext(ClientesContext);
   //hook para guardar cliente
   const [buscarCliente, setBuscarCliente] = useState("");
 
@@ -22,7 +26,7 @@ const FormBuscarClientes = ({ listaDeClientes, setListaDeClientes,ListaDeCliente
       setListaDeClientes(respuesta);
     } else {
       //con esto refrescamos la lista al volver a dar click si el input esta vacio
-      setListaDeClientes(ListaDeClientesOriginal)
+      setListaDeClientes(listaDeClientesCopia);
     }
     setBuscarCliente("");
   };
