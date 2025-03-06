@@ -21,7 +21,7 @@ export const Header = styled.header`
   letter-spacing: 2px;
   margin: 0;
   padding: 10px;
-  flex: 1;
+  //flex: 1;
   background-color: white;
 `;
 
