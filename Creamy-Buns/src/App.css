@@ -4,6 +4,10 @@ html, body {
   margin: 0; /* Elimina márgenes predeterminados que puedan interferir */
 }
 
+body {
+  max-height: 100svh;
+}
+
 a {
   text-decoration: none;
   color: inherit;

@@ -9,88 +9,100 @@ export const ClientesContextProvider = ({ children }) => {
     {
       id: 1,
       nombre: "Emilio",
-      apellido: "Navarro Torres",
+      apellidos: "Navarro Torres",
       telefono: "555-951-4863",
       direccion: "Unidad Habitacional 159, Ciudad",
+      correo: "emilio.navarro@email.com"
     },
     {
       id: 2,
       nombre: "Silvia",
-      apellido: "Ortega Ramírez",
+      apellidos: "Ortega Ramírez",
       telefono: "555-369-7531",
       direccion: "Conjunto Residencial 369, Ciudad",
+      correo: "silvia.ortega@email.com"
     },
     {
       id: 3,
       nombre: "Héctor",
-      apellido: "Sánchez Domínguez",
+      apellidos: "Sánchez Domínguez",
       telefono: "555-147-8523",
       direccion: "Boulevard Reforma, Ciudad",
+      correo: "hector.sanchez@email.com"
     },
     {
       id: 4,
       nombre: "Isabel",
-      apellido: "Rodríguez Castillo",
+      apellidos: "Rodríguez Castillo",
       telefono: "555-321-6549",
       direccion: "Paseo del Valle 741, Ciudad",
+      correo: "isabel.rodriguez@email.com"
     },
     {
       id: 5,
       nombre: "Oscar",
-      apellido: "Vargas López",
+      apellidos: "Vargas López",
       telefono: "555-753-9516",
       direccion: "Fraccionamiento Sur, Ciudad",
+      correo: "oscar.vargas@email.com"
     },
     {
       id: 6,
       nombre: "Raúl",
-      apellido: "Cervantes Pérez",
+      apellidos: "Cervantes Pérez",
       telefono: "555-258-1473",
       direccion: "Zona Centro 654, Ciudad",
+      correo: "raul.cervantes@email.com"
     },
     {
       id: 7,
       nombre: "Teresa",
-      apellido: "Méndez Ruiz",
+      apellidos: "Méndez Ruiz",
       telefono: "555-654-2581",
       direccion: "Privada Arboleda, Ciudad",
+      correo: "teresa.mendez@email.com"
     },
     {
       id: 8,
       nombre: "Francisco",
-      apellido: "Domínguez Salinas",
+      apellidos: "Domínguez Salinas",
       telefono: "555-147-3695",
       direccion: "Residencial los Pinos, Ciudad",
+      correo: "francisco.dominguez@email.com"
     },
     {
       id: 9,
       nombre: "Beatriz",
-      apellido: "Hernández Ortega",
+      apellidos: "Hernández Ortega",
       telefono: "555-987-1234",
       direccion: "Plaza del Sol 963, Ciudad",
+      correo: "beatriz.hernandez@email.com"
     },
     {
       id: 10,
       nombre: "Guillermo",
-      apellido: "Suárez Gutiérrez",
+      apellidos: "Suárez Gutiérrez",
       telefono: "555-369-8521",
       direccion: "Villas del Lago 753, Ciudad",
+      correo: "guillermo.suarez@email.com"
     },
     {
       id: 11,
       nombre: "Monica",
-      apellido: "Flores Castillo",
+      apellidos: "Flores Castillo",
       telefono: "555-852-9631",
       direccion: "Carretera Vieja 147, Ciudad",
+      correo: "monica.flores@email.com"
     },
     {
       id: 12,
       nombre: "Eduardo",
-      apellido: "Paredes Nava",
+      apellidos: "Paredes Nava",
       telefono: "555-321-9874",
       direccion: "Sector 258, Ciudad",
+      correo: "eduardo.paredes@email.com"
     },
-  ];
+];
 
   //hook de la lista de clientes
   const [listaDeClientes, setListaDeClientes] = useState(clientes);
@@ -107,7 +119,7 @@ export const ClientesContextProvider = ({ children }) => {
 
   return (
     <ClientesContext.Provider
-      value={{ listaDeClientes, setListaDeClientes, listaDeClientesCopia }}
+      value={{ listaDeClientes, setListaDeClientes, listaDeClientesCopia,clientes }}
     >
       {children}
     </ClientesContext.Provider>
