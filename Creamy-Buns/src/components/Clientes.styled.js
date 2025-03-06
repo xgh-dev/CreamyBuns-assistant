@@ -7,10 +7,10 @@ export const ContenedorPrincipal = styled.div`
   flex: 1;
   height: 100%; 
   width: 100%; 
-  
 `;
 export const ContenedorSecundario = styled.div`
   background-color: #f4f4f4;
+  flex: 2;
 `;
 export const Header = styled.header`
   font-size: 2.5rem;
@@ -21,6 +21,7 @@ export const Header = styled.header`
   letter-spacing: 2px;
   margin: 0;
   padding: 10px;
+  flex: 1;
 `;
 
 export const Tituloh1 = styled.h1`
