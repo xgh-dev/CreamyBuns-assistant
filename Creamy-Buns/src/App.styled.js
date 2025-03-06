@@ -12,6 +12,6 @@ export const EstructuraDeVistas = styled.main`
     overflow:hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: #f4f4f4;
 `

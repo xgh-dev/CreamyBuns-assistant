@@ -29,14 +29,24 @@ export const BodyCards = styled.div`
   box-sizing: border-box;
   overflow-y: auto; /* Barra de desplazamiento vertical */
   height: 100%; /* Limita la altura al 80% del viewport */
-  max-height: 80vh; /* Limita la altura máxima al 80% del viewport */
+  //max-height: 80vh; /* Limita la altura máxima al 80% del viewport */
   padding: 10px;
-  flex: 1;
+  flex: 2;
 `;
 
 export const Header = styled.header`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
   text-align: center;
-`
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+  //flex: 1;
+`;
+
 export const Titulo = styled.h1`
   font-size: 2.5rem; /* Tamaño grande para destacar */
   font-weight: bold; /* Negrita */

@@ -24,9 +24,22 @@ export const ContentSectionList = styled.section`
   flex: 1;
 `;
 
-export const Header = styled.header`
+/*export const Header = styled.header`
   text-align: center;
-  margin: 10px;
+  //margin: 10px;
+  background-color: white;
+`;*/
+
+export const Header = styled.header`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 10px;
+  background-color: white;
 `;
 
 export const Titulo = styled.h1`

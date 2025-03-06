@@ -22,6 +22,7 @@ export const Header = styled.header`
   margin: 0;
   padding: 10px;
   flex: 1;
+  background-color: white;
 `;
 
 export const Tituloh1 = styled.h1`
