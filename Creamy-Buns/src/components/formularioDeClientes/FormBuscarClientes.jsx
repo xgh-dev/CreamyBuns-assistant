@@ -11,16 +11,25 @@ import { ClientesContext } from "../contextos/ClientesContext.jsx";
 
 const FormBuscarClientes = () => {
   //llamar al contexto
-  const { listaDeClientes, setListaDeClientes, listaDeClientesCopia } =
-    useContext(ClientesContext);
+  const {
+    listaDeClientes,
+    setListaDeClientes,
+    listaDeClientesCopia,
+    setListaDeClientesCopia,
+  } = useContext(ClientesContext);
   //hook para guardar cliente
   const [buscarCliente, setBuscarCliente] = useState("");
-
+  
   const funcionBucarCliente = (e) => {
     e.preventDefault();
+    //de esta forma actualizamos la copia con respecto a algun dato que ya modificaramos en la lista de clientes original
+    setListaDeClientesCopia(listaDeClientes);
     if (buscarCliente !== "") {
       let respuesta = listaDeClientes.filter((cliente) =>
-        cliente.nombre.toLowerCase().includes(buscarCliente.toLowerCase())
+        cliente
+          .retornarDatos()
+          .nombre.toLowerCase()
+          .includes(buscarCliente.toLowerCase())
       );
       console.log(respuesta);
       setListaDeClientes(respuesta);

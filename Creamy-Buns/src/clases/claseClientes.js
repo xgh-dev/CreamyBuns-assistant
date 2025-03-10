@@ -1,10 +1,10 @@
 export class Cliente {
-  constructor(id, nombre, apellidos, telefono, mail, direccion) {
+  constructor(id, nombre, apellidos, telefono, correo, direccion) {
     this.id = id;
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.telefono = telefono;
-    this.mail = mail;
+    this.correo = correo;
     this.direccion = direccion;
   }
   mostrar_nombre() {
@@ -17,6 +17,7 @@ export class Cliente {
       nombre: this.nombre,
       apellidos: this.apellidos,
       telefono: this.telefono,
+      correo: this.correo,
       direccion: this.direccion,
     };
   }
@@ -39,5 +40,8 @@ export class Cliente {
     //agregar la consulta que actualice al usuario
     this.direccion = nuevaDireccion;
     return this.direccion;
+  }
+  eliminarCliente() {
+    //llamada a la api que elimine clientes
   }
 }

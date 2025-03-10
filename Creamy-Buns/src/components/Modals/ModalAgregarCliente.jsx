@@ -10,21 +10,22 @@ import { ClientesContext } from "../contextos/ClientesContext.jsx";
 import { useContext } from "react";
 
 const ModalAgregarCliente = () => {
+  //llamar al contexto
+  const { listaDeClientes, setListaDeClientes, Cliente } =
+    useContext(ClientesContext);
+
   //estado para manipular la apertura y cierre del modal
   const [isOpen, setIsOpen] = useState(false);
 
   //estado para capturar los datos del cliente
   const [agregarCliente, setAgregarCliente] = useState({
+    id: listaDeClientes.length > 0 ? listaDeClientes[listaDeClientes.length - 1].id + 1 : 1,
     nombre: "",
     apellidos: "",
     telefono: "",
     correo: "",
     direccion: "",
   });
-
-  //llamar al contexto
-  const { listaDeClientes, setListaDeClientes } =
-    useContext(ClientesContext);
 
   //funcion para abrir el modal
   const openModal = () => {
@@ -44,8 +45,16 @@ const ModalAgregarCliente = () => {
     setIsOpen(false);
     console.log("modal cerrado y datos guardados");
     console.log(agregarCliente);
-    setListaDeClientes([...listaDeClientes, agregarCliente]);
+    //falta la api que agregue la api que cargue los clientes
+    setListaDeClientes([...listaDeClientes, new Cliente(agregarCliente.id, agregarCliente.nombre, agregarCliente.apellidos, agregarCliente.telefono, agregarCliente.mail, agregarCliente.direccion)]);
     console.log(listaDeClientes);
+    setAgregarCliente({
+      id: agregarCliente.id + 1,
+      nombre: "",
+      apellidos: "",
+      telefono: "",
+      correo: "",
+      direccion: "",})
   };
 
   return (

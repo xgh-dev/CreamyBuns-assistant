@@ -30,9 +30,9 @@ const TablaDeClientes = () => {
         <tbody>
           {listaDeClientes.map((cliente) => (
             <tr key={cliente.id} onClick={() => handleClientModal(cliente)}>
-              <td>{cliente.nombre}</td>
-              <td>{cliente.apellidos}</td>
-              <td>{cliente.telefono}</td>
+              <td>{cliente.retornarDatos().nombre}</td>
+              <td>{cliente.retornarDatos().apellidos}</td>
+              <td>{cliente.retornarDatos().telefono}</td>
             </tr>
           ))}
         </tbody>

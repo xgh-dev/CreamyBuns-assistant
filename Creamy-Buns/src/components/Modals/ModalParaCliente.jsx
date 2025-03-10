@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import {
   CloseButton,
   ContenedorDelModal,
@@ -13,23 +13,32 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
 
   //hook para actualizar datos
   const [datosNuevos, setDatosNuevos] = useState({
-    nombre: cliente.nombre,
-    apellidos: cliente.apellidos,
-    telefono: cliente.telefono,
-    correo: cliente.correo,
-    direccion: cliente.direccion,
+    nombre: cliente.retornarDatos().nombre,
+    apellidos: cliente.retornarDatos().apellidos,
+    telefono: cliente.retornarDatos().telefono,
+    correo: cliente.retornarDatos().correo,
+    direccion: cliente.retornarDatos().direccion,
   });
-
+  //console.log(cliente.retornarDatos())
   //funcion que ejecutara los cambios de datos
   const funcionParaActualizarDatos = (e) => {
     e.preventDefault();
     if (datosNuevos.nombre !== cliente.nombre) {
       console.log("nombre actualizado");
-      console.log('id',cliente.id)
-      clientes[cliente.id-1].nombre=datosNuevos.nombre;
+      cliente.actualizarNombre(datosNuevos.nombre);
+      //clientes[cliente.id-1].nombre=datosNuevos.nombre;
     }
-    console.log(datosNuevos);
+    //definir la actualizaciones de datos
+    if (datosNuevos.apellidos !== cliente.retornarDatos().apellidos) {
+      cliente.actualizarApellidos(datosNuevos.apellidos);
+    }
+
+    console.log("datos actualizados: ", datosNuevos);
   };
+  //avisar que seleccionamos un cliente
+  /*useEffect(() => {
+    console.log(cliente.retornarDatos())
+  })*/
 
   return (
     <ContenedorDelModal>
