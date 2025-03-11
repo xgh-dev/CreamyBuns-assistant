@@ -46,7 +46,7 @@ const ModalAgregarCliente = () => {
     setListaDeClientes([
       ...listaDeClientes,
       new Cliente(
-        listaDeClientes[listaDeClientes.length - 1].id + 1,//el id es mejor actualizarlo directamente en la clase
+        listaDeClientes.length > 0 ? listaDeClientes[listaDeClientes.length - 1].id + 1 : 1,//el id es mejor actualizarlo directamente en la clase
         agregarCliente.nombre,
         agregarCliente.apellidos,
         agregarCliente.telefono,
@@ -55,7 +55,7 @@ const ModalAgregarCliente = () => {
       ),
     ]);
     //aqui ira la api que agregue el cliente nuevo
-    
+
     console.log(listaDeClientes);
     setAgregarCliente({
       nombre: "",
