@@ -50,7 +50,7 @@ const ModalAgregarCliente = () => {
         agregarCliente.nombre,
         agregarCliente.apellidos,
         agregarCliente.telefono,
-        agregarCliente.mail,
+        agregarCliente.correo,
         agregarCliente.direccion
       ),
     ]);
