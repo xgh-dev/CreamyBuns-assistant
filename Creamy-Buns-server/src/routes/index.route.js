@@ -1,5 +1,6 @@
 import { Router } from "express"
 import recetasRouter from "./recetas.route.js"
+import clientesRouter from "./clientes.route.js"
 
 const indexRouter = Router()
 
@@ -20,6 +21,8 @@ indexRouter.get(`/${prefijoApi}`,(req,res) => {
 //definir la ruta que se conectara con los controladores, de esta forma escuchara las consultas realizadas y las redireccionara
 indexRouter.use(`/${prefijoApi}`, recetasRouter)
 
+//definir las rutas relacionadas a los clientes
+indexRouter.use(`/${prefijoApi}`,clientesRouter)
 
 //definir la ruta que redirija la consulta relacionada con los pedidos
 

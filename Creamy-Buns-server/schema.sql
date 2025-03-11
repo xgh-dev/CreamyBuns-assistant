@@ -12,3 +12,11 @@ CREATE TABLE recetas (
     imagen BLOB
 )
 
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    apellidos VARCHAR(255),
+    telefono VARCHAR(255),
+    correo VARCHAR(255),
+    direccion VARCHAR(255)
+)
