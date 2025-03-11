@@ -6,7 +6,7 @@ export async function obtenerClientesDB() {
   console.log("Conectando con el servicio de obtención de clientes");
   try {
     //crear una constante que almacene los datos
-    const datos = await conexion.query("SELECT * FROM Clientes");
+    const [datos] = await conexion.query("SELECT * FROM Clientes");
     console.log(datos);
     return datos;
   } catch (error) {
@@ -35,5 +35,15 @@ export async function actualizarClienteService(id,datos) {
     console.log('datos del cliente actualizados correctamente')
   } catch (error) {
     console.error('error en el servicio de actualiza ciente')
+  }
+}
+
+export async function obtenerClientePorIdService(id) {
+  console.log('iniciando el servicio para obtener un cliente por id')
+  try {
+    const [respuesta] = await conexion.query('SELECT * FROM clientes WHERE id=?',[id])
+    return respuesta //retornamos el primer elemento de la lista
+  } catch (error) {
+    console.error('error en el servicio de obtencion de cliente por id',error)
   }
 }

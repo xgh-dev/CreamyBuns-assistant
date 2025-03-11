@@ -1,7 +1,7 @@
 //importar el router de express
 import { Router } from "express";
 
-import { obtenerClientesController,crearClienteController, actualizarClienteController } from "../controllers/clientes.controller.js";
+import { obtenerClientesController,crearClienteController, actualizarClienteController,obtenerClientePorIdController } from "../controllers/clientes.controller.js";
 
 //definir la ruta mediante Router y llamar a la funcion del controlador
 
@@ -19,6 +19,8 @@ clientesRouter.delete('/eliminarCliente/:id',(req,res) => {
 
 //crear ruta para editar datos del cliente
 clientesRouter.put('/actualizarCliente/:id',actualizarClienteController)
+
+clientesRouter.get('/obtenerClientePorId/:id',obtenerClientePorIdController)
 
 //exportar el router
 export default clientesRouter;
