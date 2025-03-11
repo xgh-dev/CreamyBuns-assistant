@@ -18,10 +18,6 @@ const ModalAgregarCliente = () => {
   const [isOpen, setIsOpen] = useState(false);
   //estado para capturar los datos del cliente
   const [agregarCliente, setAgregarCliente] = useState({
-    id:
-      listaDeClientes.length > 0
-        ? listaDeClientes[listaDeClientes.length - 1].id + 1
-        : 1,
     nombre: "",
     apellidos: "",
     telefono: "",
@@ -50,7 +46,7 @@ const ModalAgregarCliente = () => {
     setListaDeClientes([
       ...listaDeClientes,
       new Cliente(
-        agregarCliente.id,
+        listaDeClientes[listaDeClientes.length - 1].id + 1,//el id es mejor actualizarlo directamente en la clase
         agregarCliente.nombre,
         agregarCliente.apellidos,
         agregarCliente.telefono,
@@ -58,9 +54,10 @@ const ModalAgregarCliente = () => {
         agregarCliente.direccion
       ),
     ]);
+    //aqui ira la api que agregue el cliente nuevo
+    
     console.log(listaDeClientes);
     setAgregarCliente({
-      id: agregarCliente.id + 1,
       nombre: "",
       apellidos: "",
       telefono: "",
