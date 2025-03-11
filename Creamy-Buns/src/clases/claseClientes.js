@@ -21,6 +21,9 @@ export class Cliente {
       direccion: this.direccion,
     };
   }
+  retornarId(){
+    return this.id
+  }
   actualizarNombre(nuevoNombre) {
     //agregar la consulta que actualice al usuario
     this.nombre = nuevoNombre;

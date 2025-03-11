@@ -97,3 +97,17 @@ export function useObtenerRecetaPorID(id) {
   // Retornamos los hooks
   return { isLoading, error, datos };
 }
+
+export async function obtenerClientesApi(){
+  //inicializamos el trycatch
+  try {
+    //inicializamos la consulta
+    const consulta = await fetch(`${apiUrl}/obtenerClientes`)
+    //transformamos los datos a tipo json
+    const respuesta = consulta.json()
+    //retornamos
+    return respuesta
+  } catch (error) {
+    console.error('error en el fetch de obtencion de clientes',error)
+  }
+}

@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { Cliente } from "../../clases/claseClientes.js";
+import { obtenerClientesApi } from "../../apiAcces.js";
 
 //crear la constante del contexto
 export const ClientesContext = createContext(null);
 
 //crear la constante que sera el contenxtProvider que envolvera elementos para que los elementos dentro puedan usar la constante del contexto
 export const ClientesContextProvider = ({ children }) => {
-  const clientes = [
+  /*const clientes = [
     new Cliente(
       1,
       "Emilio",
@@ -104,14 +105,36 @@ export const ClientesContextProvider = ({ children }) => {
       "eduardo.paredes@email.com"
     ),
   ];
+  */
 
   //hook de la lista de clientes
-  const [listaDeClientes, setListaDeClientes] = useState(clientes);
+  const [listaDeClientes, setListaDeClientes] = useState([]);
   //hook de la copia de recuperacion de la lista de clientes
-  const [listaDeClientesCopia, setListaDeClientesCopia] = useState(clientes);
+  const [listaDeClientesCopia, setListaDeClientesCopia] = useState([]);
 
   const cargarClientes = async () => {
     //aqui llamaremos a la api para cargar la lista
+    try {
+      const datos = await obtenerClientesApi();
+      console.log(datos);
+      //seteamos el hook con un map a los datos obtenidos de la consulta
+      const listaConClases = datos.map(
+        (cliente) =>
+          new Cliente(
+            cliente.id,
+            cliente.nombre,
+            cliente.apellidos,
+            cliente.telefono,
+            cliente.direccion,
+            cliente.correo
+          )
+      );
+
+      setListaDeClientes(listaConClases);
+      setListaDeClientesCopia(listaConClases);
+    } catch (error) {
+      console.error("error al cargar con la api", error);
+    }
   };
 
   useEffect(() => {
@@ -125,8 +148,7 @@ export const ClientesContextProvider = ({ children }) => {
         setListaDeClientes,
         listaDeClientesCopia,
         setListaDeClientesCopia,
-        clientes,
-        Cliente
+        Cliente,
       }}
     >
       {children}
