@@ -41,7 +41,7 @@ export async function nuevaRecetaApi(datos) {
     console.log("api de nueva receta funcionando");
     const consulta = await fetch(`${apiUrl}/puclicarReceta`, {
       method: "POST",
-      body: formData, // Enviamos el FormData con los datos y la imagen
+      body: formData, // Enviamos el FormData con los datos y la imagen, en este caso no usamos json.sringify por que enviamos un FormData
     });
 
     const respuesta = await consulta.json();
@@ -110,4 +110,21 @@ export async function obtenerClientesApi(){
   } catch (error) {
     console.error('error en el fetch de obtencion de clientes',error)
   }
+}
+
+export async function crearClientesApi(datos) {
+  try {
+    const consulta = await fetch(`${apiUrl}/crearCliente`,{
+      method:'post',
+      body:JSON.stringify(datos),
+      headers:{
+        "Content-Type":'application/json'
+      }
+    })
+    const respuesta = await consulta.json()
+    console.log('se agrego correctamente el nuevo cliente',respuesta)
+  } catch (error) {
+    console.error('error en el fetch de crear clientes',error)
+  }
+  
 }

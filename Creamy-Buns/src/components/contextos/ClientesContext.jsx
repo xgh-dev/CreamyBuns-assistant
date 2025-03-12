@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { Cliente } from "../../clases/claseClientes.js";
-import { obtenerClientesApi } from "../../apiAcces.js";
+import { obtenerClientesApi,crearClientesApi } from "../../apiAcces.js";
 
 //crear la constante del contexto
 export const ClientesContext = createContext(null);
@@ -149,6 +149,7 @@ export const ClientesContextProvider = ({ children }) => {
         listaDeClientesCopia,
         setListaDeClientesCopia,
         Cliente,
+        crearClientesApi
       }}
     >
       {children}
