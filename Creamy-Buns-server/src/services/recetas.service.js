@@ -43,10 +43,10 @@ export async function crearRecetaDB(datos) {
 export async function eliminarRecetaDB(id) {
   console.log("Accediendo al servicio de eliminar");
   try {
-    const resultado = await conexion.query("DELETE FROM recetas WHERE id = ?", [
+     await conexion.query("DELETE FROM recetas WHERE id = ?", [
       id,
     ]);
-    console.log("Receta eliminada exitosamente", resultado);
+    console.log("Receta eliminada exitosamente");
   } catch (error) {
     console.error("Error en el servicio de eliminar", error);
   }

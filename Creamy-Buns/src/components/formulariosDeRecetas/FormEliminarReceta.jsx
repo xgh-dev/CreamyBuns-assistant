@@ -18,7 +18,7 @@ const FormEliminarReceta = () => {
     //buscar la receta
     const recetaParaEliminar = listaDeRecetas.find(
       (receta) =>
-        receta.returnarDatos().nombre.toLowerCase() === eliminarReceta.toLowerCase()
+        receta.retornarDatos().nombre.toLowerCase() === eliminarReceta.toLowerCase()
     );
 
     //evaluar si esta existe o no, mediante una negacion, en caso de que no exista se returna la ejecucion del codigo
@@ -34,7 +34,7 @@ const FormEliminarReceta = () => {
       recetaParaEliminar.eliminarReceta()
       //actualizar la lista renderizada
       const nuevaLista = listaDeRecetas.filter(
-        (receta) => receta.returnarDatos().id !== recetaParaEliminar.id
+        (receta) => receta.retornarDatos().id !== recetaParaEliminar.id
       );
       //setear la lista renderizada
       setListaDeRecetas(nuevaLista);
