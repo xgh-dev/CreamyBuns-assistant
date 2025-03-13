@@ -35,7 +35,7 @@ export const CloseButton = styled.button`
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #dc3545;
+  background-color: rgb(222, 191, 37);
   color: white;
   border-radius: 5px;
 `;
@@ -43,7 +43,15 @@ export const ActualizarButton = styled.button`
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
-  background: rgb(222, 191, 37);
+  background: rgb(86, 222, 37);
+  color: white;
+  border-radius: 5px;
+`;
+export const EliminarButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #dc3545;
   color: white;
   border-radius: 5px;
 `;
@@ -56,3 +64,4 @@ export const SaveCloseButton = styled.button`
   color: white;
   border-radius: 5px;
 `;
+

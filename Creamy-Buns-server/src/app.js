@@ -8,7 +8,7 @@ const app = express()
 
 //definir los permisos de cors
 const corsOptions  = {
-    origin: 'http://localhost:5174',
+    origin: '*',
     methods: ["POST","GET","DELETE","PUT"],
     credentials: true,
     allowedHeaders: ["Content-Type"], // Encabezados permitidos

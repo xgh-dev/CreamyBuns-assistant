@@ -4,12 +4,13 @@ import {
   ContenedorDelModal,
   Modal,
   ActualizarButton,
+  EliminarButton,
 } from "./ModalParaClientes.styled.js";
 import { ClientesContext } from "../contextos/ClientesContext";
 
 const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
   //hook para obtener el contexto
-  const { clientes } = useContext(ClientesContext);
+  const  {listaDeClientes, setListaDeClientes} = useContext(ClientesContext);
 
   //hook para actualizar datos
   const [datosNuevos, setDatosNuevos] = useState({
@@ -34,6 +35,16 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
     }
 
     console.log("datos actualizados: ", datosNuevos);
+  };
+  const funcionParaEliminarCliente = (e) => {
+    e.preventDefault();
+    console.log("accediendo a eliminar cliente");
+    const confirmacionParaEliminar = window.confirm(`Confirme la eliminacion del cliente ${cliente.retornarDatos().nombre} ${cliente.retornarDatos().apellidos}`)
+    if (confirmacionParaEliminar === true){
+      console.log('cliente eliminado',cliente)
+      setIsOpen(false)
+      cliente.eliminarCliente()
+    }
   };
   //avisar que seleccionamos un cliente
   /*useEffect(() => {
@@ -106,6 +117,9 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
           <CloseButton type="button" onClick={() => setIsOpen(false)}>
             Cerrar
           </CloseButton>
+          <EliminarButton type="button" onClick={funcionParaEliminarCliente}>
+            Eliminar
+          </EliminarButton>
         </form>
       </Modal>
     </ContenedorDelModal>
