@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import {
   CloseButton,
   ContenedorDelModal,
@@ -24,14 +24,10 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
   //funcion que ejecutara los cambios de datos
   const funcionParaActualizarDatos = (e) => {
     e.preventDefault();
-    if (datosNuevos.nombre !== cliente.nombre) {
-      console.log("nombre actualizado");
-      cliente.actualizarNombre(datosNuevos.nombre);
-      //clientes[cliente.id-1].nombre=datosNuevos.nombre;
-    }
-    //definir la actualizaciones de datos
-    if (datosNuevos.apellidos !== cliente.retornarDatos().apellidos) {
-      cliente.actualizarApellidos(datosNuevos.apellidos);
+    if (datosNuevos !== cliente.retornarDatos()){
+      console.log('se ejecuta la condicion y se actualizan los datos')
+      //aqui ejecutaremos el metodo de clase que mandara los datos nuevos a la api
+      
     }
 
     console.log("datos actualizados: ", datosNuevos);

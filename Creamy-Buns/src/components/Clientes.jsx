@@ -10,7 +10,7 @@ import {
 import ModalAgregarCliente from "./Modals/ModalAgregarCliente.jsx";
 import TablaDeClientes from "./tablasClientes/TablaClientes.jsx";
 import FormBuscarClientes from "./formularioDeClientes/FormBuscarClientes.jsx";
-import { ClientesContextProvider } from "./contextos/ClientesContext.jsx";
+import { ClientesContextProvider } from "./contextos/ClientesContext";
 
 const Clientes = () => {
 

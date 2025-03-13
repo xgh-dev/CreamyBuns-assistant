@@ -7,7 +7,7 @@ import {
   InputSubmit,
   Label,
 } from "./FormBuscarClientes.styled.js";
-import { ClientesContext } from "../contextos/ClientesContext.jsx";
+import { ClientesContext } from "../contextos/ClientesContext";
 
 const FormBuscarClientes = () => {
   //llamar al contexto

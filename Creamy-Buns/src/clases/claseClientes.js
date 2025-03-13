@@ -26,6 +26,17 @@ export class Cliente {
   retornarId(){
     return this.id
   }
+  actualizarDatos(datosNuevos){
+    //ejecutar la api que actualice los datos
+    console.log('nuevos dato',datosNuevos)
+  }
+  eliminarCliente() {
+    //llamada a la api que elimine clientes
+    eliminarClienteApi(this.id)
+  }
+}
+
+/*
   actualizarNombre(nuevoNombre) {
     //agregar la consulta que actualice al usuario
     this.nombre = nuevoNombre;
@@ -46,8 +57,4 @@ export class Cliente {
     this.direccion = nuevaDireccion;
     return this.direccion;
   }
-  eliminarCliente() {
-    //llamada a la api que elimine clientes
-    eliminarClienteApi(this.id)
-  }
-}
+*/

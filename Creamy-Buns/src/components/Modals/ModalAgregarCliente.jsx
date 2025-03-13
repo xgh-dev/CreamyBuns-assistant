@@ -6,7 +6,7 @@ import {
   OpenButton,
   SaveCloseButton,
 } from "./ModalAgregarClientes.styled.js";
-import { ClientesContext } from "../contextos/ClientesContext.jsx";
+import { ClientesContext } from "../contextos/ClientesContext";
 import { useContext } from "react";
 
 const ModalAgregarCliente = () => {
