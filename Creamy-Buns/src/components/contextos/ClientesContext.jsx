@@ -13,7 +13,8 @@ export const ClientesContextProvider = ({ children }) => {
   const [listaDeClientesCopia, setListaDeClientesCopia] = useState([]);
 
   const cargarClientes = async () => {
-    //aqui llamaremos a la api para cargar la lista
+    try {
+      //aqui llamaremos a la api para cargar la lista
     const datos = await obtenerClientesApi();
     console.log(datos);
     //seteamos el hook con un map a los datos obtenidos de la consulta
@@ -30,7 +31,10 @@ export const ClientesContextProvider = ({ children }) => {
     );
 
     setListaDeClientes(listaConClases);
-    setListaDeClientesCopia(listaConClases);
+    setListaDeClientesCopia(listaConClases);  
+    } catch (error) {
+      console.error('error en la obtencion de clientes desde la api',error)
+    }
   };
 
   useEffect(() => {
