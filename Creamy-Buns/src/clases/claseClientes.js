@@ -1,3 +1,5 @@
+import { eliminarClienteApi } from "../apiAcces.js";
+
 export class Cliente {
   constructor(id, nombre, apellidos, telefono, correo, direccion) {
     this.id = id;
@@ -46,5 +48,6 @@ export class Cliente {
   }
   eliminarCliente() {
     //llamada a la api que elimine clientes
+    eliminarClienteApi(this.id)
   }
 }

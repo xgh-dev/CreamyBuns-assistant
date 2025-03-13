@@ -70,7 +70,7 @@ export const agregarNuevaRecetaController = async (req, res) => {
 
     // Llamar al servicio que guarda los datos en la base de datos
     await crearRecetaDB(nuevaReceta);
-    console.log("Receta creada exitosamente");
+    //console.log("Receta creada exitosamente");
     //returnamos como respuesta un json con la informacion cargada
     return res.status(201).json({
       message: "Receta creada exitosamente",
@@ -88,8 +88,8 @@ export const agregarNuevaRecetaController = async (req, res) => {
 export const eliminarRecetaController = async (req, res) => {
   try {
     await eliminarRecetaDB(req.params.id);
-    console.log("conectando con el servicvio de eliminar receta");
-    return res.status(200).json({ message: "receta eliminada correctamente" });
+    //console.log("conectando con el servicvio de eliminar receta");
+    res.status(200).json({ message: "receta eliminada correctamente" });
   } catch (error) {
     console.error("erro en el controlador de eliminar receta", error);
   }

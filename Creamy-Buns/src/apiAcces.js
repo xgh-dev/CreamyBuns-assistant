@@ -128,3 +128,18 @@ export async function crearClientesApi(datos) {
   }
   
 }
+
+export async function eliminarClienteApi(id) {
+  try {
+    const consulta = await fetch(`${apiUrl}/eliminarCliente/${id}`,{
+      method: 'delete',
+      headers: {
+        "Content-Type":'application/json'
+      }
+    })
+    const respuesta = await consulta.json(consulta)
+    console.log('cliente eliminado',respuesta)
+  } catch (error) {
+    console.error('error en la api de eliminar cliente',error)
+  }  
+}

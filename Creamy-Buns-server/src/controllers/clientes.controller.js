@@ -1,4 +1,4 @@
-import { obtenerClientesDB,crearClienteService,actualizarClienteService,obtenerClientePorIdService } from "../services/clientes.service.js";
+import { obtenerClientesDB,crearClienteService,actualizarClienteService,obtenerClientePorIdService, eliminarClienteService } from "../services/clientes.service.js";
 
 //los controladores son la funciones encargadas de la comunicacion entre las consultas y la base dedatos 
 
@@ -51,5 +51,16 @@ export async function obtenerClientePorIdController(req,res) {
         res.status(200).json(respuesta) 
     } catch (error) {
         console.log('error en el controlador de obtencion de cliente por id')
+    }
+}
+
+export async function eliminarClienteController(req,res) {
+    try {
+        await eliminarClienteService(req.params.id)
+        res.status(200).json({
+            message: 'cliente eliminado correctamente '
+        })
+    } catch (error) {
+        console.error('error en el controller de eliminar cliente',error)
     }
 }

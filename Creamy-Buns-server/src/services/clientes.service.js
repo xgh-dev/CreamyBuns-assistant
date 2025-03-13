@@ -43,7 +43,7 @@ export async function actualizarClienteService(id, datos) {
 }
 
 export async function obtenerClientePorIdService(id) {
-  console.log("iniciando el servicio para obtener un cliente por id");
+  //console.log("iniciando el servicio para obtener un cliente por id");
   try {
     const [respuesta] = await conexion.query(
       "SELECT * FROM clientes WHERE id=?",
@@ -52,5 +52,13 @@ export async function obtenerClientePorIdService(id) {
     return respuesta; //retornamos el primer elemento de la lista
   } catch (error) {
     console.error("error en el servicio de obtencion de cliente por id", error);
+  }
+}
+
+export async function eliminarClienteService(id) {
+  try {
+    await conexion.query('DELETE * FROM clientes WHERE id = ?',[id])
+  } catch (error) {
+    console.error('error en el servicio de eliminar cliente',error)
   }
 }

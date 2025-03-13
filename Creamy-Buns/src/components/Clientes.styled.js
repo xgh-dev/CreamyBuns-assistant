@@ -37,7 +37,7 @@ export const Tituloh1 = styled.h1`
 `;
 
 export const ContenedorDeTabla = styled.div`
-  max-height: 61vh;
+  max-height: 59vh;
   overflow: auto;
   //max-height: 66vh;
 `;

@@ -2,7 +2,7 @@
 import conexion from "../config/database.js";
 
 export async function obtenerRecetasDB() {
-  console.log("conectando con el servicio");
+  //console.log("conectando con el servicio");
   try {
     const datos = conexion.query("SELECT * FROM recetas");
     return datos;
@@ -12,7 +12,7 @@ export async function obtenerRecetasDB() {
 }
 
 export async function crearRecetaDB(datos) {
-  console.log("conectando con el servicio para crear receta");
+  //console.log("conectando con el servicio para crear receta");
   //desestructuraremos los datos
   const {
     nombre_del_postre,
@@ -41,7 +41,7 @@ export async function crearRecetaDB(datos) {
 }
 
 export async function eliminarRecetaDB(id) {
-  console.log("Accediendo al servicio de eliminar");
+  //console.log("Accediendo al servicio de eliminar");
   try {
      await conexion.query("DELETE FROM recetas WHERE id = ?", [
       id,
@@ -53,7 +53,7 @@ export async function eliminarRecetaDB(id) {
 }
 
 export async function obtenerRecetaPorIdDB(id) {
-  console.log("accediendo al servicio de obtencion de una receta por id");
+  //console.log("accediendo al servicio de obtencion de una receta por id");
   try {
     const [respuesta] = await conexion.query(
       "SELECT * from recetas where id = ?",
