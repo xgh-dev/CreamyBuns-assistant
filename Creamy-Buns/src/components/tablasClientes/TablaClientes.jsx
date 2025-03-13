@@ -22,9 +22,9 @@ const TablaDeClientes = () => {
       <table className="table table-striped table-hover">
         <TableHeader>
           <tr>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Telefono</td>
+            <th style={{position:"sticky",top:0,zIndex:10}}>Nombre</th>
+            <th style={{position:"sticky",top:0,zIndex:10}}>Apellidos</th>
+            <th style={{position:"sticky",top:0,zIndex:10}}>Telefono</th>
           </tr>
         </TableHeader>
         <tbody>
