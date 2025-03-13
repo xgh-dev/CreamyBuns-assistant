@@ -19,7 +19,7 @@ const TablaDeClientes = () => {
 
   return (
     <>
-      <table className="table table-striped table-hover">
+      <table className="table table-striped table-hover" style={{margin:0}}>
         <TableHeader>
           <tr>
             <th style={{position:"sticky",top:0,zIndex:10}}>Nombre</th>
@@ -49,3 +49,10 @@ const TablaDeClientes = () => {
   );
 };
 export default TablaDeClientes;
+
+
+/*
+recordemos que th es  table header para crear celdas que funcionen como encabezados
+
+td espara generar una celda de datos
+*/

@@ -15,7 +15,6 @@ export class Cliente {
   }
   retornarDatos() {
     return {
-      id: this.id,
       nombre: this.nombre,
       apellidos: this.apellidos,
       telefono: this.telefono,
@@ -28,7 +27,7 @@ export class Cliente {
   }
   actualizarDatos(datosNuevos){
     //ejecutar la api que actualice los datos
-    console.log('nuevos dato',datosNuevos)
+    console.log('nuevos datos',datosNuevos)
   }
   eliminarCliente() {
     //llamada a la api que elimine clientes

@@ -5,12 +5,15 @@ export const ContenedorPrincipal = styled.div`
   flex-direction: column;
   //justify-content: space-around;
   flex: 1;
-  height: 100%; 
-  width: 100%; 
+  height: 100%;
+  width: 100%;
 `;
 export const ContenedorSecundario = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #f4f4f4;
   flex: 2;
+  justify-content: space-evenly;
 `;
 export const Header = styled.header`
   font-size: 2.5rem;
@@ -41,7 +44,6 @@ export const ContenedorDeTabla = styled.div`
   overflow: auto;
   //max-height: 66vh;
 `;
-
 
 export const ContenedorDeAgregarCliente = styled.div`
   display: flex;
