@@ -44,6 +44,8 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
       console.log('cliente eliminado',cliente)
       setIsOpen(false)
       cliente.eliminarCliente()
+      const nuevaLista = listaDeClientes.filter(iterador => iterador.retornarDatos().id  !== cliente.retornarDatos().id )
+      setListaDeClientes(nuevaLista);
     }
   };
   //avisar que seleccionamos un cliente

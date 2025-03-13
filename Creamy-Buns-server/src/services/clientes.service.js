@@ -57,7 +57,7 @@ export async function obtenerClientePorIdService(id) {
 
 export async function eliminarClienteService(id) {
   try {
-    await conexion.query('DELETE * FROM clientes WHERE id = ?',[id])
+    await conexion.query('DELETE FROM clientes WHERE id = ?',[id])
   } catch (error) {
     console.error('error en el servicio de eliminar cliente',error)
   }

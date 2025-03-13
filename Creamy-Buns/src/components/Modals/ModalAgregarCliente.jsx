@@ -74,12 +74,10 @@ const ModalAgregarCliente = () => {
           {" "}
           <Modal>
             <h1>Modal abierto</h1>
-            <form action="">
-              <label htmlFor="">Ingresar Nombre</label>
+            <form>
+              <label>Ingresar Nombre</label>
               <input
                 type="text"
-                name=""
-                id=""
                 placeholder="Ingresar nombre"
                 value={agregarCliente.nombre}
                 onChange={(e) =>
@@ -120,8 +118,6 @@ const ModalAgregarCliente = () => {
               <label htmlFor="">Ingresar Correo electronico</label>
               <input
                 type="email"
-                name=""
-                id=""
                 placeholder="Ingresar correo electronico"
                 value={agregarCliente.correo}
                 onChange={(e) =>
@@ -134,8 +130,6 @@ const ModalAgregarCliente = () => {
               <label htmlFor="">Ingresar Domicilio</label>
               <input
                 type="text"
-                name=""
-                id=""
                 placeholder="Ingresar Domicilio"
                 value={agregarCliente.direccion}
                 onChange={(e) =>
