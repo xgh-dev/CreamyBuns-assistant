@@ -58,3 +58,11 @@ Para tabla responsiva
 */
 
 
+/*
+    display: flex
+;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+
+*/

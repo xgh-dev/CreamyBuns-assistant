@@ -1,4 +1,4 @@
-import { obtenerClientesDB,crearClienteService,actualizarClienteService,obtenerClientePorIdService, eliminarClienteService } from "../services/clientes.service.js";
+import { obtenerClientesDB,crearClienteService,actualizarClienteService,obtenerClientePorIdService,eliminarClienteService } from "../services/clientes.service.js";
 
 //los controladores son la funciones encargadas de la comunicacion entre las consultas y la base dedatos 
 

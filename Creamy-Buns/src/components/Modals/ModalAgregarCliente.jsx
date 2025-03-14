@@ -11,7 +11,7 @@ import { useContext } from "react";
 
 const ModalAgregarCliente = () => {
   //llamar al contexto
-  const { listaDeClientes, setListaDeClientes, Cliente,crearClientesApi } =
+  const { listaDeClientes, setListaDeClientes, Cliente, crearClientesApi } =
     useContext(ClientesContext);
 
   //estado para manipular la apertura y cierre del modal
@@ -46,7 +46,9 @@ const ModalAgregarCliente = () => {
     setListaDeClientes([
       ...listaDeClientes,
       new Cliente(
-        listaDeClientes.length > 0 ? listaDeClientes[listaDeClientes.length - 1].retornarDatos().id + 1 : 1,//el id es mejor actualizarlo directamente en la clase
+        listaDeClientes.length > 0
+          ? listaDeClientes[listaDeClientes.length - 1].retornarId() + 1
+          : 1, //el id es mejor actualizarlo directamente en la clase
         agregarCliente.nombre,
         agregarCliente.apellidos,
         agregarCliente.telefono,
@@ -55,7 +57,7 @@ const ModalAgregarCliente = () => {
       ),
     ]);
     //aqui ira la api que agregue el cliente nuevo
-    crearClientesApi(agregarCliente)
+    crearClientesApi(agregarCliente);
     //console.log(listaDeClientes);
     setAgregarCliente({
       nombre: "",

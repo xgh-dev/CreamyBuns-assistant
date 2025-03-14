@@ -28,7 +28,8 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
       console.log('se ejecuta la condicion y se actualizan los datos')
       console.log(cliente.retornarDatos())
       //aqui ejecutaremos el metodo de clase que mandara los datos nuevos a la api
-      cliente.actualizarDatos(datosNuevos)      
+      cliente.actualizarDatos(datosNuevos)
+      setIsOpen(false)    
     }
 
     //console.log("datos actualizados: ", datosNuevos);

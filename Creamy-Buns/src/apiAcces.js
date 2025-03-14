@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 //puerto del servidor
-const port = 8080;
+const port = 3000;
 
 //url de la apo
 const apiUrl = `http://localhost:${port}/creamybuns`;
@@ -115,7 +115,7 @@ export async function obtenerClientesApi(){
 export async function crearClientesApi(datos) {
   try {
     const consulta = await fetch(`${apiUrl}/crearCliente`,{
-      method:'post',
+      method:'POST',
       body:JSON.stringify(datos),
       headers:{
         "Content-Type":'application/json'
@@ -132,7 +132,7 @@ export async function crearClientesApi(datos) {
 export async function eliminarClienteApi(id) {
   try {
     const consulta = await fetch(`${apiUrl}/eliminarCliente/${id}`,{
-      method: 'delete',
+      method: 'DELETE',
       headers: {
         "Content-Type":'application/json'
       }
@@ -142,4 +142,22 @@ export async function eliminarClienteApi(id) {
   } catch (error) {
     console.error('error en la api de eliminar cliente',error)
   }  
+}
+
+export async function actualizarCliente(id,datos) {
+  console.log(id)
+  console.log('actualizar cliente',datos)
+  try {
+    const consulta = await fetch(`${apiUrl}/actualizarCliente/${id}`,{
+      method:'PUT',
+      body: JSON.stringify(datos),//no olvidar que se debe mandar los datos como un json.stringigy para que se manden las llaves y valores
+      headers: {
+        "Content-Type":'application/json'
+      } 
+    })
+    const respuesta = await consulta.json()
+    console.log('datos actualizados',respuesta)
+  } catch (error) {
+    console.error('error en la api de actualizar clientes',error)
+  }
 }

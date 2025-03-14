@@ -12,8 +12,9 @@ export const ContenedorSecundario = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f4f4f4;
-  flex: 2;
-  justify-content: space-evenly;
+  flex: 1;
+  height: 100%;
+  //justify-content: space-around;
 `;
 export const Header = styled.header`
   font-size: 2.5rem;
@@ -49,6 +50,7 @@ export const ContenedorDeAgregarCliente = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  //margin-top: 10px;
+  margin-top: auto;
   margin-bottom: 10px;
 `;

@@ -1,4 +1,4 @@
-import { eliminarClienteApi } from "../apiAcces.js";
+import { eliminarClienteApi,actualizarCliente } from "../apiAcces.js";
 
 export class Cliente {
   constructor(id, nombre, apellidos, telefono, correo, direccion) {
@@ -28,6 +28,13 @@ export class Cliente {
   actualizarDatos(datosNuevos){
     //ejecutar la api que actualice los datos
     console.log('nuevos datos',datosNuevos)
+    //definir la api
+    this.nombre = datosNuevos.nombre
+    this.apellidos = datosNuevos.apellidos
+    this.telefono = datosNuevos.telefono
+    this.correo = datosNuevos.correo
+    this.direccion = datosNuevos.direccion
+    actualizarCliente(this.id,datosNuevos)
   }
   eliminarCliente() {
     //llamada a la api que elimine clientes

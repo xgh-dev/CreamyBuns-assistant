@@ -23,13 +23,15 @@ export async function crearClienteService(datos) {
       [nombre, apellidos, telefono, correo, direccion]
     );
     console.log("cliente creado correctamente");
-    return true
+    return true;
   } catch (error) {
     console.error("error en el servicio de agregar clientes", error);
   }
 }
 
 export async function actualizarClienteService(id, datos) {
+  //console.log('accediendo al servicio de actualizar datos')
+  //console.log(datos)
   const { nombre, apellidos, telefono, correo, direccion } = datos;
   try {
     await conexion.query(
@@ -38,7 +40,7 @@ export async function actualizarClienteService(id, datos) {
     );
     console.log("datos del cliente actualizados correctamente");
   } catch (error) {
-    console.error("error en el servicio de actualiza ciente");
+    console.error("error en el servicio de actualizar ciente",error);
   }
 }
 
@@ -57,8 +59,9 @@ export async function obtenerClientePorIdService(id) {
 
 export async function eliminarClienteService(id) {
   try {
-    await conexion.query('DELETE FROM clientes WHERE id = ?',[id])
+    await conexion.query("DELETE FROM clientes WHERE id = ?", [id]);
   } catch (error) {
-    console.error('error en el servicio de eliminar cliente',error)
+    console.error("error en el servicio de eliminar cliente", error);
   }
 }
+
