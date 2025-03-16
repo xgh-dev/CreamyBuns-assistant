@@ -1,6 +1,6 @@
 import FormRecetario from "./formulariosDeRecetas/FormRecetario";
 import ListaDeRecetas from "./renderLists/ListaDeRecetas";
-import { RecetarioContextProvider } from "./contextos/RecetarioContext";
+
 import {
   EstructuraDeRecetario,
   Header,
@@ -17,7 +17,6 @@ const Recetario = () => {
         <Header>
           <Titulo>Recetario</Titulo>
         </Header>
-        <RecetarioContextProvider>
           <ContentContainer>
             <ContentSectionForm>
               <FormRecetario />
@@ -26,7 +25,6 @@ const Recetario = () => {
               <ListaDeRecetas />
             </ContentSectionList>
           </ContentContainer>
-        </RecetarioContextProvider>
       </EstructuraDeRecetario>
     </>
   );

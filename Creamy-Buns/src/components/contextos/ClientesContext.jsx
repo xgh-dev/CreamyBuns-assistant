@@ -16,7 +16,7 @@ export const ClientesContextProvider = ({ children }) => {
     try {
       //aqui llamaremos a la api para cargar la lista
     const datos = await obtenerClientesApi();
-    //console.log(datos);
+    console.log(datos);
     //seteamos el hook con un map a los datos obtenidos de la consulta
     const listaConClases = datos.map(
       (cliente) =>

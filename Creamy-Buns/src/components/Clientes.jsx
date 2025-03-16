@@ -9,7 +9,7 @@ import {
 import ModalAgregarCliente from "./Modals/ModalAgregarCliente.jsx";
 import TablaDeClientes from "./tablasClientes/TablaClientes.jsx";
 import FormBuscarClientes from "./formularioDeClientes/FormBuscarClientes.jsx";
-import { ClientesContextProvider } from "./contextos/ClientesContext";
+
 
 const Clientes = () => {
 
@@ -18,7 +18,6 @@ const Clientes = () => {
   
   return (
     <>
-      <ClientesContextProvider>
       <ContenedorPrincipal>
         <Header>
           <Tituloh1>Clientes</Tituloh1>
@@ -33,7 +32,6 @@ const Clientes = () => {
           </ContenedorDeAgregarCliente>
         </ContenedorSecundario>
       </ContenedorPrincipal>
-      </ClientesContextProvider>
     </>
   );
 };
