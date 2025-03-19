@@ -8,6 +8,7 @@ export async function guardarImagen(ruta, id) {
   const carpetaDeDestino = "D:\\CreamyBuns\\Creamy-Buns-server\\imagenes";
   const imagenOrigen = ruta;
   const renombreDeImagen = `imagen_id_del_postre:${id}.jpg`;
+  const rutaFinal = path.join(carpetaDeDestino,renombreDeImagen)
 
   //crear la funcion que haga los cambios en el sistema, debe ser asincrona
   const accesoAlSistema = async (
@@ -32,8 +33,10 @@ export async function guardarImagen(ruta, id) {
 
       //insertar el archivo en otro directorio mediante path
       await fs.promises.writeFile(
-        path.join(carpetaDeDestino, renombreDeImagen)
+        path.join(carpetaDeDestino, renombreDeImagen),data
       );
+      //retornamos la ruta que se guardara en la base de datos
+      return rutaFinal
     } catch (error) {
       console.error("error en la ejecucion de guardarImagen", error);
     }
