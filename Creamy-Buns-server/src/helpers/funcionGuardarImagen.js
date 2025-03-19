@@ -39,8 +39,9 @@ export async function guardarImagen(ruta, id) {
       return rutaFinal
     } catch (error) {
       console.error("error en la ejecucion de guardarImagen", error);
+      throw error;
     }
   };
-  //llamamos a la funcion
-  accesoAlSistema(imagenOrigen, carpetaDeDestino, renombreDeImagen);
+  //llamamos a la funcion y la restornamos, recordar que es una funcion asincrona por que debe llevar await
+  return await accesoAlSistema(imagenOrigen, carpetaDeDestino, renombreDeImagen);
 }
