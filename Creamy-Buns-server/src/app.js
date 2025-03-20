@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import indexRouter from './routes/index.route.js'
-import fileUpload from 'express-fileupload'
+import fileUpload from 'express-fileupload'//con esta libreria evitamos usar multer ya que podemos acceder a los files
 import dotenv from 'dotenv'
 dotenv.config()
 
