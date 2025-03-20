@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import indexRouter from './routes/index.route.js'
 import fileUpload from 'express-fileupload'
+import dotenv from 'dotenv'
+dotenv.config()
 
 //inicializar la variable que nos llama a express
 const app = express()

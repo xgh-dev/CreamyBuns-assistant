@@ -1,8 +1,9 @@
 //crearemos las consultas a la api
 import { useState, useEffect } from "react";
 
+
 //puerto del servidor
-const port = 3000;
+const port = import.meta.env.VITE_PORT;
 
 //url de la apo
 const apiUrl = `http://localhost:${port}/creamybuns`;
