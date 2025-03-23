@@ -12,7 +12,7 @@ export const obtenerRecetasController = async (req, res) => {
   try {
     const [recetas] = await obtenerRecetasDB();
     //console.log(recetas[0]) de esta manera regresamos los objetos, sin ser parte de una lista
-    console.log(recetas);
+    //console.log(recetas);
     res.status(200).json(recetas);
   } catch (error) {
     console.error("error en consulta", error);
