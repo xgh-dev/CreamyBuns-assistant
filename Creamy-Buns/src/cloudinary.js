@@ -22,7 +22,8 @@ export const loadImage = async (file) => {
     .post(
       `https://api.cloudinary.com/v1_1/${CloudName}/image/upload
 `,
-      formData
+      formData,
+      { headers: { "X-Requested-With": "XMLHttpRequest" } }//con esos header le indicamo a cloudinary que hacemos la request desde java script en lugar de una solicitud estandar del navegador, con esto evitamos problemas con cors por que identifia que la peticion viene de un cliente legitimo
     )
     .then((response) => {
       const datos = response.data;

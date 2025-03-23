@@ -1,5 +1,3 @@
-//aqui definiremos el comportamiento de la funcion relacionada a la ruta perzonalizada de cada consulta y la conectaremos con el servicio que se comunica con la base de datos
-import { detectarTipoDeImagen } from "../helpers/funcionDeDeteccion.js";
 
 import {
   obtenerRecetasDB,
@@ -21,7 +19,7 @@ export const obtenerRecetasController = async (req, res) => {
 
 export const agregarNuevaRecetaController = async (req, res) => {
   try {
-    console.log("datos de la request", req.body);
+    //console.log("datos de la request", req.body);
     // Llamar al servicio que guarda los datos en la base de datos
     await crearRecetaDB(req.body);
     //console.log("Receta creada exitosamente");
