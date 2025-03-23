@@ -27,7 +27,7 @@ const ItemList = ({ receta }) => {
       setImagenURL(datosReceta.imagen);
     }
   }, []);
-  console.log(datosReceta);
+  //console.log(datosReceta);
   return (
     <Link
       to={`/receta/${datosReceta.id}`}

@@ -22,7 +22,7 @@ export async function obtenerRecetasApi() {
 
 export async function nuevaRecetaApi(datos) {
   datos.imagen = await loadImage(datos.imagen)
-  console.log(datos)
+  //console.log(datos)
   try {
     console.log("api de nueva receta funcionando");
     const consulta = await fetch(`${apiUrl}/publicarReceta`, {
