@@ -1,6 +1,6 @@
 //crearemos las consultas a la api
 import { useState, useEffect } from "react";
-
+import { loadImage } from "./cloudinary.js";
 
 //puerto del servidor
 const port = import.meta.env.VITE_PORT;
@@ -13,7 +13,7 @@ export async function obtenerRecetasApi() {
   try {
     const query = await fetch(`${apiUrl}/obtenerRecetas`);
     const recetas = await query.json();
-    //console.log(recetas);
+    console.log(recetas);
     return recetas;
   } catch (error) {
     console.error("error en el fetch", error);
@@ -21,28 +21,16 @@ export async function obtenerRecetasApi() {
 }
 
 export async function nuevaRecetaApi(datos) {
-  const formData = new FormData();
-  
-  // Añadimos los datos que no son archivos
-  formData.append("nombre_del_postre", datos.nombre_del_postre);
-  formData.append("precio", datos.precio);
-  formData.append("ingredientes", datos.ingredientes);
-  formData.append("procedimiento", datos.procedimiento);
-  formData.append("observaciones", datos.observaciones);
-
-  // Convertimos la imagen a un Blob y la añadimos al FormData
-  if (datos.imagen instanceof File) {
-    const blob = new Blob([datos.imagen], { type: datos.imagen.type });
-    formData.append("imagen", blob, datos.imagen.name || "imagen.jpg");
-  } else if (datos.imagen) {
-    console.log("El campo 'imagen' no es un archivo válido.");
-  }
-  //console.log(formData)
+  datos.imagen = await loadImage(datos.imagen)
+  console.log(datos)
   try {
     console.log("api de nueva receta funcionando");
-    const consulta = await fetch(`${apiUrl}/puclicarReceta`, {
+    const consulta = await fetch(`${apiUrl}/publicarReceta`, {
       method: "POST",
-      body: formData, // Enviamos el FormData con los datos y la imagen, en este caso no usamos json.sringify por que enviamos un FormData
+      headers: {
+        "Content-Type": "application/json", // Importante para enviar JSON
+      },
+      body: JSON.stringify(datos), // Enviamos el FormData con los datos y la imagen, en este caso no usamos json.sringify por que enviamos un FormData
     });
 
     const respuesta = await consulta.json();
@@ -50,7 +38,6 @@ export async function nuevaRecetaApi(datos) {
   } catch (error) {
     console.error("error en cargar la api de nueva receta", error);
   }
-  
 }
 
 

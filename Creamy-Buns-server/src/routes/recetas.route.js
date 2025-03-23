@@ -10,7 +10,7 @@ const recetasRouter = Router();
 recetasRouter.get('/obtenerRecetas',obtenerRecetasController)
 
 //ruta post
-recetasRouter.post('/puclicarReceta',agregarNuevaRecetaController)
+recetasRouter.post('/publicarReceta',agregarNuevaRecetaController)
 
 //ruta put
 recetasRouter.put('/actualizarReceta/:id',(req,res) => {

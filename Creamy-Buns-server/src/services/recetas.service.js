@@ -15,18 +15,19 @@ export async function crearRecetaDB(datos) {
   //console.log("conectando con el servicio para crear receta");
   //desestructuraremos los datos
   const {
-    nombre_del_postre,
+    nombre,
     precio,
     ingredientes,
     procedimiento,
     observaciones,
     imagen,
   } = datos;
+  //console.log('datos en el servicio',datos)
   try {
     await conexion.query(
-      "INSERT INTO recetas (nombre_del_postre,precio,ingredientes,procedimiento,observaciones,imagen) VALUES (?,?,?,?,?,?)",
+      "INSERT INTO recetas (nombre,precio,ingredientes,procedimiento,observaciones,imagen) VALUES (?,?,?,?,?,?)",
       [
-        nombre_del_postre,
+        nombre,
         precio,
         ingredientes,
         procedimiento,

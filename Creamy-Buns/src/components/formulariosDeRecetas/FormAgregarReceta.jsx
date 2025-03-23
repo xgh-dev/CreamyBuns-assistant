@@ -1,6 +1,14 @@
 import { RecetarioContext } from "../contextos/RecetarioContext";
 import { useContext, useState, useEffect } from "react";
-import { ContenedorDeFormulario,ContenedorDeEtiquetasForm,Formulario,Input,InputSubmit,Label,InputFile } from "./FormsRecetario.styled.js";
+import {
+  ContenedorDeFormulario,
+  ContenedorDeEtiquetasForm,
+  Formulario,
+  Input,
+  InputSubmit,
+  Label,
+  InputFile,
+} from "./FormsRecetario.styled.js";
 
 const FormAgregarReceta = () => {
   //uso de contexto
@@ -14,7 +22,7 @@ const FormAgregarReceta = () => {
 
   //hook para capturar los datos
   const [nuevaReceta, setNuevaReceta] = useState({
-    nombre_del_postre: "",
+    nombre: "",
     ingredientes: "",
     procedimiento: "",
     observaciones: "",
@@ -29,21 +37,17 @@ const FormAgregarReceta = () => {
     e.preventDefault(); //sin esto crearemos renderizados innecesarios
     setError(false);
     //para validar varias variables con un every y acortar las lineas de codigo metemos las variables en una lista y esa lista la evaluamos con every
-    if (
-      [
-        nuevaReceta.nombre_del_postre,
-        nuevaReceta.ingredientes,
-        nuevaReceta.procedimiento,
-      ].every((value) => value !== "")
-    ) {
+    if (nuevaReceta.nombre !== "") {
       //api de agregar receta
       nuevaRecetaApi(nuevaReceta);
       //console.log(nuevaReceta);
       setListaDeRecetas([
         ...listaDeRecetas,
         new Receta(
-          listaDeRecetas.length > 0 ? listaDeRecetas[listaDeRecetas.length - 1].id + 1 : 1,
-          nuevaReceta.nombre_del_postre,
+          listaDeRecetas.length > 0
+            ? listaDeRecetas[listaDeRecetas.length - 1].id + 1
+            : 1,
+          nuevaReceta.nombre,
           nuevaReceta.precio,
           nuevaReceta.ingredientes,
           nuevaReceta.procedimiento,
@@ -52,7 +56,7 @@ const FormAgregarReceta = () => {
         ),
       ]);
       setNuevaReceta({
-        nombre_del_postre: "",
+        nombre: "",
         ingredientes: "",
         procedimiento: "",
         observaciones: "",
@@ -73,21 +77,17 @@ const FormAgregarReceta = () => {
   return (
     <>
       <ContenedorDeFormulario>
-        <Formulario
-          action=""
-          onSubmit={handleFormAgregarReceta}
-         
-        >
+        <Formulario action="" onSubmit={handleFormAgregarReceta}>
           <ContenedorDeEtiquetasForm>
             <Label>Nombre de la receta</Label>
             <Input
               type="text"
               placeholder="Ingresar nuevo nombre"
-              value={nuevaReceta.nombre_del_postre}
+              value={nuevaReceta.nombre}
               onChange={(e) =>
                 setNuevaReceta({
                   ...nuevaReceta,
-                  nombre_del_postre: e.target.value,
+                  nombre: e.target.value,
                 })
               }
             />

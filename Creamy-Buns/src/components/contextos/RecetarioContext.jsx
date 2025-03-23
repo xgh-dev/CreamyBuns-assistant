@@ -23,7 +23,7 @@ export const RecetarioContextProvider = ({ children }) => {
       (receta) =>
         new Receta(
           receta.id,
-          receta.nombre_del_postre,
+          receta.nombre,
           receta.precio,
           receta.ingredientes,
           receta.procedimiento,
