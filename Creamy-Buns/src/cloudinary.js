@@ -7,7 +7,7 @@ export const loadImage = async (file) => {
   //agregamos parametros al form data
   formData.append("file", file); //agrega el archivo
   //indica la carpeta
-  formData.append("folder", "CreamyBuns");
+  formData.append("upload_preset", "CreamyBuns");
   //indicar la api_key
   formData.append("api_key", ApiKey);
   //indicar el contador de feha
@@ -25,4 +25,5 @@ export const loadImage = async (file) => {
   );
   const respuesta = await consultaCloaudinary.json()
   console.log(respuesta)
+  return respuesta.secure_url
 };
