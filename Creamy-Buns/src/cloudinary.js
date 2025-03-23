@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const ApiKey = import.meta.env.VITE_API_KEY;
 const CloudName = import.meta.env.VITE_CLOUD_NAME;
 
@@ -15,15 +17,16 @@ export const loadImage = async (file) => {
   //indicar el signature, no es neesario
 
   //ahora debemos hacer el fetch que consule a la api y mande el form data
-  const consultaCloaudinary = await fetch(
-    `https://api.cloudinary.com/v1_1/${CloudName}/image/upload
+  //usamos axios por que se presta mejor a consultas de cloudinary
+  return axios
+    .post(
+      `https://api.cloudinary.com/v1_1/${CloudName}/image/upload
 `,
-    {
-      method: "POST",
-      body: formData,
-    }
-  );
-  const respuesta = await consultaCloaudinary.json()
-  console.log(respuesta)
-  return respuesta.secure_url
+      formData
+    )
+    .then((response) => {
+      const datos = response.data;
+      const archivoUrl = datos.secure_url;
+      return archivoUrl;
+    });
 };

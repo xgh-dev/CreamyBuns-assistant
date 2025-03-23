@@ -27,7 +27,7 @@ const FormAgregarReceta = () => {
     procedimiento: "",
     observaciones: "",
     imagen: null,
-    precio: "",
+    precio: 0,
   });
   //hook para proteger de errores
   const [error, setError] = useState(false);
@@ -61,7 +61,7 @@ const FormAgregarReceta = () => {
         procedimiento: "",
         observaciones: "",
         imagen: null,
-        precio: "",
+        precio: 0,
       });
     } else {
       setError(true);
