@@ -9,7 +9,9 @@ CREATE TABLE recetas (
     ingredientes TEXT,
     procedimiento TEXT,
     observaciones TEXT,
-    imagen TEXT)
+    imagen_id INT,
+    FOREIGN KEY (imagen_id) REFERENCES imagenes(id)
+    )
 
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,4 +20,11 @@ CREATE TABLE clientes (
     telefono VARCHAR(255),
     correo VARCHAR(255),
     direccion VARCHAR(255)
+)
+
+CREATE TABLE imagenes (
+    id int AUTO_INCREMENT PRIMARY_KEY,
+    asset_id TEXT,
+    public_id TEXT,
+    secure_url TEXT
 )
