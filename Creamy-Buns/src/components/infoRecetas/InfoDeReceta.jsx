@@ -13,21 +13,21 @@ const InfoDeReceta = () => {
 
   if (isLoading == false) {
     //de esta forma accedemos al ultimo caracter del array datos.ingredientes[datos.ingredientes.length - 1] 
-    if (datos.ingredientes[datos.ingredientes.length - 1] != '\r'){
-      datos.ingredientes = datos.ingredientes.concat('\r');
+    if (datos.ingredientes[datos.ingredientes.length - 1] != '\n'){
+      datos.ingredientes = datos.ingredientes.concat('\n');
       //concat es un metodo de lista por lo tanto nos retorna una lista nueva y por lo tanto esta lista debemos guardarla en algun lugar, este lugar siendo el mismo lugar de donde surge la lista
     }
-    if (datos.procedimiento[datos.procedimiento.length - 1] != '\r'){
-      datos.procedimiento = datos.procedimiento.concat('\r');
+    if (datos.procedimiento[datos.procedimiento.length - 1] != '\n'){
+      datos.procedimiento = datos.procedimiento.concat('\n');
     }
-    if (datos.observaciones[datos.observaciones.length - 1] != '\r'){
-      datos.observaciones = datos.observaciones.concat('\r');
+    if (datos.observaciones[datos.observaciones.length - 1] != '\n'){
+      datos.observaciones = datos.observaciones.concat('\n');
     }
 
     let ingrediente = ""; //esta variable crea el string de un ingrediente y la manda a la variable de la lista
     let llave = 0; //para poder incrementar este contador lo declaramos afuera del for y dentro del for lo incrementamos, para que con cada iteracion este se incremente
     for (let index = 0; index < datos.ingredientes.length; index++) {
-      if (datos.ingredientes[index] !== "\r") {
+      if (datos.ingredientes[index] !== "\n") {
         //console.log(datos.ingredientes[index])//hasta aqui nos imprime cada elemento del string
         ingrediente = ingrediente + datos.ingredientes[index];
       } else {
@@ -45,7 +45,7 @@ const InfoDeReceta = () => {
     let paso = "";
     let numeroDePaso = 0;
     for (let index = 0; index < datos.procedimiento.length; index++) {
-      if (datos.procedimiento[index] !== "\r") {
+      if (datos.procedimiento[index] !== "\n") {
         //creamos la concatenacion de cada elemento del array
         paso = paso + datos.procedimiento[index];
       } else {
@@ -58,7 +58,7 @@ const InfoDeReceta = () => {
     let observacion = "";
     let numeroDeObservacion = 0;
     for (let index = 0; index < datos.observaciones.length; index++) {
-      if (datos.observaciones[index] !== "\r") {
+      if (datos.observaciones[index] !== "\n") {
         observacion = observacion + datos.observaciones[index];
       } else {
         numeroDeObservacion = numeroDeObservacion + 1;
