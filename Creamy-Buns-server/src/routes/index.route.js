@@ -1,6 +1,7 @@
 import { Router } from "express"
 import recetasRouter from "./recetas.route.js"
 import clientesRouter from "./clientes.route.js"
+import imagenesRouter from "./imagenes.route.js"
 
 const indexRouter = Router()
 
@@ -23,6 +24,10 @@ indexRouter.use(`/${prefijoApi}`, recetasRouter)
 
 //definir las rutas relacionadas a los clientes
 indexRouter.use(`/${prefijoApi}`,clientesRouter)
+
+//definir las rutas relacionada a la carga de imagenes
+indexRouter.use(`/${prefijoApi}`,imagenesRouter)
+
 
 //definir la ruta que redirija la consulta relacionada con los pedidos
 

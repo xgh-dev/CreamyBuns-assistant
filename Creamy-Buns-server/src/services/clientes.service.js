@@ -3,7 +3,7 @@ import conexion from "../config/database.js";
 //aqui crearemos los servicios, estas son funciones asincronas que se conectan a la base datos
 
 export async function obtenerClientesDB() {
-  console.log("Conectando con el servicio de obtención de clientes");
+  //console.log("Conectando con el servicio de obtención de clientes");
   try {
     //crear una constante que almacene los datos
     const [datos] = await conexion.query("SELECT * FROM Clientes");
@@ -18,11 +18,13 @@ export async function obtenerClientesDB() {
 export async function crearClienteService(datos) {
   const { nombre, apellidos, telefono, correo, direccion } = datos;
   try {
-    await conexion.query(
+    const [consulta] = await conexion.query(
       "INSERT INTO clientes (nombre,apellidos,telefono,correo,direccion) values (?,?,?,?,?)",
       [nombre, apellidos, telefono, correo, direccion]
     );
     console.log("cliente creado correctamente");
+    //asi tomamos el id que asertamos insertId
+    console.log(consulta.insertId)
     return true;
   } catch (error) {
     console.error("error en el servicio de agregar clientes", error);

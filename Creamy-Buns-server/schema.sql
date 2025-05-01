@@ -23,8 +23,13 @@ CREATE TABLE clientes (
 )
 
 CREATE TABLE imagenes (
-    id int AUTO_INCREMENT PRIMARY_KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     asset_id TEXT,
     public_id TEXT,
     secure_url TEXT
 )
+
+/*consulta para hacer inner join de las tablas*/
+SELECT recetas.id,recetas.nombre,recetas.precio,recetas.ingredientes,recetas.procedimiento,recetas.observaciones,imagenes.secure_url
+FROM recetas
+inner join imagenes ON recetas.imagen = imagenes.id;

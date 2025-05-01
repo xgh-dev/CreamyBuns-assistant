@@ -6,14 +6,14 @@ import { loadImage } from "./cloudinary.js";
 const port = import.meta.env.VITE_PORT;
 
 //url de la apo
-const apiUrl = `http://localhost:${port}/creamybuns`;
+export const apiUrl = `http://localhost:${port}/creamybuns`;
 
 //lista de recetas, esta sera la funcion que ejecute el fetch y guarde los datos
 export async function obtenerRecetasApi() {
   try {
     const query = await fetch(`${apiUrl}/obtenerRecetas`);
     const recetas = await query.json();
-    //console.log(recetas);
+    console.log(recetas);
     return recetas;
   } catch (error) {
     console.error("error en el fetch", error);

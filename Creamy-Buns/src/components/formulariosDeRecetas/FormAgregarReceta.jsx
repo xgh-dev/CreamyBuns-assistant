@@ -140,7 +140,7 @@ const FormAgregarReceta = () => {
               onChange={(e) =>
                 setNuevaReceta({
                   ...nuevaReceta,
-                  precio: Number(e.target.value),
+                  precio: e.target.value,
                 })
               }
             />

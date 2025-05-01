@@ -4,36 +4,35 @@ import conexion from "../config/database.js";
 export async function obtenerRecetasDB() {
   //console.log("conectando con el servicio");
   try {
-    const datos = conexion.query("SELECT * FROM recetas");
+    const datos = await conexion.query(
+      `SELECT recetas.id, recetas.nombre, recetas.precio, recetas.ingredientes, 
+              recetas.procedimiento, recetas.observaciones, imagenes.secure_url 
+       FROM recetas 
+       INNER JOIN imagenes ON recetas.imagen = imagenes.id;`
+    );
+    //console.log(datos[0])
     return datos;
   } catch (error) {
     console.error("error al obtener los datos de la base de datos", datos);
   }
 }
+/*
+`SELECT recetas.id, recetas.nombre, recetas.precio, recetas.ingredientes, 
+              recetas.procedimiento, recetas.observaciones, imagenes.secure_url 
+       FROM recetas 
+       INNER JOIN imagenes ON recetas.imagen = imagenes.id;`
+*/
 
 export async function crearRecetaDB(datos) {
   //console.log("conectando con el servicio para crear receta");
   //desestructuraremos los datos
-  const {
-    nombre,
-    precio,
-    ingredientes,
-    procedimiento,
-    observaciones,
-    imagen,
-  } = datos;
+  const { nombre, precio, ingredientes, procedimiento, observaciones, imagen } =
+    datos;
   //console.log('datos en el servicio',datos)
   try {
     await conexion.query(
       "INSERT INTO recetas (nombre,precio,ingredientes,procedimiento,observaciones,imagen) VALUES (?,?,?,?,?,?)",
-      [
-        nombre,
-        precio,
-        ingredientes,
-        procedimiento,
-        observaciones,
-        imagen,
-      ]
+      [nombre, precio, ingredientes, procedimiento, observaciones, imagen]
     );
     console.log("Receta nueva agregada");
   } catch (error) {
@@ -44,9 +43,7 @@ export async function crearRecetaDB(datos) {
 export async function eliminarRecetaDB(id) {
   //console.log("Accediendo al servicio de eliminar");
   try {
-     await conexion.query("DELETE FROM recetas WHERE id = ?", [
-      id,
-    ]);
+    await conexion.query("DELETE FROM recetas WHERE id = ?", [id]);
     console.log("Receta eliminada exitosamente");
   } catch (error) {
     console.error("Error en el servicio de eliminar", error);

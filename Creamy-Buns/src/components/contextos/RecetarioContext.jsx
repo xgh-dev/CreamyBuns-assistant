@@ -28,7 +28,7 @@ export const RecetarioContextProvider = ({ children }) => {
           receta.ingredientes,
           receta.procedimiento,
           receta.observaciones,
-          receta.imagen
+          receta.secure_url
         )
     );
     //funciona mi clase
