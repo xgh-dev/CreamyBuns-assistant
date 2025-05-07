@@ -8,7 +8,7 @@ import {
 } from "./ModalParaClientes.styled.js";
 import { ClientesContext } from "../contextos/ClientesContext";
 
-const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
+const ModalParaCliente = ({ cliente, setIsOpen }) => {
   //hook para obtener el contexto
   const  {listaDeClientes, setListaDeClientes} = useContext(ClientesContext);
 

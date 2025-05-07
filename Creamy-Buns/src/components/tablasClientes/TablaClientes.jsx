@@ -41,7 +41,6 @@ const TablaDeClientes = () => {
       {isOpen && (
         <ModalParaCliente
           cliente={cliente}
-          isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
       )}

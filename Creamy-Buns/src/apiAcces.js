@@ -133,8 +133,8 @@ export async function eliminarClienteApi(id) {
 }
 
 export async function actualizarCliente(id,datos) {
-  console.log(id)
-  console.log('actualizar cliente',datos)
+  //console.log(id)
+  //console.log('actualizar cliente',datos)
   try {
     const consulta = await fetch(`${apiUrl}/actualizarCliente/${id}`,{
       method:'PUT',
