@@ -35,6 +35,7 @@ const FormAgregarReceta = () => {
   //funcion que agregue los datos
   const handleFormAgregarReceta = (e) => {
     e.preventDefault(); //sin esto crearemos renderizados innecesarios
+    //para eventos que partan de un formulario se usa preventDefault para evitar que se recargue la pagina
     setError(false);
     //para validar varias variables con un every y acortar las lineas de codigo metemos las variables en una lista y esa lista la evaluamos con every
     if (nuevaReceta.nombre !== "") {

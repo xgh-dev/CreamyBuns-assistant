@@ -46,10 +46,6 @@ const ModalParaCliente = ({ cliente, isOpen, setIsOpen }) => {
       setListaDeClientes(nuevaLista);
     }
   };
-  //avisar que seleccionamos un cliente
-  /*useEffect(() => {
-    console.log(cliente.retornarDatos())
-  })*/
 
   return (
     <ContenedorDelModal>

@@ -31,14 +31,12 @@ const ModalAgregarCliente = () => {
   };
 
   //funcion para cerrar el modal
-  const closeModal = (e) => {
-    e.preventDefault();
+  const closeModal = () => {
     setIsOpen(false);
     console.log("modal cerrado");
   };
 
-  const SaveCloseModal = (e) => {
-    e.preventDefault();
+  const SaveCloseModal = () => {
     setIsOpen(false);
     console.log("modal cerrado y datos guardados");
     console.log(agregarCliente);
@@ -70,7 +68,7 @@ const ModalAgregarCliente = () => {
 
   return (
     <>
-      <OpenButton onClick={() => openModal()}>Agregar Cliente</OpenButton>
+      <OpenButton onClick={openModal}>Agregar Cliente</OpenButton>
       {isOpen ? (
         <ContenedorDelModal>
           {" "}
