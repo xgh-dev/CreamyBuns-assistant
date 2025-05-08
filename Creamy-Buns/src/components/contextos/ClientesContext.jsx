@@ -6,7 +6,7 @@ import { obtenerClientesApi, crearClientesApi } from "../../apiAcces.js";
 export const ClientesContext = createContext(null);
 
 //crear la constante que sera el contenxtProvider que envolvera elementos para que los elementos dentro puedan usar la constante del contexto
-export const ClientesContextProvider = ({ children }) => {
+const ClientesContextProvider = ({ children }) => {
   //hook de la lista de clientes
   const [listaDeClientes, setListaDeClientes] = useState([]);
   //hook de la copia de recuperacion de la lista de clientes
@@ -56,3 +56,5 @@ export const ClientesContextProvider = ({ children }) => {
     </ClientesContext.Provider>
   );
 };
+
+export default ClientesContextProvider;

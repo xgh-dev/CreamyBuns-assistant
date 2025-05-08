@@ -8,7 +8,7 @@ import { Receta } from "../../clases/claseReceta.js";
 
 export const RecetarioContext = createContext(null);
 
-export const RecetarioContextProvider = ({ children }) => {
+const RecetarioContextProvider = ({ children }) => {
   //hook de la lista de recetas
   const [listaDeRecetas, setListaDeRecetas] = useState([]);
 
@@ -56,3 +56,5 @@ export const RecetarioContextProvider = ({ children }) => {
     </RecetarioContext.Provider>
   );
 };
+
+export default RecetarioContextProvider;
