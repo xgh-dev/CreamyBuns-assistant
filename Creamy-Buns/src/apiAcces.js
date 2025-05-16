@@ -21,7 +21,11 @@ export async function obtenerRecetasApi() {
 }
 
 export async function nuevaRecetaApi(datos) {
-  datos.imagen = await loadImage(datos.imagen)
+  if (datos.imagen != null) {
+    datos.imagen = await loadImage(datos.imagen);
+  } else {
+    datos.imagen = ''
+  }
   //console.log(datos)
   try {
     console.log("api de nueva receta funcionando");
@@ -39,7 +43,6 @@ export async function nuevaRecetaApi(datos) {
     console.error("error en cargar la api de nueva receta", error);
   }
 }
-
 
 export async function eliminarRecetaApi(id) {
   try {
@@ -86,66 +89,65 @@ export function useObtenerRecetaPorID(id) {
   return { isLoading, error, datos };
 }
 
-export async function obtenerClientesApi(){
+export async function obtenerClientesApi() {
   //inicializamos el trycatch
   try {
     //inicializamos la consulta
-    const consulta = await fetch(`${apiUrl}/obtenerClientes`)
+    const consulta = await fetch(`${apiUrl}/obtenerClientes`);
     //transformamos los datos a tipo json
-    const respuesta = consulta.json()
+    const respuesta = consulta.json();
     //retornamos
-    return respuesta
+    return respuesta;
   } catch (error) {
-    console.error('error en el fetch de obtencion de clientes',error)
+    console.error("error en el fetch de obtencion de clientes", error);
   }
 }
 
 export async function crearClientesApi(datos) {
   try {
-    const consulta = await fetch(`${apiUrl}/crearCliente`,{
-      method:'POST',
-      body:JSON.stringify(datos),
-      headers:{
-        "Content-Type":'application/json'
-      }
-    })
-    const respuesta = await consulta.json()
-    console.log('se agrego correctamente el nuevo cliente',respuesta)
+    const consulta = await fetch(`${apiUrl}/crearCliente`, {
+      method: "POST",
+      body: JSON.stringify(datos),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const respuesta = await consulta.json();
+    console.log("se agrego correctamente el nuevo cliente", respuesta);
   } catch (error) {
-    console.error('error en el fetch de crear clientes',error)
+    console.error("error en el fetch de crear clientes", error);
   }
-  
 }
 
 export async function eliminarClienteApi(id) {
   try {
-    const consulta = await fetch(`${apiUrl}/eliminarCliente/${id}`,{
-      method: 'DELETE',
+    const consulta = await fetch(`${apiUrl}/eliminarCliente/${id}`, {
+      method: "DELETE",
       headers: {
-        "Content-Type":'application/json'
-      }
-    })
-    const respuesta = await consulta.json(consulta)
-    console.log('cliente eliminado',respuesta)
+        "Content-Type": "application/json",
+      },
+    });
+    const respuesta = await consulta.json(consulta);
+    console.log("cliente eliminado", respuesta);
   } catch (error) {
-    console.error('error en la api de eliminar cliente',error)
-  }  
+    console.error("error en la api de eliminar cliente", error);
+  }
 }
 
-export async function actualizarCliente(id,datos) {
+export async function actualizarCliente(id, datos) {
   //console.log(id)
   //console.log('actualizar cliente',datos)
   try {
-    const consulta = await fetch(`${apiUrl}/actualizarCliente/${id}`,{
-      method:'PUT',
-      body: JSON.stringify(datos),//no olvidar que se debe mandar los datos como un json.stringigy para que se manden las llaves y valores
+    const consulta = await fetch(`${apiUrl}/actualizarCliente/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(datos), //no olvidar que se debe mandar los datos como un json.stringigy para que se manden las llaves y valores
       headers: {
-        "Content-Type":'application/json'
-      } 
-    })
-    const respuesta = await consulta.json()
-    console.log('datos actualizados',respuesta)
+        "Content-Type": "application/json",
+      },
+    });
+    const respuesta = await consulta.json();
+    console.log("datos actualizados", respuesta);
   } catch (error) {
-    console.error('error en la api de actualizar clientes',error)
+    console.error("error en la api de actualizar clientes", error);
   }
 }

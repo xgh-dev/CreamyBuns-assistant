@@ -2,18 +2,15 @@
 import conexion from "../config/database.js";
 
 export async function obtenerRecetasDB() {
-  //console.log("conectando con el servicio");
   try {
     const datos = await conexion.query(
-      `SELECT recetas.id, recetas.nombre, recetas.precio, recetas.ingredientes, 
-              recetas.procedimiento, recetas.observaciones, imagenes.secure_url 
-       FROM recetas 
-       INNER JOIN imagenes ON recetas.imagen = imagenes.id;`
+      `SELECT recetas.id, recetas.nombre, recetas.precio, recetas.ingredientes, recetas.procedimiento, recetas.observaciones,imagenes.secure_url 
+      FROM recetas 
+      LEFT JOIN imagenes ON recetas.imagen = imagenes.id;`
     );
-    //console.log(datos[0])
     return datos;
   } catch (error) {
-    console.error("error al obtener los datos de la base de datos", datos);
+    console.error("error al obtener los datos de la base de datos", error);
   }
 }
 /*
