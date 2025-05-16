@@ -7,8 +7,10 @@ import {
   Titulo,
   ContentContainer,
   ContentSectionForm,
-  ContentSectionList 
+  ContentSectionList,
+  ModalContainer
 } from "./Recetario.styled.js";
+import ModalAgregarReceta from "./Modals/ModalAgregarReceta.jsx";
 
 const Recetario = () => {
   return (
@@ -17,18 +19,26 @@ const Recetario = () => {
         <Header>
           <Titulo>Recetario</Titulo>
         </Header>
-          <ContentContainer>
-            <ContentSectionForm>
-              <FormRecetario />
-            </ContentSectionForm>
-            <ContentSectionList>
-              <ListaDeRecetas />
-            </ContentSectionList>
-          </ContentContainer>
+        <ContentContainer>
+          <ContentSectionForm>
+            <FormRecetario />
+          </ContentSectionForm>
+          <ContentSectionList>
+            <ListaDeRecetas />
+          </ContentSectionList>
+        </ContentContainer>
+        <ModalContainer>
+          <ModalAgregarReceta/>
+        </ModalContainer>
       </EstructuraDeRecetario>
     </>
   );
 };
 
+
+
 export default Recetario;
 
+/* 
+          <button onClick={() => {console.log('boton de agregar funcionando')}}>Agregar receta</button>
+*/

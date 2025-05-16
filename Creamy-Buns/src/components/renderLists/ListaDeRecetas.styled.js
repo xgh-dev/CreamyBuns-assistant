@@ -5,19 +5,19 @@ export const EstructuraDeListaDeRecetas = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 100%;
-  padding: 20px;
+  //padding: 20px;
   box-sizing: border-box;
 `;
 
 export const Header = styled.header`
   text-align: center;
-  margin-bottom: 0; /* Elimina el espacio entre el header y la lista */
 `;
 
 export const TituloH2 = styled.h2`
   font-size: 1.5rem;
   color: #333;
   font-weight: bold;
+  margin: 0px;
 `;
 
 export const ContenedorDeListaDeRecetas = styled.div`

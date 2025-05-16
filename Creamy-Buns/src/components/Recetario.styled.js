@@ -52,3 +52,8 @@ export const Titulo = styled.h1`
   margin: 0; /* Espaciado superior e inferior */
   padding: 10px; /* Espaciado interno */
 `;
+
+export const ModalContainer = styled.div`
+  margin: 10px auto;
+  
+` 
