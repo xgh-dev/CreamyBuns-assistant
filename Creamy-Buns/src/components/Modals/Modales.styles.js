@@ -48,15 +48,17 @@ export const CloseButton = styled.button`
   background-color: rgb(222, 191, 37);
   color: white;
   border-radius: 5px;
+  border:0;
 `;
 
 export const AgregarClienteButton = styled.button`
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
-  background-color:rgb(24, 201, 18);
+  background-color: rgb(24, 201, 18);
   color: white;
   border-radius: 5px;
+  border:0;
 `;
 
 export const ActualizarClienteButton = styled.button`
@@ -66,6 +68,7 @@ export const ActualizarClienteButton = styled.button`
   background: rgb(86, 222, 37);
   color: white;
   border-radius: 5px;
+  border:0;
 `;
 export const EliminarClienteButton = styled.button`
   padding: 10px 15px;
@@ -74,5 +77,38 @@ export const EliminarClienteButton = styled.button`
   background: #dc3545;
   color: white;
   border-radius: 5px;
+  border:0;
 `;
 
+export const BodyFormAgregarReceta = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  input {
+    display: block;
+    width: 100%;
+    //padding: 10px;
+    //margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  legend {
+    margin: 0;
+  }
+  input[type="submit"] {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgb(86, 222, 37);
+    color: white;
+    border-radius: 5px;
+  }
+  button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: rgb(222, 191, 37);
+    color: white;
+    border-radius: 5px;
+    border:0;
+  }
+`;

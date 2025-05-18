@@ -1,8 +1,13 @@
 // Crear un componente modal para agregar pedidos
 import { useState, useContext, useEffect } from "react";
 import { RecetarioContext } from "../contextos/RecetarioContext";
-import { ContenedorDelModal,Modal,OpenButton } from "./Modales.styles";
-
+import {
+  ContenedorDelModal,
+  Modal,
+  OpenButton,
+  BodyFormAgregarReceta,
+  CloseButton,
+} from "./Modales.styles";
 
 //crear el elemento mediante un array function
 const ModalAgregarReceta = () => {
@@ -81,11 +86,9 @@ const ModalAgregarReceta = () => {
       {isOpen ? (
         <ContenedorDelModal className="ModalgregarReceta">
           <Modal>
-          <form onSubmit={handleFormAgregarReceta}>
-            <fieldset>
-              <legend>Agregar nueva receta</legend>
-
-              <div>
+            <form onSubmit={handleFormAgregarReceta}>
+              <BodyFormAgregarReceta>
+                <legend >Agregar nueva receta</legend>
                 <label htmlFor="nombre">Nombre de la receta</label>
                 <input
                   id="nombre"
@@ -99,14 +102,11 @@ const ModalAgregarReceta = () => {
                     })
                   }
                 />
-              </div>
-
-              <div>
                 <label htmlFor="ingredientes">Ingredientes</label>
                 <textarea
                   id="ingredientes"
                   placeholder="Ingresar ingredientes"
-                  rows="5"
+                  rows="4"
                   value={nuevaReceta.ingredientes}
                   onChange={(e) =>
                     setNuevaReceta({
@@ -115,14 +115,11 @@ const ModalAgregarReceta = () => {
                     })
                   }
                 />
-              </div>
-
-              <div>
                 <label htmlFor="procedimiento">Procedimiento</label>
                 <textarea
                   id="procedimiento"
                   placeholder="Ingresar procedimiento"
-                  rows="5"
+                  rows="4"
                   value={nuevaReceta.procedimiento}
                   onChange={(e) =>
                     setNuevaReceta({
@@ -131,14 +128,11 @@ const ModalAgregarReceta = () => {
                     })
                   }
                 />
-              </div>
-
-              <div>
                 <label htmlFor="observaciones">Observaciones</label>
                 <textarea
                   id="observaciones"
                   placeholder="Campo opcional"
-                  rows="5"
+                  rows="4"
                   value={nuevaReceta.observaciones}
                   onChange={(e) =>
                     setNuevaReceta({
@@ -147,9 +141,6 @@ const ModalAgregarReceta = () => {
                     })
                   }
                 />
-              </div>
-
-              <div>
                 <label htmlFor="precio">Precio</label>
                 <input
                   id="precio"
@@ -163,9 +154,6 @@ const ModalAgregarReceta = () => {
                     })
                   }
                 />
-              </div>
-
-              <div>
                 <label htmlFor="imagen">Cargar imagen</label>
                 <input
                   id="imagen"
@@ -175,18 +163,13 @@ const ModalAgregarReceta = () => {
                     setNuevaReceta({ ...nuevaReceta, imagen: file });
                   }}
                 />
-              </div>
-
-              <div>
                 <input type="submit" value="Agregar" />
                 <button type="button" onClick={() => setIsOpen(false)}>
                   Cerrar
                 </button>
-              </div>
-
-              {error && <p>No pueden quedar campos vacíos</p>}
-            </fieldset>
-          </form>
+                {error && <p>No pueden quedar campos vacíos</p>}
+              </BodyFormAgregarReceta>
+            </form>
           </Modal>
         </ContenedorDelModal>
       ) : (
