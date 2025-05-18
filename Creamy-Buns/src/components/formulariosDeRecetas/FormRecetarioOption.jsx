@@ -1,31 +1,33 @@
-import FormBuscarReceta from "./FormBuscarReceta"
-import FormAgregarReceta from "./FormAgregarReceta"
-import FormEliminarReceta from "./FormEliminarReceta"
+import FormBuscarReceta from "./FormBuscarReceta";
+import FormAgregarReceta from "./FormAgregarReceta";
+import FormEliminarReceta from "./FormEliminarReceta";
 
-const FormRecetarioOption = ({option}) => {
-    
-    const TipoDeFormulario = () => {
-       if (option == 'buscar'){
-        return (
+const FormRecetarioOption = ({ option }) => {
+  const TipoDeFormulario = () => {
+    if (option == "buscar") {
+      return (
         <>
-            <FormBuscarReceta />
-        </>)
-       } else if (option== 'agregar'){
+          <FormBuscarReceta />
+        </>
+      );
+    } /*else if (option== 'agregar'){
         return (<>
             <FormAgregarReceta/>
         </>)
-       } else if (option == 'eliminar'){
-        return (<>
-            <FormEliminarReceta />
-        </>)
-       }
-    }
-
-    return (
+       }*/ else if (option == "eliminar") {
+      return (
         <>
-            <TipoDeFormulario />
+          <FormEliminarReceta />
         </>
-    )
-}
+      );
+    }
+  };
+
+  return (
+    <>
+      <TipoDeFormulario />
+    </>
+  );
+};
 
 export default FormRecetarioOption;

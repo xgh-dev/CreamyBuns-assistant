@@ -32,9 +32,9 @@ const FormRecetario = () => {
             <Option value="buscar" id="buscar">
               Buscar
             </Option>
-            <Option value="agregar" id="agregar" >
+            {/*<Option value="agregar" id="agregar" >
               Agregar
-            </Option>
+            </Option>*/}
             <Option value="eliminar" id="eliminar">
               Eliminar
             </Option>
