@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  ContenedorDelModal,
-  CloseButton,
-  Modal,
-  OpenButton,
-  SaveCloseButton,
-} from "./ModalAgregarClientes.styled.js";
+import { ContenedorDelModal,Modal,CloseButton, OpenButton,AgregarClienteButton } from "./Modales.styles.js";
 import { ClientesContext } from "../contextos/ClientesContext";
 import { useContext } from "react";
 
@@ -139,9 +133,9 @@ const ModalAgregarCliente = () => {
                   })
                 }
               />
-              <SaveCloseButton type="button" onClick={SaveCloseModal}>
+              <AgregarClienteButton type="button" onClick={SaveCloseModal}>
                 Guardar
-              </SaveCloseButton>
+              </AgregarClienteButton>
               <CloseButton type="button" onClick={closeModal}>
                 Cerrar
               </CloseButton>

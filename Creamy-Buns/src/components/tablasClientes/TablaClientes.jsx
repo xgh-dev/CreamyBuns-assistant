@@ -1,7 +1,7 @@
 import { TableHeader } from "../tablasClientes/TablaClientes.styled.js";
 import { ClientesContext } from "../contextos/ClientesContext.jsx";
 import { useContext, useState } from "react";
-import ModalParaCliente from "../Modals/ModalParaCliente.jsx";
+import ModalDatosCliente from "../Modals/ModalDatosCliente.jsx";
 
 const TablaDeClientes = () => {
   //llamar al contexto
@@ -39,7 +39,7 @@ const TablaDeClientes = () => {
       </table>
       {/* modal para cada cliente */}
       {isOpen && (
-        <ModalParaCliente
+        <ModalDatosCliente
           cliente={cliente}
           setIsOpen={setIsOpen}
         />

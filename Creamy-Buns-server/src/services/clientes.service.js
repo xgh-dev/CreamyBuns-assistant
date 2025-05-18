@@ -22,9 +22,9 @@ export async function crearClienteService(datos) {
       "INSERT INTO clientes (nombre,apellidos,telefono,correo,direccion) values (?,?,?,?,?)",
       [nombre, apellidos, telefono, correo, direccion]
     );
-    console.log("cliente creado correctamente");
+    //console.log("cliente creado correctamente");
     //asi tomamos el id que asertamos insertId
-    console.log(consulta.insertId)
+    //console.log(consulta.insertId)
     return true;
   } catch (error) {
     console.error("error en el servicio de agregar clientes", error);

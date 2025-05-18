@@ -40,3 +40,39 @@ export const OpenButton = styled.button`
   color: white;
   border-radius: 5px;
 `;
+
+export const CloseButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(222, 191, 37);
+  color: white;
+  border-radius: 5px;
+`;
+
+export const AgregarClienteButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color:rgb(24, 201, 18);
+  color: white;
+  border-radius: 5px;
+`;
+
+export const ActualizarClienteButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgb(86, 222, 37);
+  color: white;
+  border-radius: 5px;
+`;
+export const EliminarClienteButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #dc3545;
+  color: white;
+  border-radius: 5px;
+`;
+

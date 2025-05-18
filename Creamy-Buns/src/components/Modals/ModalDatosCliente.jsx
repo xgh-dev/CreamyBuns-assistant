@@ -1,14 +1,9 @@
 import { useState, useContext } from "react";
-import {
-  CloseButton,
-  ContenedorDelModal,
-  Modal,
-  ActualizarButton,
-  EliminarButton,
-} from "./ModalParaClientes.styled.js";
-import { ClientesContext } from "../contextos/ClientesContext";
 
-const ModalParaCliente = ({ cliente, setIsOpen }) => {
+import { CloseButton,ContenedorDelModal,Modal,ActualizarClienteButton,EliminarClienteButton } from "./Modales.styles.js";
+import { ClientesContext } from "../contextos/ClientesContext.jsx";
+
+const ModalDatosCliente = ({ cliente, setIsOpen }) => {
   //hook para obtener el contexto
   const  {listaDeClientes, setListaDeClientes} = useContext(ClientesContext);
 
@@ -107,22 +102,22 @@ const ModalParaCliente = ({ cliente, setIsOpen }) => {
               setDatosNuevos({ ...datosNuevos, direccion: e.target.value })
             }
           />
-          <ActualizarButton type="button" onClick={funcionParaActualizarDatos}>
+          <ActualizarClienteButton type="button" onClick={funcionParaActualizarDatos}>
             Actualizar
-          </ActualizarButton>
+          </ActualizarClienteButton>
           <CloseButton type="button" onClick={() => setIsOpen(false)}>
             Cerrar
           </CloseButton>
-          <EliminarButton type="button" onClick={funcionParaEliminarCliente}>
+          <EliminarClienteButton type="button" onClick={funcionParaEliminarCliente}>
             Eliminar
-          </EliminarButton>
+          </EliminarClienteButton>
         </form>
       </Modal>
     </ContenedorDelModal>
   );
 };
 
-export default ModalParaCliente;
+export default ModalDatosCliente;
 
 /* para comparar objtos por valores en un condicional usaremos la funcion JSON.stringify() para comparaciones de pocos datos, pero no es tan eficiente por que igual compara  quelas llaves esten en el mismo orden, por lo tanto la mejor opcion es utilizar _.isEqualde de la libreria Lodash donde el orden de las llaves no importa siempre
 */
