@@ -36,7 +36,7 @@ export const OpenButton = styled.button`
   padding: 10px 15px;
   cursor: pointer;
   border: none;
-  background: #007bff;
+  background: #9e7237;
   color: white;
   border-radius: 5px;
 `;
