@@ -54,3 +54,8 @@ export const ContenedorDeAgregarCliente = styled.div`
   margin-top: auto;
   margin-bottom: 10px;
 `;
+
+export const ModalContainer = styled.div`
+  margin: 10px auto;
+  
+` 

@@ -4,7 +4,7 @@ import {
   ContenedorSecundario,
   ContenedorDeTabla,
   Tituloh1,
-  ContenedorDeAgregarCliente,
+  ModalContainer
 } from "./Clientes.styled.js";
 import ModalAgregarCliente from "./Modals/ModalAgregarCliente.jsx";
 import TablaDeClientes from "./tablasClientes/TablaClientes.jsx";
@@ -15,6 +15,7 @@ const Clientes = () => {
 
   //hook de la lista de los clientes
   //const [listaDeClientes,setListaDeClientes] = useState(clientes)
+
   
   return (
     <>
@@ -27,10 +28,10 @@ const Clientes = () => {
           <ContenedorDeTabla className="divTabla">
             <TablaDeClientes />
           </ContenedorDeTabla>
-          <ContenedorDeAgregarCliente>
-            <ModalAgregarCliente />
-          </ContenedorDeAgregarCliente>
         </ContenedorSecundario>
+        <ModalContainer>
+          <ModalAgregarCliente/>
+        </ModalContainer>
       </ContenedorPrincipal>
     </>
   );
