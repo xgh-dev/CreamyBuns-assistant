@@ -85,14 +85,13 @@ const InfoDeReceta = () => {
               <ContenedorDeImagen className="imagen-contenedor">
                 <ImagenPosicion
                   className="imagen-superior"
-                  src={datos.imagen}
+                  src={datos.secure_url}
                   alt="Descripción de la imagen"
                 />
               </ContenedorDeImagen>
               <Section className="ingredientes-section">
                 <SectionTitulo className="section-title">Ingredientes</SectionTitulo>
                 <article className="ingredientes-article">
-                  <SectionSubTitulo className="sub-title">Base</SectionSubTitulo>
                   <Ul className="ingredientes-list">{ingredientes}</Ul>
                 </article>
               </Section>
@@ -103,6 +102,9 @@ const InfoDeReceta = () => {
               <Section className="observaciones-section">
                 <SectionTitulo className="section-title">Observaciones</SectionTitulo>
                 <Ul className="observaciones-text">{observaciones}</Ul>
+              </Section>
+              <Section>
+                <SectionTitulo className="section-title">Precio: {datos.precio}$</SectionTitulo>
               </Section>
             </Main>
           </ContenedorDeInfoDeReceta>

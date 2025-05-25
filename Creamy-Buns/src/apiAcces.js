@@ -24,11 +24,11 @@ export async function nuevaRecetaApi(datos) {
   if (datos.imagen != null) {
     datos.imagen = await loadImage(datos.imagen);
   } else {
-    datos.imagen = ''
+    datos.imagen = "";
   }
   //console.log(datos)
   try {
-    console.log("api de nueva receta funcionando");
+    //console.log("api de nueva receta funcionando");
     const consulta = await fetch(`${apiUrl}/publicarReceta`, {
       method: "POST",
       headers: {
@@ -44,12 +44,19 @@ export async function nuevaRecetaApi(datos) {
   }
 }
 
-export async function eliminarRecetaApi(id) {
+export async function eliminarRecetaApi(id, public_id) {
   try {
     console.log("api de eliminar receta en proceso");
-    const consulta = await fetch(`${apiUrl}/eliminarReceta/${id}`, {
-      method: "DELETE",
-    }); //no olvidar asignar el metodo, ya que si no se especifica se toma como get
+    const consulta = await fetch(
+      `${apiUrl}/eliminarReceta`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({id,public_id})
+      }
+    ); //no olvidar asignar el metodo, ya que si no se especifica se toma como get
     const respuesta = await consulta.json();
     console.log("receta eliminada", respuesta);
   } catch (error) {

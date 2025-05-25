@@ -1,4 +1,5 @@
 import { eliminarRecetaApi } from "../apiAcces";
+import { destroyImage } from "../cloudinary";
 
 export class Receta {
   constructor(
@@ -8,7 +9,8 @@ export class Receta {
     ingredientes,
     procedimiento,
     observaciones,
-    imagen
+    imagen,
+    public_id
   ) {
     this.id = id;
     this.nombre = nombre;
@@ -17,6 +19,7 @@ export class Receta {
     this.procedimiento = procedimiento;
     this.observaciones = observaciones;
     this.imagen = imagen;
+    this.public_id = public_id;
   }
   mostrarDatos() {
     console.log("método mostrar datos", this.nombre);
@@ -24,7 +27,9 @@ export class Receta {
   }
 
   eliminarReceta() {
-    eliminarRecetaApi(this.id);
+    //console.log(this.id, this.public_id)
+    eliminarRecetaApi(this.id,this.public_id);
+    //console.log(this.public_id)
     console.log("receta eliminada: ", this.nombre);
   }
   retornarDatos() {

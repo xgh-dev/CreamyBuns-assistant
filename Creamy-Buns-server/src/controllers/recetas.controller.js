@@ -24,7 +24,7 @@ export const agregarNuevaRecetaController = async (req, res) => {
     await crearRecetaDB(req.body);
     //console.log("Receta creada exitosamente");
     //returnamos como respuesta un json con la informacion cargada
-    return res.status(201).json({
+    return res.status(200).json({
       message: "Receta creada exitosamente",
       data: req.body,
     });
@@ -38,8 +38,10 @@ export const agregarNuevaRecetaController = async (req, res) => {
 };
 
 export const eliminarRecetaController = async (req, res) => {
+  console.log(req.body)
+  const {id,public_id} = req.body
   try {
-    await eliminarRecetaDB(req.params.id);
+    await eliminarRecetaDB(id,public_id);
     //console.log("conectando con el servicvio de eliminar receta");
     res.status(200).json({ message: "receta eliminada correctamente" });
   } catch (error) {

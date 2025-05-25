@@ -32,4 +32,4 @@ CREATE TABLE imagenes (
 /*consulta para hacer inner join de las tablas*/
 SELECT recetas.id,recetas.nombre,recetas.precio,recetas.ingredientes,recetas.procedimiento,recetas.observaciones,imagenes.secure_url
 FROM recetas
-inner join imagenes ON recetas.imagen = imagenes.id;
+left join imagenes ON recetas.imagen = imagenes.id;

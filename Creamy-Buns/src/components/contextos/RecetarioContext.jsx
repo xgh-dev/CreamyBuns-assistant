@@ -28,7 +28,8 @@ const RecetarioContextProvider = ({ children }) => {
           receta.ingredientes,
           receta.procedimiento,
           receta.observaciones,
-          receta.secure_url
+          receta.secure_url,
+          receta.public_id
         )
     );
     //funciona mi clase

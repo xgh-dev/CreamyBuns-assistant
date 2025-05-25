@@ -40,4 +40,6 @@ export const loadImage = async (file) => {
   return resultado.data
 };
 
-//definir un fetch que se ejecute y genere el registro de la imagen y devuelva su id
+export const destroyImage = async (public_id) => {
+  console.log(public_id)
+}

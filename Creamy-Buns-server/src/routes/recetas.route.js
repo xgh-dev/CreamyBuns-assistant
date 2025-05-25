@@ -18,7 +18,7 @@ recetasRouter.put('/actualizarReceta/:id',(req,res) => {
 })
 
 //ruta delete
-recetasRouter.delete('/eliminarReceta/:id',eliminarRecetaController)
+recetasRouter.delete('/eliminarReceta',eliminarRecetaController)
 
 //ruta para obtener receta por id
 recetasRouter.get('/obtenerReceta/:id',obtenerRecetaPorIdController)

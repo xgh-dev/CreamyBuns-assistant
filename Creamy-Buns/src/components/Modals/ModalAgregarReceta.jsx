@@ -145,7 +145,7 @@ const ModalAgregarReceta = () => {
                 <input
                   id="precio"
                   type="number"
-                  placeholder="Ingrese el precio"
+                  placeholder="0"
                   value={nuevaReceta.precio}
                   onChange={(e) =>
                     setNuevaReceta({
