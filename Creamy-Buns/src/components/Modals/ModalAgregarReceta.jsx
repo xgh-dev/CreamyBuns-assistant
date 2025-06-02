@@ -106,7 +106,7 @@ const ModalAgregarReceta = () => {
                 <textarea
                   id="ingredientes"
                   placeholder="Ingresar ingredientes"
-                  rows="4"
+                  rows="3"
                   value={nuevaReceta.ingredientes}
                   onChange={(e) =>
                     setNuevaReceta({
@@ -119,7 +119,7 @@ const ModalAgregarReceta = () => {
                 <textarea
                   id="procedimiento"
                   placeholder="Ingresar procedimiento"
-                  rows="4"
+                  rows="3"
                   value={nuevaReceta.procedimiento}
                   onChange={(e) =>
                     setNuevaReceta({
@@ -132,7 +132,7 @@ const ModalAgregarReceta = () => {
                 <textarea
                   id="observaciones"
                   placeholder="Campo opcional"
-                  rows="4"
+                  rows="3"
                   value={nuevaReceta.observaciones}
                   onChange={(e) =>
                     setNuevaReceta({

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ItemList from "./itemList";
-import { RecetarioContext } from "../contextos/RecetarioContext";
+import ItemList from "./itemList.jsx";
+import { RecetarioContext } from "../contextos/RecetarioContext.jsx";
 import { EstructuraDeListaDeRecetas,Header,TituloH2,ContenedorDeListaDeRecetas } from "./ListaDeRecetas.styled.js";
 
 const ListaDeRecetas = () => {

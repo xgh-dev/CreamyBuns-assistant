@@ -1,5 +1,5 @@
 import FormRecetario from "./formulariosDeRecetas/FormRecetario";
-import ListaDeRecetas from "./renderLists/ListaDeRecetas";
+import ListaDeRecetas from "./renderListRecetas/ListaDeRecetas";
 
 import {
   EstructuraDeRecetario,
