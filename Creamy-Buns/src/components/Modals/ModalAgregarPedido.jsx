@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ModalAgregarPedido = ({ clientes, recetas }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [newTicket, setNewTicket] = useState({ receta: "", cliente: "" });
+  const [newTicket, setNewTicket] = useState({ receta: "", cliente: "" ,cantidad:"1"});
 
   //crear la función que manipule los datos y reestablezca el formulario
   const crearPedido = () => {
@@ -20,7 +20,8 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
       <button onClick={() => setIsOpen(true)}>Crear Pedido</button>
       {/* el modal no se mostrara mientras isOpen sea false*/}
       <Modal isOpen={isOpen}>
-        <h1>Creando un pedido nuevo</h1>
+        {/* aqui ira el render de la lista de inputs */}
+        <h1>Crear pedido</h1>
         <div className="formContainer">
           <form action="formAgregarPedido">
             <label htmlFor="seleccionarCliente">Selecione un cliente</label>
@@ -35,6 +36,7 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
                 </option>
               ))}
             </select>
+            <div>
             <label htmlFor="seleccionarReceta">Selecione una receta</label>
             <select name="recetas" id="seleccionarReceta" value={newTicket.receta} onChange={e => setNewTicket({...newTicket,receta:e.target.value})}>
               <option value="" disabled>
@@ -49,9 +51,23 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
                 </option>
               ))}
             </select>
+            <select name="cantidad" id="cantidad" value={newTicket.cantidad} onChange={e => setNewTicket({...newTicket,cantidad:e.target.value})}>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            </div>
           </form>
-          <button onClick={crearPedido}>Guardar</button>
-          <button onClick={() => setIsOpen(false)}>Cerrar</button>
+          <div>
+            <button className="agregarInput">+</button>
+          </div>
+          <div>
+            <button onClick={crearPedido}>Guardar</button>
+            <button onClick={() => setIsOpen(false)}>Cerrar</button>
+          </div>
         </div>
       </Modal>
     </>
