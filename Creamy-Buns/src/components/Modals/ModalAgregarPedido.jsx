@@ -3,15 +3,21 @@ import { useState } from "react";
 
 const ModalAgregarPedido = ({ clientes, recetas }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [newTicket, setNewTicket] = useState({ receta: "", cliente: "" ,cantidad:"1"});
+  const [inputs, setInputs] = useState([{ receta: "#", cantidad: "1" }]);
+  const [cliente, setCliente] = useState("#");
 
-  //crear la función que manipule los datos y reestablezca el formulario
+  const agregarInput = () => {
+    setInputs([...inputs, { receta: "#", cantidad: "1" }]);
+    console.log("input agregado");
+  };
+
   const crearPedido = () => {
-    if (newTicket.cliente !== '' && newTicket.receta !== ''){
-      console.log(newTicket)
-    }
-    //limpiamos el estado
-    setNewTicket({ ...newTicket, receta: "", cliente: "" });
+    console.log("pedido creado",inputs);
+    console.log(cliente)
+    //enviar a la api
+    //crearPedido(cliente,inputs)
+    setInputs([{ receta: "#", cantidad: "1" }]);
+    setCliente("#");
   };
 
   return (
@@ -25,10 +31,13 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
         <div className="formContainer">
           <form action="formAgregarPedido">
             <label htmlFor="seleccionarCliente">Selecione un cliente</label>
-            <select name="clientes" id="seleccionarCliente" value={newTicket.cliente} onChange={e => setNewTicket({...newTicket,cliente:e.target.value})}>
-              <option value="" disabled>
-                Selecciona un cliente
-              </option>
+            <select
+              name="clientes"
+              className="seleccionarCliente"
+              value={cliente}
+              onChange={(e) => setCliente(e.target.value)}
+            >
+              <option value="#">Selecciona un cliente</option>
               {clientes.map((cliente) => (
                 <option key={cliente.retornarId()} value={cliente.retornarId()}>
                   {cliente.retornarDatos().nombre}{" "}
@@ -36,33 +45,53 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
                 </option>
               ))}
             </select>
-            <div>
-            <label htmlFor="seleccionarReceta">Selecione una receta</label>
-            <select name="recetas" id="seleccionarReceta" value={newTicket.receta} onChange={e => setNewTicket({...newTicket,receta:e.target.value})}>
-              <option value="" disabled>
-                Selecciona una receta
-              </option>
-              {recetas.map((receta) => (
-                <option
-                  key={receta.retornarDatos().id}
-                  value={receta.retornarDatos().id}
+            {inputs.map((input, indice) => (
+              <div key={indice}>
+                <label htmlFor="seleccionarReceta">Selecione una receta</label>
+                <select
+                  name="recetas"
+                  className={`seleccionarReceta`}
+                  value={input.receta}
+                  onChange={(e) => {
+                    const marcadorInputs = [...inputs];
+                    marcadorInputs[indice].receta = e.target.value;
+                    setInputs(marcadorInputs);
+                  }}
                 >
-                  {receta.retornarDatos().nombre}
-                </option>
-              ))}
-            </select>
-            <select name="cantidad" id="cantidad" value={newTicket.cantidad} onChange={e => setNewTicket({...newTicket,cantidad:e.target.value})}>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            </div>
+                  <option value="#">Selecciona una receta</option>
+                  {recetas.map((receta) => (
+                    <option
+                      key={receta.retornarDatos().id}
+                      value={receta.retornarDatos().id}
+                    >
+                      {receta.retornarDatos().nombre}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  name="cantidad"
+                  id={`seleccionarCantidad`}
+                  value={input.cantidad}
+                  onChange={(e) => {
+                    const marcadorInputs = [...inputs];
+                    marcadorInputs[indice].cantidad = e.target.value;
+                    setInputs(marcadorInputs);
+                  }}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+            ))}
           </form>
           <div>
-            <button className="agregarInput">+</button>
+            <button className="agregarInput" onClick={agregarInput}>
+              +
+            </button>
           </div>
           <div>
             <button onClick={crearPedido}>Guardar</button>
