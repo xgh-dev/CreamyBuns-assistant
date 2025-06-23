@@ -61,6 +61,17 @@ export const AgregarClienteButton = styled.button`
   border:0;
 `;
 
+export const AddButton = styled.button`
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(24, 201, 18);
+  color: white;
+  border-radius: 5px;
+  border:0;
+`;
+
+
 export const ActualizarClienteButton = styled.button`
   padding: 10px 15px;
   font-size: 16px;

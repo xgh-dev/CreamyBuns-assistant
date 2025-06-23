@@ -1,5 +1,7 @@
 import Modal from "./Modal";
 import { useState } from "react";
+import { CloseButton,AddButton } from "./Modales.styles.js";
+import { FaPlus } from "react-icons/fa";
 
 const ModalAgregarPedido = ({ clientes, recetas }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +25,7 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
   return (
     <>
       {/* en este elemento solo se mostrara el boton de abrir el modal para cambiar el estado de isOpen */}
-      <button onClick={() => setIsOpen(true)}>Crear Pedido</button>
+      <button onClick={() => setIsOpen(true)} style={styles.openButton}>Crear Pedido</button>
       {/* el modal no se mostrara mientras isOpen sea false*/}
       <Modal isOpen={isOpen}>
         {/* aqui ira el render de la lista de inputs */}
@@ -33,7 +35,7 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
             <label htmlFor="seleccionarCliente">Selecione un cliente</label>
             <select
               name="clientes"
-              className="seleccionarCliente"
+              className="form-select"
               value={cliente}
               onChange={(e) => setCliente(e.target.value)}
             >
@@ -48,9 +50,10 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
             {inputs.map((input, indice) => (
               <div key={indice}>
                 <label htmlFor="seleccionarReceta">Selecione una receta</label>
+                <div style={{display:"flex"}}>
                 <select
                   name="recetas"
-                  className={`seleccionarReceta`}
+                  className="form-select"
                   value={input.receta}
                   onChange={(e) => {
                     const marcadorInputs = [...inputs];
@@ -85,17 +88,16 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
                   <option value="5">5</option>
                   <option value="6">6</option>
                 </select>
+                </div>
               </div>
             ))}
           </form>
           <div>
-            <button className="agregarInput" onClick={agregarInput}>
-              +
-            </button>
+            <FaPlus onClick={agregarInput}/>
           </div>
           <div>
-            <button onClick={crearPedido}>Guardar</button>
-            <button onClick={() => setIsOpen(false)}>Cerrar</button>
+            <AddButton onClick={crearPedido}>Guardar</AddButton>
+            <CloseButton onClick={() => setIsOpen(false)}>Cerrar</CloseButton>
           </div>
         </div>
       </Modal>
@@ -104,3 +106,15 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
 };
 
 export default ModalAgregarPedido;
+
+const styles = {
+  openButton: {
+    fontsize: "16px",
+    padding: "10px 15px",
+    cursor: "pointer",
+    border: "none",
+    background:" #bd8750",
+    color:"white",
+    borderRadius: "5px"
+  }
+}
