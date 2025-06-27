@@ -1,12 +1,25 @@
+import { useState } from "react"
+import { ContenedorBuscarPedido,ContenedorDeEtiquetasForm,Label,Formulario } from "./FormularioBuscarPedido"
+
 const FormBuscarPedidos = () => {
+    const [pedido,setPedido] = useState("")
+
+    // este codigo es para practicar fudamentos
+    if (pedido > ""){
+        console.log(pedido)
+    }
+
+
     return (<>
-    <div>
-        <form >
-            <label htmlFor="buscarPedido">Ingrese nombre o id del pedido</label>
-            <input type="text" id="buscarPedido"/>
+    <ContenedorBuscarPedido>
+        <Formulario >
+            <ContenedorDeEtiquetasForm>
+            <Label htmlFor="buscarPedido">Ingrese nombre o id del pedido</Label>
+            <input type="text" id="buscarPedido" value={pedido} onChange={e => setPedido(e.target.value)}/>
             <input type="submit" />
-        </form>
-    </div>
+            </ContenedorDeEtiquetasForm>
+        </Formulario>
+    </ContenedorBuscarPedido>
     </>)
 }
 

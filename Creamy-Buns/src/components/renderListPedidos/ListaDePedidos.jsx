@@ -1,4 +1,4 @@
-const TablaDePedidos = () => {
+const ListaDePedidos = () => {
   return (
     <>
       <div>
@@ -10,4 +10,4 @@ const TablaDePedidos = () => {
     </>
   );
 };
-export default TablaDePedidos;
+export default ListaDePedidos;

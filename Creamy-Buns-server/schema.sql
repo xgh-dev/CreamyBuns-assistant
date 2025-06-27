@@ -33,3 +33,20 @@ CREATE TABLE imagenes (
 SELECT recetas.id,recetas.nombre,recetas.precio,recetas.ingredientes,recetas.procedimiento,recetas.observaciones,imagenes.secure_url
 FROM recetas
 left join imagenes ON recetas.imagen = imagenes.id;
+
+/*tabla de carrito*/
+CREATE TABLE carrito (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT,
+    receta_id INT,
+    cantidad INT,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+    FOREIGN KEY (receta_id) REFERENCES recetas(id)
+)
+
+/*tabla para el pago de pedido*/
+CREATE TABLE pedido (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    carrito_id INT,
+    pagado  BOOLEAN
+)

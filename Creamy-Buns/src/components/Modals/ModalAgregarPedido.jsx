@@ -1,6 +1,6 @@
 import Modal from "./Modal";
 import { useState } from "react";
-import { CloseButton,AddButton } from "./Modales.styles.js";
+import { CloseButton,AddButton,OpenButton } from "./Modales.styles.js";
 import { FaPlus } from "react-icons/fa";
 
 const ModalAgregarPedido = ({ clientes, recetas }) => {
@@ -25,7 +25,7 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
   return (
     <>
       {/* en este elemento solo se mostrara el boton de abrir el modal para cambiar el estado de isOpen */}
-      <button onClick={() => setIsOpen(true)} style={styles.openButton}>Crear Pedido</button>
+      <OpenButton onClick={() => setIsOpen(true)} style={styles.openButton}>Crear Pedido</OpenButton>
       {/* el modal no se mostrara mientras isOpen sea false*/}
       <Modal isOpen={isOpen}>
         {/* aqui ira el render de la lista de inputs */}
@@ -56,8 +56,11 @@ const ModalAgregarPedido = ({ clientes, recetas }) => {
                   className="form-select"
                   value={input.receta}
                   onChange={(e) => {
+                    //creamos una copia de los inpunts para poder trabajar sobre cada uno en especifico mediante su indice de lista
                     const marcadorInputs = [...inputs];
+                    //console.log(marcadorInputs[indice])
                     marcadorInputs[indice].receta = e.target.value;
+                    //console.log("valor del input ",e.target.value)
                     setInputs(marcadorInputs);
                   }}
                 >
