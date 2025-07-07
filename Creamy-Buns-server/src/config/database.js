@@ -13,13 +13,8 @@ const conexion = mysql.createPool({
     database: process.env.MYSQL_DATABASE}
 ).promise()
 
+
+
 //la exportamos por defaul
 export default conexion;
 
-
-/*
-MYSQL_HOST = "127.0.0.1" 
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "shino123" 
-MYSQL_DATABASE = "creamybunsDB"
-*/
