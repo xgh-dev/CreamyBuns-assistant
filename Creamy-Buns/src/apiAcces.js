@@ -96,13 +96,24 @@ export function useObtenerRecetaPorID(id) {
   return { isLoading, error, datos };
 }
 
+export async function obtnerRecetaPorID(id) {
+  try {
+      const consulta = await fetch(`${apiUrl}/obtenerReceta/${id}`);
+      const respuesta = await consulta.json()
+      return respuesta;
+  } catch (error) {
+    console.error('error en el fetch de obtener receta',error)
+  }
+  console.log('Consulta finalizada')
+}
+
 export async function obtenerClientesApi() {
   //inicializamos el trycatch
   try {
     //inicializamos la consulta
     const consulta = await fetch(`${apiUrl}/obtenerClientes`);
     //transformamos los datos a tipo json
-    const respuesta = consulta.json();
+    const respuesta = await consulta.json();
     //retornamos
     return respuesta;
   } catch (error) {

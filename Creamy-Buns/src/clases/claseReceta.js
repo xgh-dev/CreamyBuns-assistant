@@ -1,5 +1,5 @@
 import { eliminarRecetaApi } from "../apiAcces";
-import { destroyImage } from "../cloudinary";
+//import { destroyImage } from "../cloudinary";
 
 export class Receta {
   constructor(

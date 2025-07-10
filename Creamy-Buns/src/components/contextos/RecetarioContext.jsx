@@ -36,6 +36,7 @@ const RecetarioContextProvider = ({ children }) => {
     //console.log(listaClases[0].mostrarDatos());
     setListaDeRecetas(listaConClases);
   };
+  //modificar el useEfffect ver si se puede  quitar
   useEffect(() => {
     cargarRecetas();
   }, []);
